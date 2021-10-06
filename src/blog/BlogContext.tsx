@@ -22,15 +22,15 @@ export const BlogProvider = (props: { children: ReactNode }) => {
   const [posts, setPosts] = useLokalStorage([] as PostType[]);
 
   const addOrEditPost = (post: PostType) => {
-    setPosts((p) => {
-      const posts = p.filter((ps) => ps.id !== post.id);
-      return [...posts, post];
+    setPosts((ps) => {
+      const newPosts = ps.filter((p) => p.id !== post.id);
+      return [...newPosts, post];
     });
   };
 
   const deletePost = (id: string) => {
-    setPosts((p) => {
-      return [...p.filter((post) => post.id !== id)];
+    setPosts((ps) => {
+      return [...ps.filter((post) => post.id !== id)];
     });
   };
 

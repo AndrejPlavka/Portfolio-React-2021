@@ -106,6 +106,10 @@ export const NavBar = () => {
           </DivNavItem>
 
           <DivNavItem>
+            <NavLinks to="/todo">Todo</NavLinks>
+          </DivNavItem>
+
+          <DivNavItem>
             <NavLinks to="/hackertyper">Hacker Typer</NavLinks>
           </DivNavItem>
 

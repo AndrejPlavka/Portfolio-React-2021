@@ -1,6 +1,6 @@
 import { ImgSrc } from "./ModalBackground";
 import React, { useRef } from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const DivBackdrop = styled.div`
   z-index: 3;

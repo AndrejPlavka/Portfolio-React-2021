@@ -2,8 +2,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import React from "react";
 
 //Syles
-// import { GlobalStyle } from "./GlobalStyles";
-// import styled from "styled-components";
+import styled from "styled-components/macro";
 
 //Components - Projects
 import { Blog } from "./blog/BlogApp";
@@ -12,23 +11,20 @@ import { HackerApp } from "./hackertyper/HackerApp";
 import { HomePage } from "./home/HomePage";
 import { NavBar } from "./home/NavBar";
 import { PexesoApp } from "./pexeso/PexesoApp";
+import { TaskManager } from "./todo/TaskManager";
 import { TodoApp } from "./todoapp/TodoApp";
 import { TunesApp } from "./tunesapp/TunesApp";
 import { UserList } from "./practise/Practise";
 
-// html,
-// body {
-//   color: #fff;
-// }
-// const DivMain = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   width: 100%;
-//   padding-top: 2rem;
-//   align-items: center;
-//   font-family: "Calibri";
-// `;
+const DivMain = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  padding-top: 2rem;
+  align-items: center;
+  font-family: "Calibri";
+`;
 
 // const NavStyled = styled.nav`
 //   height: 40px;
@@ -52,23 +48,26 @@ import { UserList } from "./practise/Practise";
 //     text-decoration: underline;
 //   }
 // `;
+
 function App() {
-  // Template - Projets Routes
+  // Template - Projets Routesconst
   return (
     <Router>
       <div>
         <NavBar />
-
-        <Switch>
-          <Route path="/" component={HomePage} exact />
-          <Route path="/counter" component={Counter} />
-          <Route path="/todoapp" component={TodoApp} />
-          <Route path="/hackertyper" component={HackerApp} />
-          <Route path="/pexeso" component={PexesoApp} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/tunesapp" component={TunesApp} />
-          <Route path="/practise" component={UserList} />
-        </Switch>
+        <DivMain>
+          <Switch>
+            <Route path="/" component={HomePage} exact />
+            <Route path="/counter" component={Counter} />
+            <Route path="/todoapp" component={TodoApp} />
+            <Route path="/todo" component={TaskManager} />
+            <Route path="/hackertyper" component={HackerApp} />
+            <Route path="/pexeso" component={PexesoApp} />
+            <Route path="/blog" component={Blog} />
+            <Route path="/tunesapp" component={TunesApp} />
+            <Route path="/practise" component={UserList} />
+          </Switch>
+        </DivMain>
       </div>
     </Router>
   );

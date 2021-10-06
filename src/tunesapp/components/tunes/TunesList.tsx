@@ -1,5 +1,5 @@
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { SongType } from "./TunesTypes";
+import { SongType } from "../../types/TunesTypes";
 
 //STYLES
 import "./TunesList.scss";

@@ -2,7 +2,7 @@ import { BlogContext, PostType } from "./BlogContext";
 import { theme } from "./theme";
 import { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const DivErrorInfo = styled.div`
   font-size: 1.1rem;

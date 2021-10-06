@@ -1,5 +1,5 @@
-import { SongType } from "../components/tunes/TunesTypes";
-import { SongTypeFromITunes } from "../components/tunes/TunesTypes";
+import { SongType } from "../types/TunesTypes";
+import { SongTypeFromITunes } from "../types/TunesTypes";
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -12,7 +12,7 @@ import "./Tunes.scss";
 // import useContext from "react";
 
 // COMPONENT
-export const Tunes = (props: { song?: SongType }) => {
+export const Tunes = () => {
   //STATE
   const [songs, setSongs] = useState<SongType[]>([]);
 

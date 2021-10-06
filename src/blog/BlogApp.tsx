@@ -12,7 +12,7 @@ import { PostManager } from "./PostManager";
 import { PostPage } from "./PostPage";
 import { Posts } from "./PostsPage";
 import { theme } from "./theme";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const LinkStyled = styled(Link)`
   font-size: 1.5rem;

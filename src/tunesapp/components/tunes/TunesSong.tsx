@@ -1,4 +1,4 @@
-import { SongType } from "./TunesTypes";
+import { SongType } from "../../types/TunesTypes";
 import { truncate } from "lodash";
 import React from "react";
 
