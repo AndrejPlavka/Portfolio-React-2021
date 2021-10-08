@@ -33,7 +33,7 @@ export const TodoApp = () => {
   // hooks:
   // TodoApp
   const [tasks, setTasks] = useTaskLocalStorage("data", [] as TaskType[]);
-  const [filter, setFilter] = useState<any>("all");
+  const [filter, setFilter] = useState("all");
   // Todo
   const [isEditing, setEditing] = useState(false);
   const [newTaskContent, setNewTaskContent] = useState("");

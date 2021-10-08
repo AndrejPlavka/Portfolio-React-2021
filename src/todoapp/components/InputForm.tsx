@@ -6,16 +6,16 @@ interface Props {
 
 export const InputForm = (props: Props) => {
   // hooks - states
-  const [name, setName] = useState<string>("");
+  const [taskContent, setTaskContent] = useState<string>("");
   // handlers
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (name.replace(" ", "") === "") return;
-    props.addTask(name);
-    setName("");
+    if (taskContent.replace(" ", "") === "") return;
+    props.addTask(taskContent);
+    setTaskContent("");
   };
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
+    setTaskContent(e.target.value);
   };
   // template
   return (
@@ -31,7 +31,7 @@ export const InputForm = (props: Props) => {
         className="input input__lg"
         name="text"
         autoComplete="off"
-        value={name}
+        value={taskContent}
         onChange={handleChange}
       />
       <button type="submit" className="btn btn__primary btn__lg">

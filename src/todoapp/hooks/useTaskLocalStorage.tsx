@@ -1,34 +1,10 @@
 import { TaskType } from "../TodoApp";
 import { useState } from "react";
 
-// const TODO_LS_NAME = "todo-data";
-
 /**
  * Inspiration: https://usehooks.com/useLocalStorage/
  */
-// export const useTaskLocalStorage = (defaultValue: TaskType[]) => {
-//   // storedValue, setStoredValue
-//   const [tasks, setTasksLocally] = useState(() => {
-//     try {
-//       const data = localStorage.getItem(TODO_LS_NAME);
-//       return data ? JSON.parse(data) : defaultValue;
-//     } catch {
-//       return defaultValue;
-//     }
-//   });
 
-//   const setTasks = (value: TaskType[] | ((v: TaskType[]) => TaskType[])) => {
-//     try {
-//       const valueToStore = value instanceof Function ? value(tasks) : value;
-//       setTasksLocally(valueToStore);
-//       localStorage.setItem(TODO_LS_NAME, JSON.stringify(valueToStore));
-//     } catch {}
-//   };
-
-//   return [tasks, setTasks] as const;
-// };
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
 export function useTaskLocalStorage<T>(key: string, initialValue: T) {
   // State to store our value
   // Pass initial state function to useState so logic is only executed once
@@ -65,3 +41,28 @@ export function useTaskLocalStorage<T>(key: string, initialValue: T) {
   };
   return [tasks, setTasks] as const;
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+// const TODO_LS_NAME = "todo-data";
+
+// export const useTaskLocalStorage = (defaultValue: TaskType[]) => {
+//   // storedValue, setStoredValue
+//   const [tasks, setTasksLocally] = useState(() => {
+//     try {
+//       const data = localStorage.getItem(TODO_LS_NAME);
+//       return data ? JSON.parse(data) : defaultValue;
+//     } catch {
+//       return defaultValue;
+//     }
+//   });
+
+//   const setTasks = (value: TaskType[] | ((v: TaskType[]) => TaskType[])) => {
+//     try {
+//       const valueToStore = value instanceof Function ? value(tasks) : value;
+//       setTasksLocally(valueToStore);
+//       localStorage.setItem(TODO_LS_NAME, JSON.stringify(valueToStore));
+//     } catch {}
+//   };
+
+//   return [tasks, setTasks] as const;
+// };
