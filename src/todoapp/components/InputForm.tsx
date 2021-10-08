@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 
 interface Props {
-  addTask: (name: string) => void;
+  addTask: (taskContent: string) => void;
 }
 
 export const InputForm = (props: Props) => {

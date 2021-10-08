@@ -26,7 +26,7 @@ const randomID = () => Math.random().toString(36).substr(2, 8);
 // Props & Types
 export type TaskType = {
   id: string;
-  name: string;
+  taskContent: string;
   completed: boolean;
 };
 export const TodoApp = () => {
@@ -42,10 +42,10 @@ export const TodoApp = () => {
   /*There’s one problem however: we can’t just pass the name argument of addTask() into setTasks, because tasks is an array of objects and name is a string. If we tried to do this, the array would be replaced with the string.
   First of all, we need to put name into an object that has the same structure as our existing tasks. Inside of the addTask() function, we will make a newTask object to add to the array. */
   // callbacks
-  const addTask = (name: string) => {
+  const addTask = (taskContent: string) => {
     const newTask = {
       id: randomID() /*or use npm nanoid as for exem. id: "todo-"+nanodid() */,
-      name: name,
+      taskContent: taskContent,
       completed: false,
     };
     setTasks([...tasks, newTask]);
@@ -66,10 +66,10 @@ export const TodoApp = () => {
     setTasks(remainingTasks);
   };
 
-  const editTask = (id: string, newName: string) => {
+  const editTask = (id: string, newTaskContent: string) => {
     const editedTaskList = tasks.map((task) => {
       if (id === task.id) {
-        return { ...task, name: newName };
+        return { ...task, taskContent: newTaskContent };
       }
       return task;
     });
@@ -83,7 +83,7 @@ export const TodoApp = () => {
       <Todo
         key={task.id}
         id={task.id}
-        name={task.name}
+        taskContent={task.taskContent}
         completed={task.completed}
         toggleTaskCompleted={toggleTaskCompleted}
         deleteTask={deleteTask}
