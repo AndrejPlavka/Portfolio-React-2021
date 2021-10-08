@@ -29,12 +29,16 @@ export type TaskType = {
   name: string;
   completed: boolean;
 };
-
 export const TodoApp = () => {
-  // hooks - states
-  const [tasks, setTasks] = useTaskLocalStorage([] as TaskType[]);
+  // hooks:
+  // TodoApp
+  const [tasks, setTasks] = useTaskLocalStorage("data", [] as TaskType[]);
   const [filter, setFilter] = useState<any>("all");
-
+  // Todo
+  const [isEditing, setEditing] = useState(false);
+  const [newTaskContent, setNewTaskContent] = useState("");
+  // InputForm
+  const [taskContent, setTaskContent] = useState<string>("");
   /*There’s one problem however: we can’t just pass the name argument of addTask() into setTasks, because tasks is an array of objects and name is a string. If we tried to do this, the array would be replaced with the string.
   First of all, we need to put name into an object that has the same structure as our existing tasks. Inside of the addTask() function, we will make a newTask object to add to the array. */
   // callbacks
