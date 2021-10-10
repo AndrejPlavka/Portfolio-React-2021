@@ -35,10 +35,11 @@ export const TodoApp = () => {
   const [tasks, setTasks] = useTaskLocalStorage("data", [] as TaskType[]);
   const [filter, setFilter] = useState("all");
   // Todo
-  const [isEditing, setEditing] = useState(false);
-  const [newTaskContent, setNewTaskContent] = useState("");
+  // const [isEditing, setEditing] = useState(false);
+  // const [newTaskContent, setNewTaskContent] = useState("");
   // InputForm
   const [taskContent, setTaskContent] = useState<string>("");
+  const [error, setError] = useState("");
   /*There’s one problem however: we can’t just pass the name argument of addTask() into setTasks, because tasks is an array of objects and name is a string. If we tried to do this, the array would be replaced with the string.
   First of all, we need to put name into an object that has the same structure as our existing tasks. Inside of the addTask() function, we will make a newTask object to add to the array. */
   // callbacks
@@ -48,6 +49,12 @@ export const TodoApp = () => {
       taskContent: taskContent,
       completed: false,
     };
+    setError("");
+    //replace ,,space,, with ,,nothing,, to be sure tahat error's set right
+    if (taskContent.replace(" ", "") === "") {
+      setError("Please, fill the Task");
+      return;
+    }
     setTasks([...tasks, newTask]);
   };
   // functions *************************************************************************************************************************
@@ -75,7 +82,18 @@ export const TodoApp = () => {
     });
     setTasks(editedTaskList);
   };
+  // handlers
+  // InputForm
+  const handleSubmitIF = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    addTask(taskContent);
+    setTaskContent("");
+  };
+  const handleChangeIF = (e: ChangeEvent<HTMLInputElement>) => {
+    setTaskContent(e.target.value);
+  };
 
+  // const handleClick;
   // general const *****************************************************************************************************************
   const taskList = tasks
     .filter(FILTER_LIST[filter])
@@ -90,11 +108,11 @@ export const TodoApp = () => {
         editTask={editTask}
       />
     ));
-  const filterList = FILTER_LIST_NAMES.map((name) => (
+  const filterList = FILTER_LIST_NAMES.map((filterCategory) => (
     <FilterButtons
-      key={name}
-      name={name}
-      isPressed={name === filter}
+      key={filterCategory}
+      filterCategory={filterCategory}
+      isPressed={filterCategory === filter}
       setFilter={setFilter}
     />
   ));
@@ -106,7 +124,12 @@ export const TodoApp = () => {
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
-      <InputForm addTask={addTask} />
+      <InputForm
+        handleSubmitIF={handleSubmitIF}
+        handleChangeIF={handleChangeIF}
+        taskContent={taskContent}
+        error={error}
+      />
       <div className="filters btn-group stack-exception"> {filterList} </div>
       <h2 id="list-heading">{headingText}</h2>
       <ul
