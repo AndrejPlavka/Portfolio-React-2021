@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, FormEvent, useState } from "react";
+import React, { ChangeEvent, FC, FormEvent, useRef, useState } from "react";
 // Components
 import { FilterButtons } from "./components/FilterButtons";
 import { InputForm } from "./components/InputForm";
@@ -40,6 +40,7 @@ export const TodoApp = () => {
   // InputForm
   const [taskContent, setTaskContent] = useState<string>("");
   const [error, setError] = useState("");
+  const contentInputFormRef = useRef<any>(null);
   /*There’s one problem however: we can’t just pass the name argument of addTask() into setTasks, because tasks is an array of objects and name is a string. If we tried to do this, the array would be replaced with the string.
   First of all, we need to put name into an object that has the same structure as our existing tasks. Inside of the addTask() function, we will make a newTask object to add to the array. */
   // callbacks
@@ -82,7 +83,7 @@ export const TodoApp = () => {
     });
     setTasks(editedTaskList);
   };
-  // handlers
+  // handlers:
   // InputForm
   const handleSubmitIF = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -92,8 +93,14 @@ export const TodoApp = () => {
   const handleChangeIF = (e: ChangeEvent<HTMLInputElement>) => {
     setTaskContent(e.target.value);
   };
-
-  // const handleClick;
+  const handleFocusCancel = () => {
+    setTaskContent("");
+    contentInputFormRef.current?.blur();
+  };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") handleSubmitIF;
+    if (e.key === "Escape") handleFocusCancel();
+  };
   // general const *****************************************************************************************************************
   const taskList = tasks
     .filter(FILTER_LIST[filter])
@@ -125,10 +132,12 @@ export const TodoApp = () => {
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
       <InputForm
+        handleKeyDown={handleKeyDown}
         handleSubmitIF={handleSubmitIF}
         handleChangeIF={handleChangeIF}
         taskContent={taskContent}
         error={error}
+        contentInputFormRef={contentInputFormRef}
       />
       <div className="filters btn-group stack-exception"> {filterList} </div>
       <h2 id="list-heading">{headingText}</h2>
