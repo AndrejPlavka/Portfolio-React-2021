@@ -102,19 +102,18 @@ export const TodoApp = () => {
     if (e.key === "Escape") handleFocusCancel();
   };
   // general const *****************************************************************************************************************
-  const taskList = tasks
-    .filter(FILTER_LIST[filter])
-    .map((task) => (
-      <Todo
-        key={task.id}
-        id={task.id}
-        taskContent={task.taskContent}
-        completed={task.completed}
-        toggleTaskCompleted={toggleTaskCompleted}
-        deleteTask={deleteTask}
-        editTask={editTask}
-      />
-    ));
+  const taskList = tasks.filter(FILTER_LIST[filter]).map((task) => (
+    <Todo
+      key={task.id}
+      task={task}
+      // id={task.id}
+      // taskContent={task.taskContent}
+      // completed={task.completed}
+      toggleTaskCompleted={toggleTaskCompleted}
+      deleteTask={deleteTask}
+      editTask={editTask}
+    />
+  ));
   const filterList = FILTER_LIST_NAMES.map((filterCategory) => (
     <FilterButtons
       key={filterCategory}
