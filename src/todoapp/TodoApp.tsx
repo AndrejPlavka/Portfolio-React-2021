@@ -36,7 +36,7 @@ export const TodoApp = () => {
   const [filter, setFilter] = useState("all");
   // Todo
   // const [isEditing, setEditing] = useState(false);
-  // const [newTaskContent, setNewTaskContent] = useState("");
+  const [newTaskContent, setNewTaskContent] = useState("");
   // InputForm
   const [taskContent, setTaskContent] = useState<string>("");
   const [error, setError] = useState("");
@@ -106,7 +106,8 @@ export const TodoApp = () => {
     <Todo
       key={task.id}
       task={task}
-      // id={task.id}
+      newTaskContent={newTaskContent}
+      setNewTaskContent={setNewTaskContent}
       // taskContent={task.taskContent}
       // completed={task.completed}
       toggleTaskCompleted={toggleTaskCompleted}

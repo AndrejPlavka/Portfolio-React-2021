@@ -15,16 +15,25 @@ interface Props {
   // completed: boolean;
   // id: string;
   task: TaskType;
+  newTaskContent: string;
+  setNewTaskContent: React.Dispatch<React.SetStateAction<string>>;
   toggleTaskCompleted: (id: string) => void;
   deleteTask: (id: string) => void;
   editTask: (id: string, newName: string) => void;
 }
 
 export const Todo = (props: Props) => {
-  const { task, toggleTaskCompleted, deleteTask, editTask } = props;
+  const {
+    task,
+    newTaskContent,
+    toggleTaskCompleted,
+    deleteTask,
+    editTask,
+    setNewTaskContent,
+  } = props;
   // hooks - states
   const [isEditing, setEditing] = useState(false);
-  const [newTaskContent, setNewTaskContent] = useState("");
+  // const [newTaskContent, setNewTaskContent] = useState("");
 
   // functions - handlers
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +41,7 @@ export const Todo = (props: Props) => {
   };
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    props.editTask(task.id, newTaskContent);
+    editTask(task.id, newTaskContent);
     setNewTaskContent("");
     setEditing(false);
   };
@@ -82,7 +91,7 @@ export const Todo = (props: Props) => {
           id={task.id}
           type="checkbox"
           defaultChecked={task.completed}
-          onChange={() => props.toggleTaskCompleted(task.id)}
+          onChange={() => toggleTaskCompleted(task.id)}
         />
         <label className="todo-label" htmlFor={task.id}>
           {task.taskContent}
@@ -95,7 +104,7 @@ export const Todo = (props: Props) => {
         <button
           type="button"
           className="btn btn__danger"
-          onClick={() => props.deleteTask(task.id)}
+          onClick={() => deleteTask(task.id)}
         >
           Delete <span className="visually-hidden">{task.taskContent}</span>
         </button>
