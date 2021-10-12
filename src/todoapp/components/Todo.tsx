@@ -11,19 +11,14 @@ import React, {
 import "../styles.css";
 
 interface Props {
-  // taskContent: string;
-  // completed: boolean;
-  // id: string;
   task: TaskType;
   newTaskContent: string;
-  isEditing: boolean;
-  setEditing: React.Dispatch<React.SetStateAction<boolean>>;
-  setNewTaskContent: React.Dispatch<React.SetStateAction<string>>;
+  isEditing: string;
+  setEditing: React.Dispatch<React.SetStateAction<string>>;
   toggleTaskCompleted: (id: string) => void;
   deleteTask: (id: string) => void;
-  editTask: (id: string, newName: string) => void;
-  handleSubmit: (e: FormEvent<HTMLFormElement>, task: TaskType) => void;
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleSubmitT: (e: FormEvent<HTMLFormElement>, id: string) => void;
+  handleChangeT: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Todo = (props: Props) => {
@@ -33,30 +28,14 @@ export const Todo = (props: Props) => {
     isEditing,
     toggleTaskCompleted,
     deleteTask,
-    editTask,
-    setNewTaskContent,
     setEditing,
-    handleChange,
-    handleSubmit,
+    handleChangeT,
+    handleSubmitT,
   } = props;
-  // hooks - states
-  // const [isEditing, setEditing] = useState(false);
-  // const [newTaskContent, setNewTaskContent] = useState("");
-
-  // functions - handlers
-  // const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-  //   setNewTaskContent(e.target.value);
-  // };
-  // const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   editTask(task.id, newTaskContent);
-  //   setNewTaskContent("");
-  //   setEditing(false);
-  // };
 
   // templates
   const editingTemplate = (
-    <form className="stack-small" onSubmit={(e) => handleSubmit(e, task)}>
+    <form className="stack-small" onSubmit={(e) => handleSubmitT(e, task.id)}>
       <div className="form-group">
         <label className="todo-label" htmlFor={task.id}>
           New name for {task.taskContent}
@@ -66,7 +45,7 @@ export const Todo = (props: Props) => {
           className="todo-text"
           type="text"
           value={newTaskContent}
-          onChange={handleChange}
+          onChange={handleChangeT}
           autoFocus
           autoComplete="off"
         />
@@ -75,7 +54,7 @@ export const Todo = (props: Props) => {
         <button
           type="button"
           className="btn todo-cancel"
-          onClick={() => setEditing(false)}
+          onClick={() => setEditing("")}
         >
           Cancel
           <span className="visually-hidden">renaming {task.taskContent}</span>
@@ -106,7 +85,11 @@ export const Todo = (props: Props) => {
         </label>
       </div>
       <div className="btn-group">
-        <button type="button" className="btn" onClick={() => setEditing(true)}>
+        <button
+          type="button"
+          className="btn"
+          onClick={() => setEditing(task.id)}
+        >
           Edit <span className="visually-hidden">{task.taskContent}</span>
         </button>
         <button
@@ -121,7 +104,7 @@ export const Todo = (props: Props) => {
   );
   return (
     <li className="todo stack-small">
-      {isEditing ? editingTemplate : viewTemplate}
+      {isEditing === task.id ? editingTemplate : viewTemplate}
     </li>
   );
 };

@@ -1,5 +1,4 @@
 import React, { Dispatch, useState } from "react";
-
 interface Props {
   filterCategory: string;
   isPressed: boolean;
