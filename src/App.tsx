@@ -15,6 +15,7 @@ import { TaskManager } from "./todo/TaskManager";
 import { TodoApp } from "./todoapp/TodoApp";
 import { TunesApp } from "./tunesapp/TunesApp";
 import { UserList } from "./practise/Practise";
+import { Wtf } from "./wtf/wtf";
 
 const DivMain = styled.div`
   display: flex;
@@ -65,6 +66,7 @@ function App() {
             <Route path="/pexeso" component={PexesoApp} />
             <Route path="/blog" component={Blog} />
             <Route path="/tunesapp" component={TunesApp} />
+            <Route path="/wtf" component={Wtf} />
             <Route path="/practise" component={UserList} />
           </Switch>
         </DivMain>

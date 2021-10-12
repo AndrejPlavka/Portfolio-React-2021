@@ -126,6 +126,10 @@ export const NavBar = () => {
           </DivNavItem>
 
           <DivNavItem>
+            <NavLinks to="/wtf">Wtf</NavLinks>
+          </DivNavItem>
+
+          <DivNavItem>
             <NavLinks to="/practise">Practise</NavLinks>
           </DivNavItem>
         </SidebarNav>

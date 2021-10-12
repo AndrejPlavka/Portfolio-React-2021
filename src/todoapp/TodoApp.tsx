@@ -35,7 +35,7 @@ export const TodoApp = () => {
   const [tasks, setTasks] = useTaskLocalStorage("data", [] as TaskType[]);
   const [filter, setFilter] = useState("all");
   // Todo
-  // const [isEditing, setEditing] = useState(false);
+  const [isEditing, setEditing] = useState(false);
   const [newTaskContent, setNewTaskContent] = useState("");
   // InputForm
   const [taskContent, setTaskContent] = useState<string>("");
@@ -101,6 +101,16 @@ export const TodoApp = () => {
     if (e.key === "Enter") handleSubmitIF;
     if (e.key === "Escape") handleFocusCancel();
   };
+
+  // Todo
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setNewTaskContent(e.target.value);
+  };
+  const handleSubmit = (e: FormEvent<HTMLFormElement>, task: TaskType) => {
+    e.preventDefault();
+    editTask(task.id, newTaskContent);
+    setNewTaskContent("");
+  };
   // general const *****************************************************************************************************************
   const taskList = tasks.filter(FILTER_LIST[filter]).map((task) => (
     <Todo
@@ -108,11 +118,15 @@ export const TodoApp = () => {
       task={task}
       newTaskContent={newTaskContent}
       setNewTaskContent={setNewTaskContent}
+      isEditing={isEditing}
+      setEditing={setEditing}
       // taskContent={task.taskContent}
       // completed={task.completed}
       toggleTaskCompleted={toggleTaskCompleted}
       deleteTask={deleteTask}
       editTask={editTask}
+      handleSubmit={handleSubmit}
+      handleChange={handleChange}
     />
   ));
   const filterList = FILTER_LIST_NAMES.map((filterCategory) => (

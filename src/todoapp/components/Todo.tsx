@@ -16,39 +16,47 @@ interface Props {
   // id: string;
   task: TaskType;
   newTaskContent: string;
+  isEditing: boolean;
+  setEditing: React.Dispatch<React.SetStateAction<boolean>>;
   setNewTaskContent: React.Dispatch<React.SetStateAction<string>>;
   toggleTaskCompleted: (id: string) => void;
   deleteTask: (id: string) => void;
   editTask: (id: string, newName: string) => void;
+  handleSubmit: (e: FormEvent<HTMLFormElement>, task: TaskType) => void;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Todo = (props: Props) => {
   const {
     task,
     newTaskContent,
+    isEditing,
     toggleTaskCompleted,
     deleteTask,
     editTask,
     setNewTaskContent,
+    setEditing,
+    handleChange,
+    handleSubmit,
   } = props;
   // hooks - states
-  const [isEditing, setEditing] = useState(false);
+  // const [isEditing, setEditing] = useState(false);
   // const [newTaskContent, setNewTaskContent] = useState("");
 
   // functions - handlers
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setNewTaskContent(e.target.value);
-  };
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    editTask(task.id, newTaskContent);
-    setNewTaskContent("");
-    setEditing(false);
-  };
+  // const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  //   setNewTaskContent(e.target.value);
+  // };
+  // const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   editTask(task.id, newTaskContent);
+  //   setNewTaskContent("");
+  //   setEditing(false);
+  // };
 
   // templates
   const editingTemplate = (
-    <form className="stack-small" onSubmit={handleSubmit}>
+    <form className="stack-small" onSubmit={(e) => handleSubmit(e, task)}>
       <div className="form-group">
         <label className="todo-label" htmlFor={task.id}>
           New name for {task.taskContent}
