@@ -106,10 +106,6 @@ export const NavBar = () => {
           </DivNavItem>
 
           <DivNavItem>
-            <NavLinks to="/todo">Todo</NavLinks>
-          </DivNavItem>
-
-          <DivNavItem>
             <NavLinks to="/hackertyper">Hacker Typer</NavLinks>
           </DivNavItem>
 
@@ -126,11 +122,7 @@ export const NavBar = () => {
           </DivNavItem>
 
           <DivNavItem>
-            <NavLinks to="/wtf">Wtf</NavLinks>
-          </DivNavItem>
-
-          <DivNavItem>
-            <NavLinks to="/practise">Practise</NavLinks>
+            <NavLinks to="/development">Developemnt</NavLinks>
           </DivNavItem>
         </SidebarNav>
       </nav>

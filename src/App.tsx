@@ -11,6 +11,7 @@ import { HackerApp } from "./hackertyper/HackerApp";
 import { HomePage } from "./portfolio/HomePage";
 import { NavBar } from "./portfolio/NavBar";
 import { PexesoApp } from "./pexeso/PexesoApp";
+import { PortfolioApp } from "./a/PortfolioApp";
 import { TodoApp } from "./todoapp/TodoApp";
 import { TunesApp } from "./tunesapp/TunesApp";
 
@@ -62,6 +63,7 @@ function App() {
             <Route path="/pexeso" component={PexesoApp} />
             <Route path="/blog" component={Blog} />
             <Route path="/tunesapp" component={TunesApp} />
+            <Route path="/development" component={PortfolioApp} />
           </Switch>
         </DivMain>
       </div>
