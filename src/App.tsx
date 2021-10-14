@@ -8,14 +8,11 @@ import styled from "styled-components/macro";
 import { Blog } from "./blog/BlogApp";
 import { Counter } from "./counter/Counter";
 import { HackerApp } from "./hackertyper/HackerApp";
-import { HomePage } from "./home/HomePage";
-import { NavBar } from "./home/NavBar";
+import { HomePage } from "./portfolio/HomePage";
+import { NavBar } from "./portfolio/NavBar";
 import { PexesoApp } from "./pexeso/PexesoApp";
-import { TaskManager } from "./todo/TaskManager";
 import { TodoApp } from "./todoapp/TodoApp";
 import { TunesApp } from "./tunesapp/TunesApp";
-import { UserList } from "./practise/Practise";
-import { Wtf } from "./wtf/wtf";
 
 const DivMain = styled.div`
   display: flex;
@@ -61,13 +58,10 @@ function App() {
             <Route path="/" component={HomePage} exact />
             <Route path="/counter" component={Counter} />
             <Route path="/todoapp" component={TodoApp} />
-            <Route path="/todo" component={TaskManager} />
             <Route path="/hackertyper" component={HackerApp} />
             <Route path="/pexeso" component={PexesoApp} />
             <Route path="/blog" component={Blog} />
             <Route path="/tunesapp" component={TunesApp} />
-            <Route path="/wtf" component={Wtf} />
-            <Route path="/practise" component={UserList} />
           </Switch>
         </DivMain>
       </div>

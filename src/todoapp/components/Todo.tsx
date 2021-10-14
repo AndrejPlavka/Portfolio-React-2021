@@ -35,7 +35,15 @@ export const Todo = (props: Props) => {
 
   // templates
   const editingTemplate = (
-    <form className="stack-small" onSubmit={(e) => handleSubmitT(e, task.id)}>
+    <form
+      className="stack-small"
+      onSubmit={(e) => handleSubmitT(e, task.id)}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") {
+          setEditing("");
+        }
+      }}
+    >
       <div className="form-group">
         <label className="todo-label" htmlFor={task.id}>
           New name for {task.taskContent}
@@ -80,7 +88,13 @@ export const Todo = (props: Props) => {
           defaultChecked={task.completed}
           onChange={() => toggleTaskCompleted(task.id)}
         />
-        <label className="todo-label" htmlFor={task.id}>
+        <label
+          className="todo-label"
+          htmlFor={task.id}
+          onDoubleClick={(e) => {
+            setEditing(task.id);
+          }}
+        >
           {task.taskContent}
         </label>
       </div>

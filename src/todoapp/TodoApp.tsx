@@ -125,8 +125,8 @@ export const TodoApp = () => {
     setTaskContent("");
     contentInputFormRef.current?.blur();
   };
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") handleSubmitIF;
+  const handleKeyDownIF = (e) => {
+    // if (e.key === "Enter") handleSubmitIF; // not needed - form
     if (e.key === "Escape") handleFocusCancel();
   };
 
@@ -176,7 +176,7 @@ export const TodoApp = () => {
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
       <InputForm
-        handleKeyDown={handleKeyDown}
+        handleKeyDownIF={handleKeyDownIF}
         handleSubmitIF={handleSubmitIF}
         handleChangeIF={handleChangeIF}
         taskContent={taskContent}

@@ -4,7 +4,7 @@ interface Props {
   // addTask: (taskContent: string) => void;
   handleSubmitIF: (e: FormEvent<HTMLFormElement>) => void;
   handleChangeIF: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleKeyDown: (e) => void;
+  handleKeyDownIF: (e) => void;
   taskContent: string;
   error: string;
   contentInputFormRef: any;
@@ -15,11 +15,12 @@ export const InputForm = (props: Props) => {
   const {
     handleSubmitIF,
     handleChangeIF,
-    handleKeyDown,
+    handleKeyDownIF,
     error,
     taskContent,
     contentInputFormRef,
   } = props;
+  // alternative:
   // hooks - states
   // const [taskContent, setTaskContent] = useState<string>("");
   // handlers
@@ -33,7 +34,7 @@ export const InputForm = (props: Props) => {
   // };
   // template
   return (
-    <form onSubmit={handleSubmitIF} onKeyDown={handleKeyDown}>
+    <form onSubmit={handleSubmitIF} onKeyDown={handleKeyDownIF}>
       <h2 className="label-wrapper">
         <label htmlFor="new-todo-input" className="label__lg">
           What needs to be done?
@@ -49,7 +50,6 @@ export const InputForm = (props: Props) => {
         value={taskContent}
         onChange={handleChangeIF}
         ref={contentInputFormRef}
-        // ref={taskInputRefContent}
       />
       <button type="submit" className="btn btn__primary btn__lg">
         Add
