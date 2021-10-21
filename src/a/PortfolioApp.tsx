@@ -1,39 +1,46 @@
-import React from "react";
-
-interface Props {}
-
-export const PortfolioApp = (props: Props) => {
-  return <div>{"jebo"}</div>;
-};
-
+// import { Footer } from "./components/navigation2/Footer";
+// import { Navbar } from "./components/navigation2/Header";
 // import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-// import { TheNavigation } from "./components/TheNavigation";
-// import React from "react";
+// import { ScrollComponent } from "./components/navigation2/ScrollComponent";
+import React, { useContext } from "react";
 
 // //STYLES & ASSETS
-// import "./TunesApp.scss";
+// import { ThemeContext, ThemeProvider } from "./context/themeContext";
+// import styled from "styled-components/macro";
 
-// //VIEWS
+// // VIEWS
 // import { About } from "./views/About";
-// import { Home } from "./views/Home";
-// import { Tunes } from "./views/Tunes";
+// import { LandingPage } from "./views/LandingPage";
+// import { ProjectList } from "./components/portfolio/ProjectList";
 
-// export const TunesApp = () => {
+// export const PortfolioApp = () => {
+//   const { themeName } = useContext(ThemeContext);
+
 //   return (
-//     <Router basename="/tunesapp">
-//       <div className="App">
-//         <header>
-//           <TheNavigation />
-//         </header>
+//     <ThemeProvider>
+//       <Router basename="/ap">
+//         <Div /* className={`${themeName} app`}*/>
+//           <Navbar />
 
-//         <main className="content">
-//           <Switch>
-//             <Route path="/" component={Home} exact />
-//             <Route path="/tunes" component={Tunes} />
-//             <Route path="/about" component={About} />
-//           </Switch>
-//         </main>
-//       </div>
-//     </Router>
+//           <main>
+//             <Switch>
+//               <Route path="/" component={LandingPage} exact />
+//               <Route path="/about" component={About} />
+//               <Route path="/portfolio" component={ProjectList} />
+//             </Switch>
+//           </main>
+
+//           <ScrollComponent />
+//           <Footer />
+//         </Div>
+//       </Router>
+//     </ThemeProvider>
 //   );
 // };
+
+// const Div = styled.div`
+//   display: flex;
+//   height: 100%;
+//   width: 100%;
+//   flex-direction: column;
+// `;

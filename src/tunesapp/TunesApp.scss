@@ -44,13 +44,18 @@
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	header {
+		background-color: black;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		margin-bottom: 1em;
+	}
+
+	article {
+		text-align: left;
+	}
 }
 
-header {
-	background-color: black;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-	margin-bottom: 1em;
-}
 
 .content {
 	background-color: black;
@@ -58,10 +63,6 @@ header {
 	line-height: 1.5em;
 	// padding: 1.5em 1.75em;
 	padding: 1.5em 1.75em 0;
-}
-
-article {
-	text-align: left;
 }
 
 @media screen and (max-width: 520px) {

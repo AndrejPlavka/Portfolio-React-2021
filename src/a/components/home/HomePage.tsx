@@ -32,15 +32,13 @@ export const ImgLogo = styled.img`
 `;
 
 // CLASS
-export class HomePage extends Component {
-  render() {
-    //TEMPLATE
-    return (
-      <DivHome>
-        <ImgLogo src={logo} />
-        <h1>HomePage</h1>
-        <p>ITA REACT 2021</p>
-      </DivHome>
-    );
-  }
-}
+export const HomePage = () => {
+  //TEMPLATE
+  return (
+    <DivHome>
+      <ImgLogo src={logo} />
+      <h1>HomePage</h1>
+      <p>ITA REACT 2021</p>
+    </DivHome>
+  );
+};

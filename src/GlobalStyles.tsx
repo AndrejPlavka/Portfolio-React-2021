@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components/macro";
 
 export const GlobalStyle = createGlobalStyle`
     body {
@@ -8,9 +8,18 @@ export const GlobalStyle = createGlobalStyle`
       background-color: #fcfcfc;
       color: #000000;
       font-family: 'Source Sans Pro', sans-serif;
+      /* @media screen and (min-width: 620px) {
+          font-size: 1.9rem;
+          line-height: 1.31579;
+      } */
+
     }
 
-    a,
+    /* html {
+      font: 62.5% / 1.15 'Source Sans Pro', sans-serif;
+    } */
+
+    /* a,
     button,
     input,
     textarea {
@@ -20,8 +29,52 @@ export const GlobalStyle = createGlobalStyle`
 
     hr {
       border-color: #19609c;
+    } */
+
+    h1,
+    h2 {
+      margin-bottom: 0;
     }
 
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    button {
+      border: none;
+      margin: 0;
+      padding: 0;
+      width: auto;
+      overflow: visible;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      line-height: normal;
+      /* -webkit-font-smoothing: inherit;
+      -moz-osx-font-smoothing: inherit;
+      -webkit-appearance: none; */
+    }
+
+    button::-moz-focus-inner {
+      border: 0;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0;
+    }
+    button,
+    input {
+      overflow: visible;
+    }
+    
     button:hover {
       opacity: 0.8;
     }
