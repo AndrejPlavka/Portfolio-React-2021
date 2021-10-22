@@ -10,50 +10,38 @@ import React, { useState } from "react";
 import { theme } from "../../PortfolioAppTheme";
 import styled from "styled-components/macro";
 
-const DivNav = styled.div`
+const Nav = styled.div`
+  /* background: #15171c; */
   height: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 `;
 
-const LinkNavIcon = styled(Link)`
-  height: 80px;
-  display: none;
-  justify-content: flex-start;
-  align-items: center;
+const NavIcon = styled(Link)`
   margin-left: 2rem;
-  height: 80px;
   font-size: 2rem;
-  @media (${theme.width800}) {
-    display: flex !important;
-  }
-`;
-
-const NavSidebar = styled.nav<{ sidebar: boolean }>`
-  @media (${theme.width800}) {
-    z-index: 10;
-    width: 250px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
-    right: 0;
-    transition: 350ms;
-    z-index: 10;
-    background: #15171c;
-  }
-`;
-
-const DivSidebarWrap = styled.div`
+  height: 80px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  @media (${theme.width800}) {
-    width: 100%;
-    display: block;
-  }
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+const SidebarNav = styled.nav<{ sidebar: boolean }>`
+  background: #15171c;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
+  transition: 350ms;
+  z-index: 10;
+`;
+
+const SidebarWrap = styled.div`
+  width: 100%;
 `;
 // let iconStyle = {sidebar? color: white : color: black};
 // let iconStyle = { color: `${({ sidebar }) => (sidebar ? "white" : "black")}` };
@@ -80,26 +68,24 @@ export const Sidebar = () => {
 
   return (
     <>
-      {/* <IconContext.Provider > */}
-      <DivNav>
-        <LinkNavIcon to="#">
+      <Nav>
+        <NavIcon to="#">
           <FaIcons.FaBars style={{ color: "black" }} onClick={showSidebar} />
-        </LinkNavIcon>
-      </DivNav>
-      <NavSidebar sidebar={sidebar}>
-        <DivSidebarWrap>
-          <LinkNavIcon to="#">
+        </NavIcon>
+      </Nav>
+      <SidebarNav sidebar={sidebar}>
+        <SidebarWrap>
+          <NavIcon to="#">
             <AiIcons.AiOutlineClose
               style={{ color: "white" }}
               onClick={showSidebar}
             />
-          </LinkNavIcon>
+          </NavIcon>
           {SidebarData.map((item, index) => {
             return <SubMenu item={item} key={index} />;
           })}
-        </DivSidebarWrap>
-      </NavSidebar>
-      {/* </IconContext.Provider> */}
+        </SidebarWrap>
+      </SidebarNav>
     </>
   );
 };

@@ -2,9 +2,11 @@ import styled, { createGlobalStyle } from "styled-components/macro";
 
 export const GlobalStyle = createGlobalStyle`
     body {
-      box-sizing: border-box;
+      height:100vh;
+      /* box-sizing: inherit; */
       margin: 0;
       padding: 0;
+      /* padding: 0; */
       background-color: #fcfcfc;
       color: #000000;
       font-family: 'Source Sans Pro', sans-serif;
@@ -15,23 +17,23 @@ export const GlobalStyle = createGlobalStyle`
 
     }
 
-    /* html {
-      font: 62.5% / 1.15 'Source Sans Pro', sans-serif;
-    } */
-
-    /* a,
-    button,
-    input,
-    textarea {
-      color: #19609c;
-      border-color: #19609c;
+    html {
+      box-sizing: border-box;
+      margin: 0;
+      padding:0;
+      /* font: 62.5% / 1.15 'Source Sans Pro', sans-serif; */
+      height:100vh;
     }
 
-    hr {
-      border-color: #19609c;
+    body > #root > div {
+	    height: 100vh;
+    }
+    /* *, *:before, *:after {
+      box-sizing: inherit;
     } */
+    
 
-    h1,
+    /* h1,
     h2 {
       margin-bottom: 0;
     }
@@ -39,9 +41,9 @@ export const GlobalStyle = createGlobalStyle`
     ul {
       list-style: none;
       padding: 0;
-    }
+    } */
 
-    button {
+    /* button {
       border: none;
       margin: 0;
       padding: 0;
@@ -51,14 +53,14 @@ export const GlobalStyle = createGlobalStyle`
       color: inherit;
       font: inherit;
       line-height: normal;
-      /* -webkit-font-smoothing: inherit;
+      -webkit-font-smoothing: inherit;
       -moz-osx-font-smoothing: inherit;
-      -webkit-appearance: none; */
-    }
+      -webkit-appearance: none;
+    } */
 
-    button::-moz-focus-inner {
+    /* button::-moz-focus-inner {
       border: 0;
-    }
+    } */
 
     button,
     input,
@@ -70,6 +72,7 @@ export const GlobalStyle = createGlobalStyle`
       line-height: 1.15;
       margin: 0;
     }
+    
     button,
     input {
       overflow: visible;
@@ -88,12 +91,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #114068;
+      background: black;
       border-radius: 10px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #563c7e;
+      background: gray;
     }
 
     input:focus-visible {
@@ -105,13 +108,13 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     input:focus {
-      border: 2px solid #1a639f !important;
+      border: 2px solid #128cf0 !important;
     }
 
-    textarea::-webkit-resizer {
+    /* textarea::-webkit-resizer {
       border-width: 3px;
       border-color: transparent;
-    }
+    } */
 
     ::-webkit-scrollbar-corner {
       background: transparent;

@@ -2,6 +2,7 @@
 import { Sidebar } from "./Sidebar";
 import { header } from "../../PortfolioData";
 // Styles:
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 // Component:
 export const Navbar = () => {
@@ -11,7 +12,8 @@ export const Navbar = () => {
   return (
     <DivHeader>
       <SectionLogo>
-        <ALogo href="/">{title}</ALogo>
+        {/* <ALogo href="/">{title}</ALogo> */}
+        <LinkLogo to="/">{title}</LinkLogo>
       </SectionLogo>
       <SectionNavbar>
         <Sidebar />
@@ -65,13 +67,18 @@ const SectionLogo = styled.div`
     margin-left: 2em;
   }
 `;
-
-const ALogo = styled.a`
+const LinkLogo = styled(Link)`
   color: inherit;
   text-decoration: inherit;
   font-family: RobotoThin;
   font-size: 3em;
 `;
+// const ALogo = styled.a`
+//   color: inherit;
+//   text-decoration: inherit;
+//   font-family: RobotoThin;
+//   font-size: 3em;
+// `;
 
 const SectionNavbar = styled.div`
   display: flex;
