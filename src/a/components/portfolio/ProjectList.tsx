@@ -5,42 +5,70 @@ import React from "react";
 // Styles:
 import styled from "styled-components/macro";
 
-export const randomID = () => Math.random().toString(36).substr(2, 8);
-
 // Component:
 export const ProjectList = () => {
   if (!projects.length) return null;
 
   // Template
   return (
-    <Section id="projects" className="section projects">
-      <H2 className="section__title">Projects</H2>
-
-      <DivProjetsGrid className="projects__grid">
-        {projects.map((project) => (
-          <ProjectContainer key={randomID()} project={project} />
+    <DivMain>
+      <DivProjectsList>
+        {projects.map((project, index) => (
+          <ProjectContainer key={index} project={project} />
         ))}
-      </DivProjetsGrid>
-    </Section>
+      </DivProjectsList>
+    </DivMain>
   );
 };
-
+{
+  /* <H2>Projects</H2> */
+}
 // styled cpomponets:
-const DivProjetsGrid = styled.div`
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
-  grid-gap: 2em;
+const DivMain = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 `;
+
+const DivProjectsList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1300px;
+  width: 100%;
+  padding: 6em 0.5em;
+  @media screen and (max-width: 1128px) {
+    padding: 5em 3em;
+  }
+  @media screen and (max-width: 760px) {
+    justify-content: center;
+  }
+  @media screen and (max-width: 430px) {
+    justify-content: center;
+    padding: 4em 0.5em;
+  }
+`;
+
+// // grid
+// const DivGrid = styled.div`
+//   max-width: 1010px;
+//   width: 100%;
+//   padding: 6em 0.5em;
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+//   grid-gap: 1em;
+//   @media screen and (max-width: 1128px) {
+//     padding: 5em 3em;
+//   }
+// `;
+
 // section__title
-const H2 = styled.h2`
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1em;
-  text-transform: uppercase;
-`;
-// section projects
-const Section = styled.section`
-  margin-top: 5em;
-`;
+// const H2 = styled.h2`
+//   width: 100%;
+//   margin: 2.5em 0;
+//   font-size: 2rem;
+//   text-align: center;
+//   text-transform: uppercase;
+// `;

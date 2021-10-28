@@ -12,6 +12,7 @@ const DivIntro = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 400px;
+  height: 100px;
   width: 100%;
+  padding-top: 10em;
 `;

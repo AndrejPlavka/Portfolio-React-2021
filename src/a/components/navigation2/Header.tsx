@@ -11,17 +11,45 @@ export const Navbar = () => {
   // Tempplate:
   return (
     <DivHeader>
-      <SectionLogo>
-        {/* <ALogo href="/">{title}</ALogo> */}
-        <LinkLogo to="/">{title}</LinkLogo>
-      </SectionLogo>
-      <SectionNavbar>
-        <Sidebar />
-      </SectionNavbar>
+      <DivContent>
+        <DivLogoSection>
+          {/* <ALogo href="/">{title}</ALogo> */}
+          <LinkLogo to="/">{title}</LinkLogo>
+        </DivLogoSection>
+        <DivNavbarSection>
+          <Sidebar />
+        </DivNavbarSection>
+      </DivContent>
     </DivHeader>
   );
 };
 
+{
+  /* <header className="site-header">
+  <div className="wrapper site-header__wrapper">
+    <a href="#" className="brand">
+      <img src="logo.svg" alt="brand" />
+    </a>
+    <nav className="nav"></nav>
+  </div>
+</header>; */
+}
+
+// use flex-wrap: wrap; !!
+// flex-basis: 100% use instead of widths
+
+// .site-header {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+
+// .site-header__wrapper {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+///////////////////////////////////////////////////////////////////////////
 // import React from 'react';
 
 // function Header() {
@@ -39,54 +67,62 @@ export const Navbar = () => {
 //   );
 // }
 
-// Styled components
-const DivHeader = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10em;
-  height: 5em;
-  width: 100%;
-  -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  /* box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3); */ // alternative 1
-  /* box-shadow: 0 9px 9px -9px rgba(0, 0, 0, 0.13); */ // alternative 2
-  @media (max-width: 600px) {
-    height: 6em;
-  }
-`;
+// width1000: "max-width: 1000px",
+//   width530: "max-width: 530px",
+//   width760: "max-width: 760px",
+//   width800: "max-width: 800px",
+//   width400: "max-width: 400px",
+//   width300: "max-width: 300px",
 
-const SectionLogo = styled.div`
+// Styled components
+const DivHeader = styled.header`
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 10em;
-  @media (max-width: 600px) {
-    margin-left: 2em;
+  height: 6em;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  flex-basis: 100%;
+  /* box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3); */
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  @media (max-width: 760px) {
+    height: 4em;
   }
+`;
+
+const DivContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-basis: 100%;
+  max-width: 1300px;
+  padding: 0 0.5em;
+  @media screen and (max-width: 1128px) {
+    padding: 0 3em;
+  }
+`;
+
+const DivLogoSection = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 `;
 const LinkLogo = styled(Link)`
   color: inherit;
   text-decoration: inherit;
   font-family: RobotoThin;
-  font-size: 3em;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 5em;
 `;
-// const ALogo = styled.a`
-//   color: inherit;
-//   text-decoration: inherit;
-//   font-family: RobotoThin;
-//   font-size: 3em;
-// `;
 
-const SectionNavbar = styled.div`
+const DivNavbarSection = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  margin-right: 10em;
-  @media (max-width: 600px) {
-    margin-right: 2em;
+  justify-content: flex-end;
+  @media screen and (max-width: 760px) {
+    display: none;
   }
 `;

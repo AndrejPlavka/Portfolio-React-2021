@@ -1,4 +1,4 @@
-import { contact } from "../../PortfolioData";
+import { contact } from "../PortfolioData";
 // Styles:
 // Component:
 export const Contact = () => {

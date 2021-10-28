@@ -1,5 +1,6 @@
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
-import { about } from "../PortfolioData";
+import { about, cv } from "../PortfolioData";
+
 import React from "react";
 
 // Syles
@@ -23,7 +24,7 @@ export const About = () => {
 
       <div className="about__contact center">
         {resume && (
-          <a href={resume}>
+          <a href={cv.resume} target="_blank" rel="noreferrer">
             <span className="btn btn--outline">Resume</span>
           </a>
         )}

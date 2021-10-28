@@ -1,48 +1,41 @@
 import styled, { createGlobalStyle } from "styled-components/macro";
 
 export const GlobalStyle = createGlobalStyle`
-    body {
-      height:100vh;
-      /* box-sizing: inherit; */
+    *{
       margin: 0;
-      padding: 0;
-      /* padding: 0; */
-      background-color: #fcfcfc;
-      color: #000000;
-      font-family: 'Source Sans Pro', sans-serif;
-      /* @media screen and (min-width: 620px) {
-          font-size: 1.9rem;
-          line-height: 1.31579;
-      } */
-
+      padding:0;
     }
 
+   
     html {
       box-sizing: border-box;
       margin: 0;
       padding:0;
       /* font: 62.5% / 1.15 'Source Sans Pro', sans-serif; */
-      height:100vh;
     }
-
-    body > #root > div {
-	    height: 100vh;
-    }
-    /* *, *:before, *:after {
-      box-sizing: inherit;
-    } */
     
-
-    /* h1,
-    h2 {
-      margin-bottom: 0;
+    body {
+      height:100vh;
+      width:100%;
+      overflow-x: hidden;
+      /* width: 100vw; */
+      /* margin-right: calc(100vw - 100%); */
+      /* margin-right: calc(-1 * (100vw - 100%)); */
+      margin: 0;
+      padding: 0;
+      background-color: #fcfcfc;
+      color: #000000;
+      /* font-family: 'Source Sans Pro', sans-serif; */
+      font-family: 'Roboto','Source Sans Pro', sans-serif;
+      font-size: 1em;
+      line-height: 1.45;
+      /* @media screen and (min-width: 620px) {
+          font-size: 1.9rem;
+          line-height: 1.31579;
+      } */
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    } */
-
+    
     /* button {
       border: none;
       margin: 0;
@@ -81,28 +74,31 @@ export const GlobalStyle = createGlobalStyle`
     button:hover {
       opacity: 0.8;
     }
-
+      
     ::-webkit-scrollbar {
-      width: 10px;
+      /* display: none; */
+      width: 5px;
     }
-
+     
     ::-webkit-scrollbar-track {
-      background: rgba(17, 64, 104, 0.2);
+      display: none;
+      z-index: -1;
+      /* background: none; */
+      opacity: 0.5;
     }
-
+     
     ::-webkit-scrollbar-thumb {
-      background: black;
-      border-radius: 10px;
+      background: #9c9c9c;
+      border-radius: 3px;
     }
-
+     
     ::-webkit-scrollbar-thumb:hover {
       background: gray;
     }
-
     input:focus-visible {
       outline: none;
     }
-
+     
     textarea:focus-visible {
       outline: none;
     }
@@ -110,11 +106,6 @@ export const GlobalStyle = createGlobalStyle`
     input:focus {
       border: 2px solid #128cf0 !important;
     }
-
-    /* textarea::-webkit-resizer {
-      border-width: 3px;
-      border-color: transparent;
-    } */
 
     ::-webkit-scrollbar-corner {
       background: transparent;

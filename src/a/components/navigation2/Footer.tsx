@@ -14,15 +14,21 @@ export const Footer = () => {
 
 // Styled components:
 const FooterContainer = styled.footer`
-  padding: 3em 0;
-  margin-top: 10em;
-  text-align: center;
-  -webkit-box-shadow: 0px -1px 7px -2px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px -1px 7px -2px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 6em;
+  background: white;
+  /* text-align: center; */
   box-shadow: 0px -1px 7px -2px rgba(0, 0, 0, 0.5);
-  @media (max-width: 600px) {
-    padding: 2em;
-    margin-top: 3em;
+  /* -webkit-box-shadow: inset 0px 6px 4px -5px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: inset 0px 6px 4px -5px rgba(0, 0, 0, 0.37);
+  box-shadow: inset 0px 6px 4px -5px rgba(0, 0, 0, 0.37); */
+  @media (max-width: 760px) {
+    height: 4em;
   }
 `;
 

@@ -1,7 +1,43 @@
+import { SidebarData } from "./components/navigation2/SidebarData";
+//@ts-ignore
+import Pdf from "../a/Documents/CV-Andrej plavka.pdf";
+// icon imports
+import {
+  IconCSS2,
+  IconGitHub,
+  IconHTML2,
+  IconJS,
+  IconMarkdown,
+  IconReact,
+  IconRedux,
+  IconRouter,
+  IconStyledComponent,
+  IconTS,
+} from "./assets/icons";
+
+// Icons:
+const HTML = <IconHTML2 />;
+const CSS = <IconCSS2 />;
+const TS = <IconTS />;
+const JS = <IconJS />;
+const React = <IconReact />;
+const Redux = <IconRedux />;
+const SC = <IconStyledComponent />;
+const Router = <IconRouter />;
+const Markdown = <IconMarkdown />;
+const GitHub = <IconGitHub />;
+
 const header = {
   // all the properties are optional - can be left empty or deleted
   homepage: "https://",
   title: "AP.", // nahradit logom
+  logo: "",
+};
+
+const footer = {
+  text: "Andrej Plavka",
+  homepage: "https://",
+  logo: "",
 };
 
 const about = {
@@ -19,61 +55,82 @@ const about = {
 export type ProjectType = {
   name: string;
   description: string;
-  stack: string[];
+  stack: JSX.Element[];
+  sourceIcon: JSX.Element;
   sourceCode: string;
   livePreview: string;
 };
 
+// export const PortfolioIntro = {
+//   tile: "Portfolio",
+//   intro: "Chceck out some of my latest work",
+//   text: "The portfolio currently consists of a selection of projects that I developed during the completion of various trainings (udemy, L2C, ITA). The projects are mainly focused on work in React.",
+// };
+
 const projects = [
-  // projects can be added an removed
-  // if there are no projects, Projects section won't show up
   {
-    name: "Project 1",
-    description: "bla bla bla bla bla bla bla",
-    stack: ["SASS", "TypeScript", "React"],
+    name: "Hackertyper",
+    description:
+      "Bacome a hacker yourself! By pressing any key on keyboard you'll add a line of real code to fool your friends.",
+    stack: [HTML, CSS, TS, React, SC],
+    sourceIcon: GitHub,
     sourceCode: "https://github.com",
-    livePreview: "https://github.com",
+    livePreview: "/hackertyper",
+    bgImg: "",
   },
   {
-    name: "Project 2",
-    description: "ble ble ble ble ble ble",
-    stack: ["SASS", "TypeScript", "React"],
+    name: "To-Do List",
+    description:
+      "Get all those tasks out of your head and add them to the local storage list to get an overview. A simple task application in which you learn how to add, edit, delete and filter tasks. Connect with hooks ",
+    stack: [HTML, CSS, TS, React, SC, Router],
+    sourceIcon: GitHub,
     sourceCode: "https://github.com",
-    livePreview: "https://github.com",
+    livePreview: "/todoapp",
+    bgImg: "",
   },
   {
-    name: "Project 3",
-    description: "bli bli bli bli bli",
-    stack: ["SASS", "TypeScript", "React"],
+    name: "Memory Game",
+    description:
+      "Test your memory by playing! Memory games give space to critical thinking, which helps to develop attention to detail.",
+    stack: [HTML, CSS, TS, React, SC],
+    sourceIcon: GitHub,
     sourceCode: "https://github.com",
-    livePreview: "https://github.com",
+    livePreview: "/pexeso",
+    bgImg: "",
   },
   {
-    name: "Project 4",
-    description: "bli bli bli bli bli",
-    stack: ["SASS", "TypeScript", "React"],
+    name: "Blog",
+    description:
+      "Create a blog to learn how to use local storage and a react router. Learn how to add, edit, or delete posts. ",
+    stack: [HTML, CSS, TS, React, SC, Router, Markdown],
+    sourceIcon: GitHub,
     sourceCode: "https://github.com",
-    livePreview: "https://github.com",
+    livePreview: "/blog",
+    bgImg: "",
   },
   {
-    name: "Project 5",
-    description: "bli bli bli bli bli",
-    stack: ["SASS", "TypeScript", "React"],
+    name: "Tunes App",
+    description:
+      "Find your favorite music! Learn how to create a search form and use the iTunes API to build on the JSON experience! ",
+    stack: [HTML, CSS, TS, React, SC, Router],
+    sourceIcon: GitHub,
     sourceCode: "https://github.com",
-    livePreview: "https://github.com",
+    livePreview: "/tunesapp",
+    bgImg: "",
   },
   {
-    name: "Project 6",
-    description: "bli bli bli bli bli",
-    stack: ["SASS", "TypeScript", "React"],
+    name: "Counter",
+    description:
+      "Create your first simple React application and learn the basics of React. Find out what the previous state is and why it is important.",
+    stack: [HTML, CSS, TS, React, SC, Redux],
+    sourceIcon: GitHub,
     sourceCode: "https://github.com",
-    livePreview: "https://github.com",
+    livePreview: "/counter",
+    bgImg: "",
   },
 ];
 
 const skills = [
-  // skills can be added or removed
-  // if there are no skills, Skills section won't show up
   "HTML",
   "CSS",
   "JavaScript",
@@ -86,8 +143,12 @@ const skills = [
 ];
 
 const contact = {
-  // email is optional - if left empty Contact section won't show up
   email: "andrej.p.@gmail.com",
+  phone: "",
 };
 
-export { header, about, projects, skills, contact };
+const cv = {
+  resume: Pdf,
+};
+
+export { header, cv, footer, about, projects, skills, contact };

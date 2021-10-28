@@ -1,45 +1,43 @@
+// System
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import React from "react";
+import React, { useRef } from "react";
 
 //Syles
 import styled from "styled-components/macro";
 
-//Components - Projects
+//Components:
+// Projects:
 import { Blog } from "./blog/BlogApp";
 import { Counter } from "./counter/Counter";
 import { HackerApp } from "./hackertyper/HackerApp";
-import { Home } from "./tunesapp/views/Home";
-// import { HomePage } from "./a/components/home/HomePage";
+import { PexesoApp } from "./pexeso/PexesoApp";
+import { TodoApp } from "./todoapp/TodoApp";
+import { TunesApp } from "./tunesapp/TunesApp";
+// Main page:
 import { About } from "./a/views/About";
 import { Footer } from "./a/components/navigation2/Footer";
 import { LandingPage } from "./a/views/LandingPage";
-import { NavBar } from "./home1/NavBar";
 import { Navbar } from "./a/components/navigation2/Header";
-import { PexesoApp } from "./pexeso/PexesoApp";
-// import { PortfolioApp } from "./a/PortfolioApp";
-import { ProjectList } from "./a/components/portfolio/ProjectList";
+import { Portfolio } from "./a/views/Portfolio";
 import { ScrollComponent } from "./a/components/navigation2/ScrollComponent";
-import { Sidebar } from "./a/components/navigation2/Sidebar";
-import { TodoApp } from "./todoapp/TodoApp";
-import { TunesApp } from "./tunesapp/TunesApp";
 
-const DivMain = styled.div`
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
-  width: 100%;
-  padding-top: 2rem;
-  align-items: center;
-  font-family: "Calibri";
-`;
-// PortfolioApp
+// Styled components:
 const Div = styled.div`
-  display: flex;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+`;
+const DivContent = styled.div`
   height: 100%;
   width: 100%;
-  flex-direction: column;
-`;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 4em;
+  overflow-x: hidden;
 
+  /* padding-bottom: 2.5em; */
+  /* overflow-y: scroll; */
+`;
 // const NavStyled = styled.nav`
 //   height: 40px;
 //   display: flex;
@@ -64,29 +62,26 @@ const Div = styled.div`
 // `;
 
 function App() {
-  // const { themeName } = useContext(ThemeContext);
   // Template - Projets Routesconst
   return (
     // <ThemeProvider>
     <Router>
       <Div>
         <Navbar />
-
-        {/* <DivMain> */}
-        <Switch>
-          <Route path="/" component={LandingPage} exact />
-          <Route path="/about" component={About} />
-          <Route path="/portfolio" component={ProjectList} />
-
-          <Route path="/counter" component={Counter} />
-          <Route path="/todoapp" component={TodoApp} />
-          <Route path="/hackertyper" component={HackerApp} />
-          <Route path="/pexeso" component={PexesoApp} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/tunesapp" component={TunesApp} />
-          {/* <Route path="/development" component={PortfolioApp} /> */}
-        </Switch>
-        {/* </DivMain> */}
+        <DivContent>
+          <Switch>
+            <Route path="/" component={LandingPage} exact />
+            <Route path="/about" component={About} />
+            <Route path="/portfolio" component={Portfolio} />
+            <Route path="/counter" component={Counter} />
+            <Route path="/todoapp" component={TodoApp} />
+            <Route path="/hackertyper" component={HackerApp} />
+            <Route path="/pexeso" component={PexesoApp} />
+            <Route path="/blog" component={Blog} />
+            <Route path="/tunesapp" component={TunesApp} />
+            {/* <Route path="/development" component={PortfolioApp} /> */}
+          </Switch>
+        </DivContent>
 
         <ScrollComponent />
         <Footer />
