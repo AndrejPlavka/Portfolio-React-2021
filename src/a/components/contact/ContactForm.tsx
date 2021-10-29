@@ -1,8 +1,11 @@
+import { init } from "emailjs-com";
 import { useReducer, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
+// styles:
+import styled from "styled-components/";
 // emailjs:
-const ServiseID = "service_4370h1f";
+// emailjs.init("user_9NtwDnwudSGy35LXjGYNh");
 // to leasrn useReducer
 // type TypeSubmit = {
 //   name: string;
@@ -28,7 +31,7 @@ function reducer(state, action) {
   }
 }
 
-export default function MessageForm() {
+export const ContactForm = () => {
   const [formState, dispatch] = useReducer(reducer, initialState);
   const [showFormErr, setShowFormErr] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState({
@@ -37,13 +40,14 @@ export default function MessageForm() {
   });
   const [showCaptcha, setShowCaptcha] = useState(false);
   const { name, email, message } = formState;
+  const recaptchaKey = "";
 
   const submitFormAndShowCaptcha = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setShowCaptcha(true);
   };
   // recaptcha use example - teilored
-  const sendEmail = (captchaValue: boolean) => {
+  const sendEmail = (captchaValue) => {
     if (name === "" || email === "" || message === "") {
       setShowFormErr(true);
       return;
@@ -57,11 +61,14 @@ export default function MessageForm() {
     setFormSubmitted({ title: "Sending message...", paragraph: "" });
     emailjs
       .send(
-        //@ts-ignore
-        process.env.EMAIL_JS_SERVICE,
-        process.env.EMAIL_JS_TEMPLATE,
+        "service_4370h1f",
+        "template_rl8gm1r",
         params,
-        process.env.EMAIL_JS_USER
+        "user_9NtwDnwudSGy35LXjGYNh"
+        // process.env.EMAIL_JS_SERVICE,
+        // process.env.EMAIL_JS_TEMPLATE,
+        // params,
+        // process.env.EMAIL_JS_USER
       )
       .then(
         ({ status }) => {
@@ -90,29 +97,29 @@ export default function MessageForm() {
   };
 
   return formSubmitted.title === "" ? (
-    <div>
+    <DivMain>
       <h3 className="text-lato text-2xl font-light text-white">
         Send me a message
       </h3>
       {!showCaptcha ? (
-        <form onSubmit={submitFormAndShowCaptcha}>
-          <div className="flex font-open-sans justify-start flex-col sm:flex-row">
-            <div className="sm:mr-4 w-100 sm:w-1/2 md:w-2/5 flex flex-col items-end">
+        <Form onSubmit={submitFormAndShowCaptcha}>
+          <DivContent className="flex font-open-sans justify-start flex-col sm:flex-row">
+            <DivContentData className="sm:mr-4 w-100 sm:w-1/2 md:w-2/5 flex flex-col items-end">
+              <input
+                id="contact-form-name"
+                className="appearance-none border-2 border-gray-200 rounded w-full p-2 text-gray-700 leading-tight focus:outline-none focus:border-theme-green"
+                type="text"
+                value={name}
+                onChange={(e) =>
+                  dispatch({ type: "name", value: e.target.value })
+                }
+                required
+              />
               <label
                 className="block text-gray-500 font-bold my-2 w-full"
                 htmlFor="contact-form-name"
               >
                 Name:
-                <input
-                  id="contact-form-name"
-                  className="appearance-none border-2 border-gray-200 rounded w-full p-2 text-gray-700 leading-tight focus:outline-none focus:border-theme-green"
-                  type="text"
-                  value={name}
-                  onChange={(e) =>
-                    dispatch({ type: "name", value: e.target.value })
-                  }
-                  required
-                />
               </label>
               <label
                 className="block text-gray-500 font-bold my-2 w-full"
@@ -130,8 +137,8 @@ export default function MessageForm() {
                   required
                 />
               </label>
-            </div>
-            <div className="sm:mx-4 w-full sm:w-1/2 md:w-3/5">
+            </DivContentData>
+            <DivContentMesage className="sm:mx-4 w-full sm:w-1/2 md:w-3/5">
               <label
                 className="block text-gray-500 font-bold my-2"
                 htmlFor="contact-form-message"
@@ -149,8 +156,8 @@ export default function MessageForm() {
                   required
                 />
               </label>
-            </div>
-          </div>
+            </DivContentMesage>
+          </DivContent>
           <div className="w-full flex justify-end items-center flex-col sm:flex-row">
             {showFormErr ? (
               <p className="sm:mr-4 text-red-400">
@@ -164,14 +171,11 @@ export default function MessageForm() {
               Send
             </button>
           </div>
-        </form>
+        </Form>
       ) : (
-        <ReCAPTCHA
-          sitekey={process.env.CAPTCHA_SITE_KEY}
-          onChange={sendEmail}
-        />
+        <ReCAPTCHA sitekey={recaptchaKey} onChange={sendEmail} />
       )}
-    </div>
+    </DivMain>
   ) : (
     <div className="flex flex-col items-center">
       <h3 className="text-lato text-2xl font-light text-white">
@@ -180,4 +184,84 @@ export default function MessageForm() {
       <p>{formSubmitted.paragraph}</p>
     </div>
   );
-}
+};
+
+//Styled components:
+const DivMain = styled.div`
+  background: #bdc3c7;
+  padding: 30px 0 50px 0;
+  text-align: center;
+  h3 {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans";
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 25px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  button {
+    margin: 0;
+    float: center;
+    background: #e74c3c;
+    padding: 8px 77px;
+    border: 1px solid #e74c3c;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    font-family: "Varela Round";
+    transition: all 0.3;
+    &:hover {
+      background: none;
+      border: 1px solid rgba(0, 0, 0, 0.7);
+    }
+  }
+`;
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 880px;
+  height: 450px;
+  background: rgba(0, 0, 0, 0.32);
+  text-align: left;
+  padding: 10px 0;
+`;
+
+const DivContent = styled.form`
+  background: #bdc3c7;
+  padding: 30px 0 50px 0;
+  text-align: center;
+`;
+
+const DivContentData = styled.form`
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  width: 80%;
+  margin: 0 auto;
+  input {
+    display: inline-block;
+    width: 45%;
+    label {
+      color: #999;
+      padding: 1.3rem 30px 1rem 30px;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      -webkit-transition: all 0.25s ease;
+      transition: all 0.25s ease;
+      pointer-events: none;
+    }
+    /* input[name="email"],
+    input[name="name"] {
+      width: 100%;
+      height: 40px;
+    } */
+  }
+`;
+const DivContentMesage = styled.form`
+  textarea {
+    width: 100%;
+    resize: none;
+  }
+`;

@@ -58,6 +58,7 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.173",
+    "@types/react-google-recaptcha": "^2.1.2",
     "@types/react-helmet": "^6.1.2",
     "@types/react-router-dom": "^5.1.9",
     "@types/react-transition-group": "^4.4.3",

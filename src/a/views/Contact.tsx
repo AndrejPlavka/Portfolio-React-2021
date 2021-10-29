@@ -1,5 +1,5 @@
+import { ContactForm } from "../components/contact/ContactForm";
 import { contact } from "../PortfolioData";
-import React from "react";
 // Styles:
 import { IconLinkedIn } from "../assets/icons";
 import styled from "styled-components/macro";
@@ -14,54 +14,65 @@ export const Contact = () => {
   // Template:
   return (
     <DivMain>
-      <DivContent>
-        <DivTextSection>
-          <h1>Contat.</h1>
-          <h2>Would you like to work on project together? Just email me!</h2>
-          <p>
-            {quoteText}
-            <br />
-            {quoteAutor}
-          </p>
-        </DivTextSection>
-        <DivLinks>
-          <DivLink>
-            <a href={contact.linkedin} rel="noreferrer" target="_blank">
-              <DivA>{contact.LinkedIn}</DivA>
-              <DivB>LinkedIn</DivB>
-            </a>
-          </DivLink>
-          <DivLink>
-            <a
-              href={`mailto:${contact.email}`}
-              rel="noreferrer"
-              target="_blank"
-            >
-              <DivA>{contact.Mail}</DivA>
-              <DivB>Email</DivB>
-            </a>
-          </DivLink>
-          <DivLink>
-            <a href={contact.instagram} rel="noreferrer" target="_blank">
-              <DivA>{contact.Instagram}</DivA>
-              <DivB>Instagram</DivB>
-            </a>
-          </DivLink>
-          <DivLink>
-            <a href={contact.facebook} rel="noreferrer" target="_blank">
-              <DivA>{contact.Facebook}</DivA>
-              <DivB>Facebook</DivB>
-            </a>
-          </DivLink>
-        </DivLinks>
-      </DivContent>
+      <DivInfoSection>
+        <DivContent>
+          <DivTextSection>
+            <h1>Contact.</h1>
+            <h2>Would you like to work on project together? Just email me!</h2>
+            <p>
+              {quoteText}
+              <br />
+              {quoteAutor}
+            </p>
+          </DivTextSection>
+          <DivLinks>
+            <DivLink>
+              <a href={contact.linkedin} rel="noreferrer" target="_blank">
+                <DivA>{contact.LinkedIn}</DivA>
+                <DivB>LinkedIn</DivB>
+              </a>
+            </DivLink>
+            <DivLink>
+              <a
+                href={`mailto:${contact.email}`}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <DivA>{contact.Mail}</DivA>
+                <DivB>Email</DivB>
+              </a>
+            </DivLink>
+            <DivLink>
+              <a href={contact.instagram} rel="noreferrer" target="_blank">
+                <DivA>{contact.Instagram}</DivA>
+                <DivB>Instagram</DivB>
+              </a>
+            </DivLink>
+            <DivLink>
+              <a href={contact.facebook} rel="noreferrer" target="_blank">
+                <DivA>{contact.Facebook}</DivA>
+                <DivB>Facebook</DivB>
+              </a>
+            </DivLink>
+          </DivLinks>
+        </DivContent>
+      </DivInfoSection>
+      <DivContctForm>
+        <ContactForm />
+      </DivContctForm>
     </DivMain>
   );
 };
 
 // Styled components:
-// Intro area: ****************************************************************************
+
 const DivMain = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+`;
+const DivInfoSection = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -84,7 +95,7 @@ const DivContent = styled.div`
     flex-direction: column;
   }
 `;
-
+// Text area:  *****************************
 const DivTextSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -112,7 +123,7 @@ const DivTextSection = styled.div`
     padding: 0 0.6em;
   }
 `;
-// Links area ******************************************************************************
+// Links area *****************************
 const DivLinks = styled.div`
   display: flex;
   flex-direction: column;
@@ -171,4 +182,12 @@ const DivB = styled.div`
   font-size: 1.8em;
   line-height: 2;
   color: black;
+`;
+// Contact form section ******************************************************************
+const DivContctForm = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
 `;
