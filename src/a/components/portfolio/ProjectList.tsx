@@ -20,14 +20,12 @@ export const ProjectList = () => {
     </DivMain>
   );
 };
-{
-  /* <H2>Projects</H2> */
-}
+
 // styled cpomponets:
 const DivMain = styled.section`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   width: 100%;
   height: 100%;
 `;

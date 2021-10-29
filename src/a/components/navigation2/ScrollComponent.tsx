@@ -51,14 +51,14 @@ const DivScrollButtonConteiner = styled.div`
     z-index: 100;
     display: flex;
     align-content: center;
-    position: fixed; /*Fixed/sticky position */
+    position: fixed;
     bottom: 25px; /* Place the button at the bottom of the page */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    border-radius: 10px; /* Rounded corners */
+    border: none;
+    outline: none;
     transition: transform 0.2s linear;
     opacity: 0.5;
-    filter: drop-shadow(0 0.1rem 0.12em black);
+    filter: drop-shadow(0px 3px 2px rgb(53, 48, 54));
+    /* filter: drop-shadow(0 0.1rem 0.12em black); */
     :hover {
       transition: transform 0.2s linear;
       transform: translateY(-7px);

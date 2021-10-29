@@ -1,6 +1,6 @@
 // svg icons from devicon
 // Code languages ***********************************************************************
-export const IconJS = () => {
+export const IconJS = (props) => {
   return (
     <svg viewBox="0 0 128 128">
       <path
@@ -11,7 +11,7 @@ export const IconJS = () => {
   );
 };
 
-export const IconTS = () => {
+export const IconTS = (props) => {
   return (
     <svg viewBox="0 0 128 128">
       <path
@@ -22,7 +22,7 @@ export const IconTS = () => {
   );
 };
 
-export const IconReact = () => {
+export const IconReact = (props) => {
   return (
     <svg viewBox="0 0 128 128">
       <g fill="#61DAFB">
@@ -33,7 +33,7 @@ export const IconReact = () => {
   );
 };
 // without filling
-export const IconCSS1 = () => {
+export const IconCSS1 = (props) => {
   return (
     <svg viewBox="0 0 128 128">
       <path
@@ -44,7 +44,7 @@ export const IconCSS1 = () => {
   );
 };
 // with filling and shades
-export const IconCSS2 = () => {
+export const IconCSS2 = (props) => {
   return (
     <svg viewBox="0 0 128 128">
       <path
@@ -75,7 +75,7 @@ export const IconCSS2 = () => {
   );
 };
 // without filling
-export const IconHTML1 = () => {
+export const IconHTML1 = (props) => {
   return (
     <svg viewBox="0 0 128 128">
       <path
@@ -87,7 +87,7 @@ export const IconHTML1 = () => {
 };
 
 // with filling and shades
-export const IconHTML2 = () => {
+export const IconHTML2 = (props) => {
   return (
     <svg viewBox="0 0 128 128">
       <path
@@ -108,7 +108,7 @@ export const IconHTML2 = () => {
 };
 
 // Code Tools  ***********************************************************************
-export const IconGitHub = () => {
+export const IconGitHub = (props) => {
   return (
     <svg viewBox="0 0 128 128">
       <g fill="#181616">
@@ -123,7 +123,7 @@ export const IconGitHub = () => {
   );
 };
 
-export const IconStyledComponent = () => {
+export const IconStyledComponent = (props) => {
   return (
     <svg
       fill="#b03a56"
@@ -139,7 +139,7 @@ export const IconStyledComponent = () => {
   );
 };
 
-export const IconMarkdown = () => {
+export const IconMarkdown = (props) => {
   return (
     <svg viewBox="0 0 128 128">
       <path
@@ -155,7 +155,7 @@ export const IconMarkdown = () => {
   );
 };
 
-export const IconRedux = () => {
+export const IconRedux = (props) => {
   return (
     <svg viewBox="0 0 128 128">
       <path fill="none" d="M0 0h128v128H0z"></path>
@@ -167,7 +167,7 @@ export const IconRedux = () => {
   );
 };
 
-export const IconRouter = () => {
+export const IconRouter = (props) => {
   return (
     <svg
       fill="black"
@@ -182,25 +182,61 @@ export const IconRouter = () => {
   );
 };
 // Social Media ***********************************************************************
-export const IconFB = () => {
+// icon8 f
+export const IconFB = (props) => {
   return (
     <svg
+      fill="#000000"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="-7 -2 24 24"
-      width="24"
-      fill="currentColor"
+      viewBox="0 0 50 50"
+      width="50px"
+      height="50px"
     >
-      <path d="M2.046 3.865v2.748H.032v3.36h2.014v9.986H6.18V9.974h2.775s.26-1.611.386-3.373H6.197V4.303c0-.343.45-.805.896-.805h2.254V0H6.283c-4.34 0-4.237 3.363-4.237 3.865z"></path>
+      <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z" />
+    </svg>
+  );
+};
+// icon8 cicrled
+export const IconFBC = (props) => {
+  return (
+    <svg
+      fill="#000000"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 50 50"
+      width="currentWidth"
+      height="currentHeight"
+    >
+      <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z" />
+    </svg>
+  );
+};
+// circled
+export const IconIGC = (props) => {
+  return (
+    <svg
+      fill="currentColor"
+      color="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 30 30"
+      width="currentWidth"
+      height="currentHeight"
+    >
+      <path d="M15,12.124c-1.589,0-2.876,1.288-2.876,2.876s1.288,2.876,2.876,2.876s2.876-1.288,2.876-2.876S16.589,12.124,15,12.124z" />
+      <circle cx="15" cy="15" r="3" />
+      <path d="M15,2C7.832,2,2,7.832,2,15s5.832,13,13,13s13-5.832,13-13S22.168,2,15,2z M24,18.333C24,21.458,21.458,24,18.334,24h-6.667	C8.542,24,6,21.458,6,18.334v-6.667C6,8.542,8.542,6,11.666,6h6.667C21.458,6,24,8.542,24,11.666V18.333z" />
+      <path d="M18.333,8h-6.667C9.645,8,8,9.645,8,11.667v6.667C8,20.355,9.645,22,11.667,22h6.667C20.355,22,22,20.355,22,18.333v-6.667	C22,9.645,20.355,8,18.333,8z M15,20c-2.757,0-5-2.243-5-5s2.243-5,5-5s5,2.243,5,5S17.757,20,15,20z M19.667,11	C19.299,11,19,10.701,19,10.333s0.299-0.667,0.667-0.667c0.368,0,0.667,0.299,0.667,0.667S20.035,11,19.667,11z" />
     </svg>
   );
 };
 
-export const IconIG = () => {
+export const IconIG = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-2 -2 24 24"
-      width="24"
+      color="currentColor"
+      width="currentWidth"
+      height="currentHeight"
       fill="currentColor"
     >
       <path d="M14.017 0h-8.07A5.954 5.954 0 0 0 0 5.948v8.07a5.954 5.954 0 0 0 5.948 5.947h8.07a5.954 5.954 0 0 0 5.947-5.948v-8.07A5.954 5.954 0 0 0 14.017 0zm3.94 14.017a3.94 3.94 0 0 1-3.94 3.94h-8.07a3.94 3.94 0 0 1-3.939-3.94v-8.07a3.94 3.94 0 0 1 3.94-3.939h8.07a3.94 3.94 0 0 1 3.939 3.94v8.07z"></path>
@@ -209,13 +245,27 @@ export const IconIG = () => {
     </svg>
   );
 };
+// circled
+export const IconLinkedInC = (props) => {
+  return (
+    <svg
+      fill="#000000"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 50 50"
+      width="curentWidth"
+      height="currentHigth"
+    >
+      <path d="M25,2C12.318,2,2,12.317,2,25s10.318,23,23,23s23-10.317,23-23S37.682,2,25,2z M18,35h-4V20h4V35z M16,17 c-1.105,0-2-0.895-2-2c0-1.105,0.895-2,2-2s2,0.895,2,2C18,16.105,17.105,17,16,17z M37,35h-4v-5v-2.5c0-1.925-1.575-3.5-3.5-3.5 S26,25.575,26,27.5V35h-4V20h4v1.816C27.168,20.694,28.752,20,30.5,20c3.59,0,6.5,2.91,6.5,6.5V35z" />
+    </svg>
+  );
+};
 
-export const IconLikedIn = () => {
+export const IconLinkedIn = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-2 -2 24 24"
-      width="24"
+      width="currentWidth"
       fill="currentColor"
     >
       <path d="M19.959 11.719v7.379h-4.278v-6.885c0-1.73-.619-2.91-2.167-2.91-1.182 0-1.886.796-2.195 1.565-.113.275-.142.658-.142 1.043v7.187h-4.28s.058-11.66 0-12.869h4.28v1.824l-.028.042h.028v-.042c.568-.875 1.583-2.126 3.856-2.126 2.815 0 4.926 1.84 4.926 5.792zM2.421.026C.958.026 0 .986 0 2.249c0 1.235.93 2.224 2.365 2.224h.028c1.493 0 2.42-.989 2.42-2.224C4.787.986 3.887.026 2.422.026zM.254 19.098h4.278V6.229H.254v12.869z"></path>
@@ -224,7 +274,7 @@ export const IconLikedIn = () => {
 };
 // General page icons ************************************************************************
 // icons8
-export const IconMenu = () => {
+export const IconMenu = (props) => {
   return (
     <svg
       fill="#000000"
@@ -244,7 +294,7 @@ export const IconMenu = () => {
   );
 };
 
-export const IconDelete = () => {
+export const IconDelete = (props) => {
   return (
     <svg
       fill="#000000"
@@ -264,7 +314,7 @@ export const IconDelete = () => {
   );
 };
 
-export const IconArrowDown = () => {
+export const IconArrowDown = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -277,7 +327,7 @@ export const IconArrowDown = () => {
   );
 };
 
-export const IconArrowUp = () => {
+export const IconArrowUp = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -290,7 +340,7 @@ export const IconArrowUp = () => {
   );
 };
 
-export const IconEdit = () => {
+export const IconEdit = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -303,7 +353,7 @@ export const IconEdit = () => {
   );
 };
 
-export const IconCheck = () => {
+export const IconCheck = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -316,7 +366,7 @@ export const IconCheck = () => {
   );
 };
 
-export const IconSun = () => {
+export const IconSun = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -329,7 +379,7 @@ export const IconSun = () => {
   );
 };
 
-export const IconMoon = () => {
+export const IconMoon = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -341,7 +391,7 @@ export const IconMoon = () => {
     </svg>
   );
 };
-export const IconScrollUp = () => {
+export const IconScrollUp = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -350,6 +400,63 @@ export const IconScrollUp = () => {
       viewBox="0 0 24 24"
     >
       <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
+    </svg>
+  );
+};
+// Vectors
+export const IconMail1 = (props) => {
+  return (
+    <svg
+      color="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      width="currentWidth"
+      height="currentHeight"
+      viewBox="0 0 24 24"
+    >
+      <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+    </svg>
+  );
+};
+// Filled out
+export const IconMail2 = (props) => {
+  return (
+    <svg
+      color="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      width="currentWidth"
+      height="currentHeight"
+      viewBox="0 0 24 24"
+    >
+      <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z" />
+    </svg>
+  );
+};
+// Vectors
+export const IconMailPlane1 = (props) => {
+  return (
+    <svg
+      color="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      width="currentWidth"
+      height="currentHeight"
+      viewBox="0 0 24 24"
+    >
+      <path d="M0 12l11 3.1 7-8.1-8.156 5.672-4.312-1.202 15.362-7.68-3.974 14.57-3.75-3.339-2.17 2.925v-.769l-2-.56v7.383l4.473-6.031 4.527 4.031 6-22z" />
+    </svg>
+  );
+};
+
+// Filled out
+export const IconMailPlane2 = (props) => {
+  return (
+    <svg
+      color="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      width="currentWidth"
+      height="currentHeight"
+      viewBox="0 0 24 24"
+    >
+      <path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z" />
     </svg>
   );
 };
@@ -364,7 +471,7 @@ export const IconScrollUp = () => {
 //     </svg>
 //   );
 
-export const ReactSpin = () => {
+export const ReactSpin = (props) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3">
       <g fill="black">

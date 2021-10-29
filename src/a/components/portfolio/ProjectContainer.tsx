@@ -130,8 +130,8 @@ const DivFooter = styled.div`
     justify-content: flex-start;
   }
   div > div {
-    width: 1.75em;
-    margin: 0 0.45em;
+    width: 1.9em;
+    margin: 0 0.45em 0 0;
     opacity: 0.5;
     &:hover {
       opacity: 1;

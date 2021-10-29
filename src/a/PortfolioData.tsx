@@ -4,9 +4,16 @@ import Pdf from "../a/Documents/CV-Andrej plavka.pdf";
 // icon imports
 import {
   IconCSS2,
+  IconFB,
+  IconFBC,
   IconGitHub,
   IconHTML2,
+  IconIG,
+  IconIGC,
   IconJS,
+  IconLinkedIn,
+  IconLinkedInC,
+  IconMailPlane2,
   IconMarkdown,
   IconReact,
   IconRedux,
@@ -15,7 +22,7 @@ import {
   IconTS,
 } from "./assets/icons";
 
-// Icons:
+// Project icons:
 const HTML = <IconHTML2 />;
 const CSS = <IconCSS2 />;
 const TS = <IconTS />;
@@ -26,6 +33,11 @@ const SC = <IconStyledComponent />;
 const Router = <IconRouter />;
 const Markdown = <IconMarkdown />;
 const GitHub = <IconGitHub />;
+// contact icons:
+const LinkedIn = <IconLinkedInC />;
+const Instagram = <IconIGC />;
+const Facebook = <IconFBC />;
+const Mail = <IconMailPlane2 />;
 
 const header = {
   // all the properties are optional - can be left empty or deleted
@@ -142,9 +154,25 @@ const skills = [
   "Git",
 ];
 
+export type ContactType = {
+  email: string;
+  instagram: string;
+  facebook: string;
+  linkedin: string;
+  Mail: JSX.Element;
+  LinkedIn: JSX.Element;
+  Facebook: JSX.Element;
+  Instagram: JSX.Element;
+};
 const contact = {
   email: "andrej.p.@gmail.com",
-  phone: "",
+  instagram: "https://www.instagram.com/an_dre_jj/",
+  facebook: "https://www.facebook.com/andrej.plavka",
+  linkedin: "https://www.linkedin.com/in/andrej-plavka",
+  Mail,
+  LinkedIn,
+  Facebook,
+  Instagram,
 };
 
 const cv = {

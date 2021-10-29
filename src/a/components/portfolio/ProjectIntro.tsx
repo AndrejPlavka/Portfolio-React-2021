@@ -72,7 +72,9 @@ const DivText = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
-  /* width: 60%; */
+  @media screen and (max-width: 375px) {
+    padding: 0 0.6em;
+  }
 `;
 
 const DivImg = styled.div`

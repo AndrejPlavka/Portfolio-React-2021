@@ -13,7 +13,6 @@ export const Navbar = () => {
     <DivHeader>
       <DivContent>
         <DivLogoSection>
-          {/* <ALogo href="/">{title}</ALogo> */}
           <LinkLogo to="/">{title}</LinkLogo>
         </DivLogoSection>
         <DivNavbarSection>

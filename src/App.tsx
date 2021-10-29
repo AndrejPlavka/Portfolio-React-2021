@@ -15,6 +15,7 @@ import { TodoApp } from "./todoapp/TodoApp";
 import { TunesApp } from "./tunesapp/TunesApp";
 // Main page:
 import { About } from "./a/views/About";
+import { Contact } from "./a/views/Contact";
 import { Footer } from "./a/components/navigation2/Footer";
 import { LandingPage } from "./a/views/LandingPage";
 import { Navbar } from "./a/components/navigation2/Header";
@@ -34,7 +35,6 @@ const DivContent = styled.div`
   justify-content: center;
   padding-bottom: 4em;
   overflow-x: hidden;
-
   /* padding-bottom: 2.5em; */
   /* overflow-y: scroll; */
 `;
@@ -73,6 +73,7 @@ function App() {
             <Route path="/" component={LandingPage} exact />
             <Route path="/about" component={About} />
             <Route path="/portfolio" component={Portfolio} />
+            <Route path="/contact" component={Contact} />
             <Route path="/counter" component={Counter} />
             <Route path="/todoapp" component={TodoApp} />
             <Route path="/hackertyper" component={HackerApp} />

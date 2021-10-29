@@ -4,16 +4,22 @@ import styled from "styled-components/macro";
 
 export const Footer = () => {
   return (
-    <FooterContainer>
-      <AFooterLink href="https://github.com" className="link footer__link">
-        Created By Andrej Plavka
-      </AFooterLink>
-    </FooterContainer>
+    <DivFooter>
+      <DivContent>
+        <AFooterLink href="https://github.com">
+          © 2021 Andrej Plavka
+        </AFooterLink>
+        {/* <DivNavbarSection>
+      <Sidebar />
+    </DivNavbarSection> */}
+      </DivContent>
+    </DivFooter>
   );
 };
 
 // Styled components:
-const FooterContainer = styled.footer`
+const DivFooter = styled.footer`
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,19 +28,33 @@ const FooterContainer = styled.footer`
   width: 100%;
   height: 6em;
   background: white;
-  /* text-align: center; */
   box-shadow: 0px -1px 7px -2px rgba(0, 0, 0, 0.5);
-  /* -webkit-box-shadow: inset 0px 6px 4px -5px rgba(0, 0, 0, 0.37);
-  -moz-box-shadow: inset 0px 6px 4px -5px rgba(0, 0, 0, 0.37);
-  box-shadow: inset 0px 6px 4px -5px rgba(0, 0, 0, 0.37); */
   @media (max-width: 760px) {
     height: 4em;
   }
 `;
-
+const DivContent = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-basis: 100%;
+  max-width: 1300px;
+  padding: 0 0.5em;
+  @media screen and (max-width: 1128px) {
+    padding: 0 3em;
+  }
+  @media screen and (max-width: 430px) {
+    padding: 0 0.6em;
+  }
+`;
 const AFooterLink = styled.a`
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-family: Roboto;
+  font-size: 1.2em;
+  font-weight: 300;
   color: ${light.crlfg};
+  @media screen and (max-width: 760px) {
+    font-size: 1em;
+  }
 `;
