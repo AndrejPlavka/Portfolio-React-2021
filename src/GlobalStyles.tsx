@@ -51,10 +51,6 @@ export const GlobalStyle = createGlobalStyle`
       -webkit-appearance: none;
     } */
 
-    /* button::-moz-focus-inner {
-      border: 0;
-    } */
-
     button,
     input,
     optgroup,
@@ -103,9 +99,9 @@ export const GlobalStyle = createGlobalStyle`
       outline: none;
     }
 
-    input:focus {
+    /* input:focus {
       border: 2px solid #128cf0 !important;
-    }
+    } */
 
     ::-webkit-scrollbar-corner {
       background: transparent;

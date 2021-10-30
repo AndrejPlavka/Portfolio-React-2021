@@ -16,7 +16,7 @@ export const ProjectIntro = () => {
             The portfolio currently consists of a selection of projects that I
             developed during the completion of various programing courses (
             Udemy, L2C, ITA ). The projects are mainly focused on work in React
-            with Typescript. Other programming languages ​​and tools used are
+            with Typescript. Other programming languages and tools used are
             listed at the bottom of each project.
           </p>
         </DivText>

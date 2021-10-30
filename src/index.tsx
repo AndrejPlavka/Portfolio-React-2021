@@ -7,7 +7,7 @@ import ReactDOM from "react-dom";
 ReactDOM.render(
   <React.StrictMode>
     <Helmet>
-      <title>React 2021 - Andrej Plávka</title>
+      <title>Andrej Plávka - React 2021</title>
     </Helmet>
     <GlobalStyle />
     <App />

@@ -3,7 +3,7 @@ import { useReducer, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
 // styles:
-import styled from "styled-components/";
+import styled from "styled-components/macro";
 // emailjs:
 // emailjs.init("user_9NtwDnwudSGy35LXjGYNh");
 // to leasrn useReducer
@@ -65,23 +65,20 @@ export const ContactForm = () => {
         "template_rl8gm1r",
         params,
         "user_9NtwDnwudSGy35LXjGYNh"
-        // process.env.EMAIL_JS_SERVICE,
-        // process.env.EMAIL_JS_TEMPLATE,
-        // params,
-        // process.env.EMAIL_JS_USER
       )
       .then(
         ({ status }) => {
           if (status === 200) {
             setFormSubmitted({
               title: "Message has been sent",
-              paragraph: "Mike will be in contact with you soon.",
+              paragraph: "I will be in contact with you soon.",
             });
           } else {
             setFormSubmitted({
               title:
                 "Unexpected status code returned from EmailJS, try again later",
-              paragraph: "Please contact Mike either by phone or email.",
+              paragraph:
+                "Please check your email adress xx@xx.xx or try other media.",
             });
           }
         },
@@ -90,7 +87,8 @@ export const ContactForm = () => {
           console.log(err);
           setFormSubmitted({
             title: "Error sending message, try again later",
-            paragraph: "Please contact Mike either by phone or email.",
+            paragraph:
+              "Please check your email adress xx@xx.xx or try other media.",
           });
         }
       );
@@ -98,37 +96,28 @@ export const ContactForm = () => {
 
   return formSubmitted.title === "" ? (
     <DivMain>
-      <h3 className="text-lato text-2xl font-light text-white">
-        Send me a message
-      </h3>
+      <h3>Send me a message</h3>
       {!showCaptcha ? (
         <Form onSubmit={submitFormAndShowCaptcha}>
-          <DivContent className="flex font-open-sans justify-start flex-col sm:flex-row">
-            <DivContentData className="sm:mr-4 w-100 sm:w-1/2 md:w-2/5 flex flex-col items-end">
-              <input
-                id="contact-form-name"
-                className="appearance-none border-2 border-gray-200 rounded w-full p-2 text-gray-700 leading-tight focus:outline-none focus:border-theme-green"
-                type="text"
-                value={name}
-                onChange={(e) =>
-                  dispatch({ type: "name", value: e.target.value })
-                }
-                required
-              />
-              <label
-                className="block text-gray-500 font-bold my-2 w-full"
-                htmlFor="contact-form-name"
-              >
-                Name:
-              </label>
-              <label
-                className="block text-gray-500 font-bold my-2 w-full"
-                htmlFor="contact-form-email"
-              >
-                Email:
+          <DivContent>
+            <DivContentData>
+              <div>
                 <input
+                  autoComplete="off"
+                  id="contact-form-name"
+                  type="text"
+                  value={name}
+                  onChange={(e) =>
+                    dispatch({ type: "name", value: e.target.value })
+                  }
+                  required
+                />
+                <label htmlFor="contact-form-name">Name:</label>
+              </div>
+              <div>
+                <input
+                  autoComplete="off"
                   id="contact-form-email"
-                  className="appearance-none border-2 border-gray-200 rounded w-full p-2 text-gray-700 leading-tight focus:outline-none focus:border-theme-green"
                   type="email"
                   value={email}
                   onChange={(e) =>
@@ -136,132 +125,210 @@ export const ContactForm = () => {
                   }
                   required
                 />
-              </label>
+                <label htmlFor="contact-form-email">Email:</label>
+              </div>
             </DivContentData>
-            <DivContentMesage className="sm:mx-4 w-full sm:w-1/2 md:w-3/5">
-              <label
-                className="block text-gray-500 font-bold my-2"
-                htmlFor="contact-form-message"
-              >
-                Message:
+            <DivContentMesage>
+              <div>
                 <textarea
-                  //   rows="5"
                   id="contact-form-message"
-                  className="appearance-none border-2 border-gray-200 rounded w-full p-2 text-gray-700 leading-tight focus:outline-none focus:border-theme-green"
-                  //   type="text"
                   value={message}
                   onChange={(e) =>
                     dispatch({ type: "message", value: e.target.value })
                   }
                   required
                 />
-              </label>
+                <label htmlFor="contact-form-message">Message:</label>
+              </div>
             </DivContentMesage>
           </DivContent>
-          <div className="w-full flex justify-end items-center flex-col sm:flex-row">
+          <DivSubmit>
             {showFormErr ? (
-              <p className="sm:mr-4 text-red-400">
-                Please fill in all three input boxes to send a message
-              </p>
+              <p>Please fill in all three input boxes to send a message</p>
             ) : null}
-            <button
-              className="bg-theme-green text-white py-2 px-4 mt-6 sm:mr-4 rounded focus:outline-none focus:shadow-outline w-full md:w-1/4 lg:w-1/5"
-              type="submit"
-            >
-              Send
-            </button>
-          </div>
+            <button type="submit">Go!</button>
+          </DivSubmit>
         </Form>
       ) : (
-        <ReCAPTCHA sitekey={recaptchaKey} onChange={sendEmail} />
+        // <ReCAPTCHA sitekey={recaptchaKey} onChange={sendEmail} />
+        <DivAlert>{"nothing"}</DivAlert>
       )}
     </DivMain>
   ) : (
-    <div className="flex flex-col items-center">
-      <h3 className="text-lato text-2xl font-light text-white">
-        {formSubmitted.title}
-      </h3>
-      <p>{formSubmitted.paragraph}</p>
-    </div>
+    <DivMain>
+      <DivAlert>
+        <h3>{formSubmitted.title}</h3>
+        <p>{formSubmitted.paragraph}</p>
+      </DivAlert>
+    </DivMain>
   );
 };
 
 //Styled components:
 const DivMain = styled.div`
-  background: #bdc3c7;
-  padding: 30px 0 50px 0;
+  background: rgba(4, 0, 2, 0.5);
+  padding: 50px;
   text-align: center;
+  font-family: Roboto;
   h3 {
     margin: 0;
     padding: 0;
-    font-family: "Open Sans";
+    font-family: Roboto;
+    font-size: 3em;
+    font-weight: 200;
     color: rgba(255, 255, 255, 0.9);
     font-size: 25px;
     margin-bottom: 20px;
     text-transform: uppercase;
   }
-  button {
-    margin: 0;
-    float: center;
-    background: #e74c3c;
-    padding: 8px 77px;
-    border: 1px solid #e74c3c;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-    font-family: "Varela Round";
-    transition: all 0.3;
-    &:hover {
-      background: none;
-      border: 1px solid rgba(0, 0, 0, 0.7);
-    }
-  }
+`;
+
+const DivAlert = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  max-width: 880px;
+  height: 450px;
+  /* text-align: left; */
+  padding: 0;
 `;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  margin: 0 auto;
+  justify-content: center;
+  margin: 0;
   max-width: 880px;
   height: 450px;
-  background: rgba(0, 0, 0, 0.32);
-  text-align: left;
-  padding: 10px 0;
+  /* text-align: left; */
+  padding: 0;
 `;
 
-const DivContent = styled.form`
-  background: #bdc3c7;
-  padding: 30px 0 50px 0;
-  text-align: center;
+const DivContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 `;
 
 const DivContentData = styled.form`
   display: flex;
-  justify-content: space-between;
-  height: 80px;
-  width: 80%;
-  margin: 0 auto;
-  input {
-    display: inline-block;
-    width: 45%;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* height: 80px; */
+  width: 100%;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     label {
-      color: #999;
-      padding: 1.3rem 30px 1rem 30px;
       position: absolute;
-      top: 10px;
-      left: 0;
+      font-size: 1.5em;
+      padding: 1.3rem 30px 1rem 30px;
       -webkit-transition: all 0.25s ease;
       transition: all 0.25s ease;
       pointer-events: none;
     }
-    /* input[name="email"],
-    input[name="name"] {
-      width: 100%;
-      height: 40px;
-    } */
+
+    input {
+      height: 2em;
+      padding: 1.3rem 30px 1rem 30px;
+      outline: none;
+      font-size: 1.5em;
+      border: 1px solid black;
+      border-bottom: none;
+      :focus ~ label {
+        outline: none;
+        padding: 1rem 30px 1rem 30px;
+        font-size: 0.75em;
+        color: #999;
+        -webkit-transition: all 0.225s ease;
+        transition: all 0.225s ease;
+      }
+      :valid ~ label {
+        padding: 1rem 30px 1rem 30px;
+        font-size: 0.75em;
+        color: #999;
+        -webkit-transition: all 0.225s ease;
+        transition: all 0.225s ease;
+      }
+
+      :focus {
+        background: lightgray;
+        -webkit-transition: all 0.225s ease;
+        transition: all 0.225s ease;
+      }
+      :hover {
+        background: lightgray;
+      }
+    }
   }
 `;
 const DivContentMesage = styled.form`
-  textarea {
-    width: 100%;
-    resize: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* height: 80px; */
+  width: 100%;
+  div {
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 1.5em;
+      position: absolute;
+      padding: 1.3rem 30px 1rem 30px;
+      -webkit-transition: all 0.25s ease;
+      transition: all 0.25s ease;
+      pointer-events: none;
+    }
+    textarea {
+      font-size: 1.5em;
+      height: 150px;
+      padding: 2rem 30px 1rem 30px;
+      border: 1px solid black;
+      border-bottom: none;
+      :focus ~ label {
+        padding: 1rem 30px 1rem 30px;
+        font-size: 0.75em;
+        color: #999;
+        -webkit-transition: all 0.225s ease;
+        transition: all 0.225s ease;
+      }
+      :valid ~ label {
+        padding: 1rem 30px 1rem 30px;
+        font-size: 0.75em;
+        color: #999;
+        -webkit-transition: all 0.225s ease;
+        transition: all 0.225s ease;
+      }
+      :focus {
+        background: lightgray;
+        -webkit-transition: all 0.225s ease;
+        transition: all 0.225s ease;
+        outline: none;
+      }
+      :hover {
+        background: lightgray;
+      }
+    }
+  }
+`;
+
+const DivSubmit = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  button {
+    border: 1px solid black;
+    outline: none;
+    font-size: 1.5em;
+    height: 3em;
+    padding: 1.3rem 30px 1rem 30px;
+    text-align: center;
+  }
+  p {
+    margin: 30px auto;
+    font-size: 1.5em;
   }
 `;

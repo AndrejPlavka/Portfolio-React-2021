@@ -69,6 +69,7 @@ export const Contact = () => {
 const DivMain = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 `;
