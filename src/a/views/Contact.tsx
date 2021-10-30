@@ -8,14 +8,14 @@ import styled from "styled-components/macro";
 export const Contact = () => {
   if (!contact.email) return null;
   let quoteText =
-    '"The greatest glory in living lies not in never falling, but inrising every time we fall."';
+    '"The greatest glory in living lies not in never falling, but in rising every time we fall."';
   let quoteAutor = "-Nelson Mandela";
   let picovina = "LinkedIn";
   // Template:
   return (
     <DivMain>
       <DivInfoSection>
-        <DivContent>
+        <DivInfoContent>
           <DivTextSection>
             <h1>Contact.</h1>
             <h2>Would you like to work on project together? Just email me!</h2>
@@ -25,7 +25,7 @@ export const Contact = () => {
               {quoteAutor}
             </p>
           </DivTextSection>
-          <DivLinks>
+          <DivLinksSection>
             <DivLink>
               <a href={contact.linkedin} rel="noreferrer" target="_blank">
                 <DivA>{contact.LinkedIn}</DivA>
@@ -54,8 +54,8 @@ export const Contact = () => {
                 <DivB>Facebook</DivB>
               </a>
             </DivLink>
-          </DivLinks>
-        </DivContent>
+          </DivLinksSection>
+        </DivInfoContent>
       </DivInfoSection>
       <DivContctForm>
         <ContactForm />
@@ -80,14 +80,14 @@ const DivInfoSection = styled.div`
   height: 100%;
   box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
 `;
-const DivContent = styled.div`
+const DivInfoContent = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  align-items: stretch;
+  justify-content: center;
   max-width: 1300px;
   width: 100%;
-  padding: 6em 0.5em;
-  background: lightblue;
+  padding: 6em 3em;
   @media screen and (max-width: 1128px) {
     padding: 5em 3em;
   }
@@ -101,12 +101,13 @@ const DivTextSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: stretch;
+  align-content: stretch;
   flex-wrap: wrap;
+  padding: 1em 0 1em 0;
+  text-align: center;
   line-height: 1.5;
-  background: lightgreen;
   h1 {
-    margin: 0.5em 0 0;
     font-size: 5em;
   }
   h2 {
@@ -125,19 +126,13 @@ const DivTextSection = styled.div`
   }
 `;
 // Links area *****************************
-const DivLinks = styled.div`
+const DivLinksSection = styled.div`
   display: flex;
-  flex-direction: column;
-  flex-basis: 50%;
-  justify-content: center;
-  align-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  max-height: 300px;
-  background: gray;
-  /* transition: transform 0.2s linear;
-    :hover {
-      transform: translateY(-7px);
-    } */
+  padding: 1em 0 1em 0;
   /* @media screen and (max-width: 1128px) {
       flex-basis: 45%;
     }
@@ -152,15 +147,17 @@ const DivLinks = styled.div`
 const DivLink = styled.div`
   display: flex;
   flex-direction: column;
-  flex-basis: 20%;
+  align-items: stretch;
+  align-content: center;
   height: 5em;
   padding: 0 0.6em;
-  margin-bottom: 2em;
+  /* margin-bottom: 2em; */
   a {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    align-content: center;
     flex-basis: 100%;
     text-decoration: none;
     cursor: pointer;
@@ -171,15 +168,11 @@ const DivLink = styled.div`
 `;
 
 const DivA = styled.div`
-  display: flex;
-  vertical-align: middle;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   margin: 0 1em 0 0;
 `;
 const DivB = styled.div`
-  display: flex;
-  align-items: center;
   font-size: 1.8em;
   line-height: 2;
   color: black;

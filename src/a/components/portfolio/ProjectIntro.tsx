@@ -41,11 +41,11 @@ const DivContent = styled.div`
   justify-content: space-between;
   max-width: 1300px;
   width: 100%;
-  padding: 6em 0.5em;
+  padding: 6em 3em;
   @media screen and (max-width: 1128px) {
     padding: 5em 3em;
   }
-  @media screen and (max-width: 430px) {
+  @media screen and (max-width: 450px) {
     padding: 4em 1.2em;
     flex-direction: column;
   }
@@ -72,8 +72,17 @@ const DivText = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 450px) {
     padding: 0 0.6em;
+    h1 {
+      font-size: 4em;
+    }
+    h2 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.25em;
+    }
   }
 `;
 
@@ -94,7 +103,7 @@ const DivImg = styled.div`
       transform: rotate(360deg);
     }
   }
-  @media screen and (max-width: 430px) {
+  @media screen and (max-width: 780px) {
     display: none;
   }
 `;

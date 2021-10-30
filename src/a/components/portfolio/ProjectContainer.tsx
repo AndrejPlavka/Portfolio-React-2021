@@ -56,7 +56,7 @@ const DivProject = styled.div`
   flex-direction: column;
   flex-basis: 30%;
   height: 20em;
-  padding: 0 0.6em;
+  padding: 0 0.5em;
   margin-bottom: 2em;
   border-radius: 2.5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
