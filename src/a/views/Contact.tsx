@@ -121,6 +121,18 @@ const DivTextSection = styled.div`
     font-weight: 200;
     font-size: 1.4em;
   }
+  @media screen and (max-width: 450px) {
+    padding: 0 0.6em;
+    h1 {
+      font-size: 4em;
+    }
+    h2 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.25em;
+    }
+  }
   @media screen and (max-width: 375px) {
     padding: 0 0.6em;
   }
@@ -133,15 +145,6 @@ const DivLinksSection = styled.div`
   align-items: center;
   flex-wrap: wrap;
   padding: 1em 0 1em 0;
-  /* @media screen and (max-width: 1128px) {
-      flex-basis: 45%;
-    }
-    @media screen and (max-width: 760px) {
-      flex-basis: 92%;
-    }
-    @media screen and (max-width: 430px) {
-      flex-basis: 100%;
-    } */
 `;
 
 const DivLink = styled.div`
@@ -151,6 +154,10 @@ const DivLink = styled.div`
   align-content: center;
   height: 5em;
   padding: 0 0.6em;
+  @media screen and (max-width: 375px) {
+    flex-basis: 100%;
+    align-items: center;
+  }
   /* margin-bottom: 2em; */
   a {
     display: flex;
@@ -171,11 +178,20 @@ const DivA = styled.div`
   width: 70px;
   height: 70px;
   margin: 0 1em 0 0;
+  @media screen and (max-width: 780px) {
+    width: 50px;
+    height: 50px;
+    margin: 0 0.5em 0 0;
+  }
 `;
 const DivB = styled.div`
   font-size: 1.8em;
   line-height: 2;
   color: black;
+  @media screen and (max-width: 780px) {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
 `;
 // Contact form section ******************************************************************
 const DivContctForm = styled.div`

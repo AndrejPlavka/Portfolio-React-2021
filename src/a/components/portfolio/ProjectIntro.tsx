@@ -52,6 +52,11 @@ const DivContent = styled.div`
 `;
 
 const DivText = styled.div`
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   line-height: 1.5;
   h1 {
     margin: 0.5em 0 0;
@@ -67,11 +72,6 @@ const DivText = styled.div`
     font-weight: 300;
     font-size: 1.4em;
   }
-  display: flex;
-  flex: 2;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-wrap: wrap;
   @media screen and (max-width: 450px) {
     padding: 0 0.6em;
     h1 {
