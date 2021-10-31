@@ -11,8 +11,10 @@ export const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
       margin: 0;
       padding:0;
+      html{scroll-behavior:smooth};
       /* font: 62.5% / 1.15 'Source Sans Pro', sans-serif; */
     }
+    
     
     body {
       height:100vh;

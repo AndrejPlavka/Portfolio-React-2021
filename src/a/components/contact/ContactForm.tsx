@@ -30,8 +30,11 @@ function reducer(state, action) {
       throw new Error();
   }
 }
+interface Props {
+  emailRef: React.MutableRefObject<null>;
+}
 
-export const ContactForm = () => {
+export const ContactForm = (props: Props) => {
   const [formState, dispatch] = useReducer(reducer, initialState);
   const [showFormErr, setShowFormErr] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState({
@@ -101,8 +104,9 @@ export const ContactForm = () => {
         <Form onSubmit={submitFormAndShowCaptcha}>
           <DivContent>
             <DivContentData>
-              <div>
+              <div id="contactInput">
                 <input
+                  ref={props.emailRef}
                   autoComplete="off"
                   id="contact-form-name"
                   type="text"
@@ -128,7 +132,7 @@ export const ContactForm = () => {
                 <label htmlFor="contact-form-email">Email:</label>
               </div>
             </DivContentData>
-            <DivContentMesage>
+            <DivContentMessage>
               <div>
                 <textarea
                   id="contact-form-message"
@@ -140,13 +144,13 @@ export const ContactForm = () => {
                 />
                 <label htmlFor="contact-form-message">Message:</label>
               </div>
-            </DivContentMesage>
+            </DivContentMessage>
           </DivContent>
           <DivSubmit>
+            <button type="submit">Go!</button>
             {showFormErr ? (
               <p>Please fill in all three input boxes to send a message</p>
             ) : null}
-            <button type="submit">Go!</button>
           </DivSubmit>
         </Form>
       ) : (
@@ -166,20 +170,33 @@ export const ContactForm = () => {
 
 //Styled components:
 const DivMain = styled.div`
-  background: rgba(4, 0, 2, 0.5);
-  padding: 50px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1300px;
+  width: 100%;
+  padding: 5em 3.6em 6em;
+  background: rgba(4, 0, 2, 0.75);
   font-family: Roboto;
   h3 {
-    margin: 0;
-    padding: 0;
+    margin: 20px auto;
     font-family: Roboto;
-    font-size: 3em;
-    font-weight: 200;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 25px;
-    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: 300;
+    color: white;
     text-transform: uppercase;
+  }
+  @media screen and (max-width: 1128px) {
+    padding: 4em 3em;
+  }
+  @media screen and (max-width: 450px) {
+    padding: 4em 1.2em;
+    flex-direction: column;
+  }
+  h3 {
+    font-size: 2em;
+    font-weight: 300;
   }
 `;
 
@@ -192,31 +209,32 @@ const DivAlert = styled.div`
   margin: auto;
   max-width: 880px;
   height: 450px;
-  /* text-align: left; */
   padding: 0;
 `;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 0;
-  max-width: 880px;
-  height: 450px;
-  /* text-align: left; */
-  padding: 0;
+  align-content: center;
 `;
 
 const DivContent = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: center;
+  column-gap: 30px;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0px;
+  }
 `;
 
 const DivContentData = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  /* height: 80px; */
+  justify-content: space-between;
   width: 100%;
   div {
     display: flex;
@@ -224,7 +242,8 @@ const DivContentData = styled.form`
     justify-content: flex-start;
     label {
       position: absolute;
-      font-size: 1.5em;
+      font-size: 1.25em;
+      font-weight: 300;
       padding: 1.3rem 30px 1rem 30px;
       -webkit-transition: all 0.25s ease;
       transition: all 0.25s ease;
@@ -232,24 +251,25 @@ const DivContentData = styled.form`
     }
 
     input {
-      height: 2em;
-      padding: 1.3rem 30px 1rem 30px;
+      padding: 1.3rem 30px;
       outline: none;
-      font-size: 1.5em;
+      font-size: 1.25em;
+      font-weight: 300;
       border: 1px solid black;
-      border-bottom: none;
+      border-radius: 2px;
       :focus ~ label {
         outline: none;
-        padding: 1rem 30px 1rem 30px;
+        padding: 0.5rem 30px;
         font-size: 0.75em;
-        color: #999;
+        color: black;
         -webkit-transition: all 0.225s ease;
         transition: all 0.225s ease;
       }
       :valid ~ label {
-        padding: 1rem 30px 1rem 30px;
+        outline: none;
+        padding: 0.5rem 30px;
         font-size: 0.75em;
-        color: #999;
+        color: black;
         -webkit-transition: all 0.225s ease;
         transition: all 0.225s ease;
       }
@@ -264,18 +284,41 @@ const DivContentData = styled.form`
       }
     }
   }
+  /* @media screen and (max-width: 600px) {
+    div {
+      label {
+        font-size: 1.25em;
+        font-weight: 300;
+        padding: 1.3rem 30px 1rem 30px;
+      }
+      input {
+        padding: 1.3rem 30px;
+        font-size: 1.25em;
+        font-weight: 300;
+        :focus ~ label {
+          padding: 0.5rem 30px;
+          font-size: 0.75em;
+        }
+        :valid ~ label {
+          padding: 0.5rem 30px;
+          font-size: 0.75em;
+        }
+      }
+    }
+  } */
 `;
-const DivContentMesage = styled.form`
+const DivContentMessage = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /* height: 80px; */
+  height: 100%;
   width: 100%;
   div {
     display: flex;
     flex-direction: column;
     label {
-      font-size: 1.5em;
+      font-size: 1.25em;
+      font-weight: 300;
       position: absolute;
       padding: 1.3rem 30px 1rem 30px;
       -webkit-transition: all 0.25s ease;
@@ -283,11 +326,12 @@ const DivContentMesage = styled.form`
       pointer-events: none;
     }
     textarea {
-      font-size: 1.5em;
-      height: 150px;
+      font-size: 1.25em;
+      font-weight: 300;
+      height: 120px;
       padding: 2rem 30px 1rem 30px;
       border: 1px solid black;
-      border-bottom: none;
+      border-radius: 2px;
       :focus ~ label {
         padding: 1rem 30px 1rem 30px;
         font-size: 0.75em;
@@ -313,22 +357,76 @@ const DivContentMesage = styled.form`
       }
     }
   }
+  /* @media screen and (max-width: 600px) {
+    div {
+      label {
+        font-size: 1.25em;
+        font-weight: 300;
+        position: absolute;
+        padding: 1.3rem 30px 1rem 30px;
+      }
+      textarea {
+        font-size: 1.25em;
+        font-weight: 300;
+        padding: 2rem 30px 1rem 30px;
+        :focus ~ label {
+          padding: 1rem 30px 1rem 30px;
+          font-size: 0.75em;
+        }
+        :valid ~ label {
+          padding: 1rem 30px 1rem 30px;
+          font-size: 0.75em;
+        }
+      }
+    } */
 `;
 
 const DivSubmit = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  margin-top: 30px;
+  justify-content: flex-end;
   button {
-    border: 1px solid black;
-    outline: none;
-    font-size: 1.5em;
+    width: 20%;
     height: 3em;
-    padding: 1.3rem 30px 1rem 30px;
     text-align: center;
+    font-size: 1.5em;
+    border: 1px solid black;
+    border-radius: 2px;
+    outline: none;
+    background: rgb(120, 81, 169);
+    color: white;
+    opacity: 0.65;
+    :hover {
+      opacity: 1;
+      transition: transform 0.2s linear;
+      transform: translateY(2px);
+    }
   }
   p {
     margin: 30px auto;
     font-size: 1.5em;
+    font-weight: 300;
+    color: lightcoral;
   }
+  /* @media screen and (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    button {
+      border: 1px solid black;
+      outline: none;
+      font-size: 1.5em;
+      height: 3em;
+      padding: 1.3rem 30px 1rem 30px;
+      text-align: center;
+    }
+    p {
+      margin: 30px auto;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: lightcoral;
+    }
+  } */
 `;

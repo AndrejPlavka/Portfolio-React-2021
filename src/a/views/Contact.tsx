@@ -2,15 +2,22 @@ import { ContactForm } from "../components/contact/ContactForm";
 import { contact } from "../PortfolioData";
 // Styles:
 import { IconLinkedIn } from "../assets/icons";
+import { Link } from "react-router-dom";
+import React, { useRef, useState } from "react";
 import styled from "styled-components/macro";
 // import ReactSpin
 
 export const Contact = () => {
-  if (!contact.email) return null;
+  const emailRef = useRef(null);
+  const scrollToReff = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
   let quoteText =
     '"The greatest glory in living lies not in never falling, but in rising every time we fall."';
   let quoteAutor = "-Nelson Mandela";
-  let picovina = "LinkedIn";
+
+  if (!contact.email) return null;
+
   // Template:
   return (
     <DivMain>
@@ -33,11 +40,8 @@ export const Contact = () => {
               </a>
             </DivLink>
             <DivLink>
-              <a
-                href={`mailto:${contact.email}`}
-                rel="noreferrer"
-                target="_blank"
-              >
+              {/*Timebeeing solution -> implement custom hook !! */}
+              <a onClick={() => scrollToReff(emailRef)}>
                 <DivA>{contact.Mail}</DivA>
                 <DivB>Email</DivB>
               </a>
@@ -57,9 +61,9 @@ export const Contact = () => {
           </DivLinksSection>
         </DivInfoContent>
       </DivInfoSection>
-      <DivContctForm>
-        <ContactForm />
-      </DivContctForm>
+      <DivCFSection>
+        <ContactForm emailRef={emailRef} />
+      </DivCFSection>
     </DivMain>
   );
 };
@@ -77,7 +81,7 @@ const DivInfoSection = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  min-height: 80vh;
   box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
 `;
 const DivInfoContent = styled.div`
@@ -91,7 +95,7 @@ const DivInfoContent = styled.div`
   @media screen and (max-width: 1128px) {
     padding: 5em 3em;
   }
-  @media screen and (max-width: 430px) {
+  @media screen and (max-width: 450px) {
     padding: 4em 1.2em;
     flex-direction: column;
   }
@@ -118,8 +122,8 @@ const DivTextSection = styled.div`
   }
   p {
     text-align: center;
-    font-weight: 200;
-    font-size: 1.4em;
+    font-weight: 300;
+    font-size: 1.25em;
   }
   @media screen and (max-width: 450px) {
     padding: 0 0.6em;
@@ -169,7 +173,9 @@ const DivLink = styled.div`
     text-decoration: none;
     cursor: pointer;
     :hover {
-      filter: drop-shadow(0px 2px 1px rgb(153, 141, 153));
+      opacity: 0.7;
+      transition: transform 0.2s linear;
+      transform: translateY(2px);
     }
   }
 `;
@@ -178,6 +184,9 @@ const DivA = styled.div`
   width: 70px;
   height: 70px;
   margin: 0 1em 0 0;
+  /* :hover {
+    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.52));
+  } */
   @media screen and (max-width: 780px) {
     width: 50px;
     height: 50px;
@@ -194,10 +203,54 @@ const DivB = styled.div`
   }
 `;
 // Contact form section ******************************************************************
-const DivContctForm = styled.div`
+const DivCFSection = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
   height: 100%;
-  box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
 `;
+
+// .btn6{
+//   border:1px solid transparent;
+//    -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+//   transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+// }
+
+// .btn6::before {
+//   content: '';
+//   position: absolute;
+//   left: 0px;
+//   bottom:0px;
+//   z-index:-1;
+//   width: 0%;
+//   height:1px;
+//   background: #6098FF;
+//   box-shadow: inset 0px 0px 0px #6098FF;
+//   display: block;
+//   -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+//   transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
+// }
+
+// .btn6:hover::before {
+//   width:100%;
+// }
+
+// .btn6::after {
+//   content: '';
+//   position: absolute;
+//   right: 0px;
+//   top:0px;
+//   z-index:-1;
+//   width: 0%;
+//   height:1px;
+//   background: #6098FF;
+//   -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+//   transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
+// }
+// .btn6:hover::after {
+//   width:100%;
+// }
+// .btn6:hover{
+//   border-left:1px solid #6098FF;
+//   border-right:1px solid #6098FF;
+// }

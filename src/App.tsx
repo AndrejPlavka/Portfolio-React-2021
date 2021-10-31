@@ -33,7 +33,7 @@ const DivContent = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-bottom: 4em;
+  padding-bottom: 3em;
   overflow-x: hidden;
   /* padding-bottom: 2.5em; */
   /* overflow-y: scroll; */
