@@ -81,7 +81,7 @@ const DivInfoSection = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  min-height: 80vh;
+  min-height: 100vh;
   box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
 `;
 const DivInfoContent = styled.div`
@@ -92,6 +92,7 @@ const DivInfoContent = styled.div`
   max-width: 1300px;
   width: 100%;
   padding: 6em 3em;
+  /* row-gap: 20%; */
   @media screen and (max-width: 1128px) {
     padding: 5em 3em;
   }
@@ -104,21 +105,23 @@ const DivInfoContent = styled.div`
 const DivTextSection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: stretch;
   align-content: stretch;
   flex-wrap: wrap;
-  padding: 1em 0 1em 0;
+  padding: 1em 0 3em 0;
   text-align: center;
   line-height: 1.5;
   h1 {
     font-size: 5em;
+    margin: 0 0 30px;
   }
   h2 {
     margin-bottom: 0.5em;
     font-size: 2.25em;
     font-family: Roboto;
     font-weight: 300;
+    margin: 0 0 20px;
   }
   p {
     text-align: center;
@@ -208,6 +211,7 @@ const DivCFSection = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
+  background: rgba(4, 0, 2, 0.75);
 `;
 
 // .btn6{

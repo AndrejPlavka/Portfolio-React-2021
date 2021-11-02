@@ -1,7 +1,7 @@
 import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 import { IconContext, IconType } from "react-icons/lib";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import { SubMenu } from "./SubMenu";
 import React, { useState } from "react";

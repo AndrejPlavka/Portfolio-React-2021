@@ -1,9 +1,15 @@
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 import { about, cv } from "../PortfolioData";
-
+import PP from "../../img/PP.jpg";
 import React from "react";
 
 // Syles
+import {
+  animationOne,
+  animationThree,
+  transition,
+} from "../animations/animations";
+import { motion } from "framer-motion";
 import styled from "styled-components/macro";
 
 // Component
@@ -12,89 +18,198 @@ export const About = () => {
 
   // Template
   return (
-    <DivAbout>
-      {name && (
-        <h1>
-          Hi, I am <span className="about__name">{name}.</span>
-        </h1>
-      )}
+    <DivMain>
+      <motion.div
+        className="div"
+        initial="out"
+        animate="end"
+        exit="out"
+        variants={animationThree}
+        transition={transition}
+      >
+        <DivIntroSection>
+          <DivContent>
+            {/* <div>
+          <img src={ProfilePicture} alt="bratislava" />
+        </div> */}
 
-      {role && <h2 className="about__role">A {role}.</h2>}
-      <p className="about__desc">{description && description}</p>
-
-      <div className="about__contact center">
-        {resume && (
-          <a href={cv.resume} target="_blank" rel="noreferrer">
-            <span className="btn btn--outline">Resume</span>
-          </a>
-        )}
-
-        {social && (
-          <>
-            {social.github && (
-              <a
-                href={social.github}
-                aria-label="github"
-                className="link link--icon"
-              >
-                <IoLogoGithub />
-              </a>
-            )}
-
-            {social.linkedin && (
-              <a
-                href={social.linkedin}
-                aria-label="linkedin"
-                className="link link--icon"
-              >
-                <IoLogoLinkedin />
-              </a>
-            )}
-          </>
-        )}
-      </div>
-    </DivAbout>
+            <DivText>
+              <h1>{"Hi, I'm Andrej."}</h1>
+              <h3>
+                {"I am a fromer mechanical engineer & present"}
+                <span>{" front-end web <developer>"}</span>
+                {" currently based in Bratislava, Slovakia."}
+              </h3>
+              <p>
+                {"Lets create some"} <span>{" practical "}</span>
+                {"&"} <span>{"uniqe"}</span>
+                {" projets "}
+                <span>{"togather"}</span>
+              </p>
+            </DivText>
+            <div>
+              <img src={PP} alt="bratislava" />
+            </div>
+          </DivContent>
+        </DivIntroSection>
+      </motion.div>
+      {/* <DivPreviewSection></DivPreviewSection> */}
+    </DivMain>
   );
 };
 
 // Styled components:
-const DivAbout = styled.div`
+//ex-eg -> exempli gratia (example)
+// e.g.: background: url(&{img}), import img from "./...";
+// e.g.: backdrop-filter: blur(5px) makes backround blury
+const DivMain = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  div {
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+`;
+const DivIntroSection = styled.div`
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  /* height: 100vh; */
+  box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
+  background: white;
+`;
+const DivContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  max-width: 1300px;
+  width: 100%;
+  padding: 6em 3em 0;
+  max-height: 100vh;
+  div {
+    display: flex;
+    width: 500px;
+    height: 100%;
+    img {
+      z-index: -1;
+      background: transparent;
+      left: 0;
+      position: relative;
+      bottom: 0;
+      max-width: 100%;
+      height: auto !important;
+    }
+  }
+  @media screen and (max-width: 1128px) {
+    padding: 5em 3em;
+  }
+  @media screen and (max-width: 450px) {
+    padding: 4em 1.2em;
+    flex-direction: column;
+  }
+`;
+
+const DivText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 40%;
+  span {
+    color: black;
+    font-weight: 400;
+  }
+
+  h1 {
+    font-size: 5em;
+    background: transparent;
+    margin-bottom: 30px;
+  }
+
+  h3 {
+    color: gray;
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+  p {
+    color: gray;
+    font-size: 2em;
+    font-weight: 300;
+  }
+`;
+// const DivInfoContent = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: stretch;
+//   justify-content: center;
+//   max-width: 1300px;
+//   width: 100%;
+//   padding: 6em 3em;
+//   @media screen and (max-width: 1128px) {
+//     padding: 5em 3em;
+//   }
+//   @media screen and (max-width: 450px) {
+//     padding: 4em 1.2em;
+//     flex-direction: column;
+//   }
+// `;
+// // Text area:  *****************************
+// const DivTextSection = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: stretch;
+//   align-content: stretch;
+//   flex-wrap: wrap;
+//   padding: 1em 0 1em 0;
+//   text-align: center;
+//   line-height: 1.5;
+//   h1 {
+//     font-size: 5em;
+//   }
+//   h2 {
+//     margin-bottom: 0.5em;
+//     font-size: 2.25em;
+//     font-family: Roboto;
+//     font-weight: 300;
+//   }
+//   p {
+//     text-align: center;
+//     font-weight: 300;
+//     font-size: 1.25em;
+//   }
+//   @media screen and (max-width: 450px) {
+//     padding: 0 0.6em;
+//     h1 {
+//       font-size: 4em;
+//     }
+//     h2 {
+//       font-size: 2em;
+//     }
+//     p {
+//       font-size: 1.25em;
+//     }
+//   }
+//   @media screen and (max-width: 375px) {
+//     padding: 0 0.6em;
+//   }
+// `;
+
+const DivPreviewSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 400px;
-  //   margin-top: 3em;
+  height: 100px;
+  width: 100%;
+  padding-top: 10em;
 `;
-
-// .about__name {
-//   color: var(--clr-primary);
-// }
-
-// .about__role {
-//   margin-top: 1.2em;
-// }
-
-// .about__desc {
-//   font-size: 1rem;
-//   max-width: 600px;
-// }
-
-// .about__desc,
-// .about__contact {
-//   margin-top: 2.4em;
-// }
-
-// .about .link--icon {
-//   margin-right: 0.8em;
-// }
-
-// .about .btn--outline {
-//   margin-right: 1em;
-// }
-
-// @media (max-width: 600px) {
-//   .app .about {
-//     align-items: flex-start;
-//     margin-top: 2em;
-//   }
-// }

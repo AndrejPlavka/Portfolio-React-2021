@@ -1,8 +1,8 @@
 // System
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import React, { useRef } from "react";
+import { Route, Switch, useLocation } from "react-router-dom";
 
 //Syles
+import { AnimatePresence } from "framer-motion";
 import styled from "styled-components/macro";
 
 //Components:
@@ -32,27 +32,12 @@ const DivContent = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */ // apps workspace !!
   padding-bottom: 3em;
   overflow-x: hidden;
   /* padding-bottom: 2.5em; */
   /* overflow-y: scroll; */
 `;
-// const NavStyled = styled.nav`
-//   height: 40px;
-//   display: flex;
-//   justify-content: space-evenly;
-// `;
-
-// const LinkStyled = styled(NavLink)`
-//   font-weight: bold;
-//   font-family: "Calibri";
-//   text-decoration: none;
-//   font-size: 20px;
-//   :hover {
-//     opacity: 0.8;
-//   }
-// `;
 
 // const LinkProject = styled(LinkStyled)`
 //   &.active {
@@ -62,34 +47,68 @@ const DivContent = styled.div`
 // `;
 
 function App() {
+  // const { location } = useContext(__RouterContext);
+  // const transitions = useTransition(location, location => location.pathname, {
+  //   from: { opacity: 0, transform: "translate(100%, 0)" },
+  //   enter: { opacity: 1, transform: "translate(0%, 0)" },
+  //   leave: { opacity: 0, transform: "translate(-50%, 0)" }
+  // });
+  const location = useLocation();
   // Template - Projets Routesconst
   return (
-    // <ThemeProvider>
-    <Router>
+    <>
       <Div>
         <Navbar />
         <DivContent>
-          <Switch>
-            <Route path="/" component={LandingPage} exact />
-            <Route path="/about" component={About} />
-            <Route path="/portfolio" component={Portfolio} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/counter" component={Counter} />
-            <Route path="/todoapp" component={TodoApp} />
-            <Route path="/hackertyper" component={HackerApp} />
-            <Route path="/pexeso" component={PexesoApp} />
-            <Route path="/blog" component={Blog} />
-            <Route path="/tunesapp" component={TunesApp} />
-            {/* <Route path="/development" component={PortfolioApp} /> */}
-          </Switch>
+          <AnimatePresence exitBeforeEnter>
+            <Switch location={location} key={location.pathname}>
+              <Route path="/" component={LandingPage} exact />
+              <Route path="/about" component={About} />
+              <Route path="/portfolio" component={Portfolio} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/counter" component={Counter} />
+              <Route path="/todoapp" component={TodoApp} />
+              <Route path="/hackertyper" component={HackerApp} />
+              <Route path="/pexeso" component={PexesoApp} />
+              <Route path="/blog" component={Blog} />
+              <Route path="/tunesapp" component={TunesApp} />
+              {/* <Route path="/development" component={PortfolioApp} /> */}
+            </Switch>
+          </AnimatePresence>
         </DivContent>
 
         <ScrollComponent />
         <Footer />
       </Div>
-      {/* </ThemeProvider> */}
-    </Router>
+    </>
   );
 }
 
 export default App;
+//ex-eg -> exempli gratia (example)
+
+//<>
+//  <Div>
+//    <Navbar />
+//    <DivContent>
+//      <AnimatePresence exitBeforeEnter>
+//        <Switch location={location} key={location.pathname}>
+//          <Route path="/" component={LandingPage} exact />
+//          <Route path="/about" component={About} />
+//          <Route path="/portfolio" component={Portfolio} />
+//          <Route path="/contact" component={Contact} />
+//          <Route path="/counter" component={Counter} />
+//          <Route path="/todoapp" component={TodoApp} />
+//          <Route path="/hackertyper" component={HackerApp} />
+//          <Route path="/pexeso" component={PexesoApp} />
+//          <Route path="/blog" component={Blog} />
+//          <Route path="/tunesapp" component={TunesApp} />
+//          {/* <Route path="/development" component={PortfolioApp} /> */}
+//        </Switch>
+//      </AnimatePresence>
+//    </DivContent>
+//
+//    <ScrollComponent />
+//    <Footer />
+//  </Div>
+//</>;

@@ -52,6 +52,11 @@ const footer = {
   logo: "",
 };
 
+const intro = {
+  greeting: "Hi, I'm Andrej",
+  introduction:
+    "I'm a mechanical engineer and web <developer> living in Bratislava",
+};
 const about = {
   // all the properties are optional - can be left empty or deleted
   name: "Andrej Plavka",
@@ -179,4 +184,4 @@ const cv = {
   resume: Pdf,
 };
 
-export { header, cv, footer, about, projects, skills, contact };
+export { header, cv, footer, about, projects, skills, contact, intro };

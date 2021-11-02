@@ -177,7 +177,6 @@ const DivMain = styled.div`
   max-width: 1300px;
   width: 100%;
   padding: 5em 3.6em 6em;
-  background: rgba(4, 0, 2, 0.75);
   font-family: Roboto;
   h3 {
     margin: 20px auto;

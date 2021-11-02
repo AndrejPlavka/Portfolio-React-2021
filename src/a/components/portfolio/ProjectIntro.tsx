@@ -13,10 +13,10 @@ export const ProjectIntro = () => {
           <h1>Portfolio.</h1>
           <h2>Here you can chceck out some of my latest work.</h2>
           <p>
-            The portfolio currently consists of a selection of projects that I
-            developed during the completion of various programing courses (
-            Udemy, L2C, ITA ). The projects are mainly focused on work in React
-            with Typescript. Other programming languages and tools used are
+            You can find here some of the projects I’ve been working on while
+            practicing my skills as part of completing various programming
+            courses ( Udemy, L2C, ITA ). The projects are mainly focused on
+            React and Typescript. Other programming languages and tools used are
             listed at the bottom of each project.
           </p>
         </DivText>
@@ -33,6 +33,7 @@ const DivMain = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  min-height: 70vh;
   box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
 `;
 const DivContent = styled.div`
