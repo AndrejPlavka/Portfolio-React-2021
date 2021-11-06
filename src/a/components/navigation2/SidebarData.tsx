@@ -14,7 +14,7 @@ export const SidebarData = [
 
     subNav: [
       {
-        title: "About Me",
+        title: "About",
         path: "#about",
       },
       {

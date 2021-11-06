@@ -179,7 +179,7 @@ const DivMenu = styled.div<{ sidebar: boolean }>`
     transition: all 0.5s ease 0s;
     li {
       font-size: 1.25rem;
-      /* padding: 1rem; */
+      padding: 1rem;
       display: block;
       position: relative;
       float: left;
@@ -195,7 +195,7 @@ const DivMenu = styled.div<{ sidebar: boolean }>`
     @media screen and (max-width: 780px) {
       display: block;
       position: fixed; //absolute
-      width: 150px;
+      width: 200px;
       top: 4rem;
       right: 0;
       text-align: left;
@@ -216,9 +216,10 @@ const DivMenu = styled.div<{ sidebar: boolean }>`
     }
     &:hover {
       & > ul {
-        /* top: 4rem; */
         display: block;
+        width: 200px;
         position: absolute;
+        padding-top: 1.25rem;
         animation: ${animate} 0.15s ease;
         border: none;
         outline: none;
