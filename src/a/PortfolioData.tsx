@@ -1,6 +1,6 @@
 import { SidebarData } from "./components/navigation2/SidebarData";
 //@ts-ignore
-import Pdf from "../a/Documents/CV-Andrej plavka.pdf";
+import Pdf from "../a/documents/CV-Andrej plavka.pdf";
 // icon imports
 import {
   IconCSS2,
