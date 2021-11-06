@@ -1,15 +1,12 @@
 .multilevelMenu {
-	ul {
+	div {
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		// background: #2c3e50;
 		li {
 			display: block;
 			position: relative;
 			float: left;
-            // background: white;
-			// background: #2c3e50;
 			a {
 				display: block;
 				padding: 1em;
@@ -21,23 +18,14 @@
 				}
 			}
 		}
-		// ul {
-		// 	ul {
-		// 		left: 100%;
-		// 		top: 0;
-		// 	}
-		// }
-		// &:after {
-		// 	clear: both;
-		// }
 	}
 	li {
         background: none;
-		ul {
+		div {
 			display: none;
 		}
 		&:hover {
-			& > ul {
+			& > div {
 				display: block;
 				position: absolute;
 			}
@@ -48,35 +36,58 @@
                 &:hover {
                     background: #08090a;
                 }
-				// a {
-				// 	&:hover {
-				// 		background: #151e27;
-				// 	}
-				// }
 			}
-			// a {
-			// 	background:  #151e27;
-            //     opacity: 0.7;
-			// }
 		}
 	}
-	// .main-navigation {
-	// 	li {
-	// 		ul {
-	// 			li {
-	// 				border-top: 0;
-	// 			}
-	// 		}
-	// 	}
-	// }
+	
 }
-// .multilevelMenu ul:before,
-// .multilevelMenu ul:after {
-// 	// content: " ";
-// 	// display: table;
+
+// .multilevelMenu {
+// 	ul {
+// 		list-style: none;
+// 		padding: 0;
+// 		margin: 0;
+// 		li {
+// 			display: block;
+// 			position: relative;
+// 			float: left;
+// 			a {
+// 				display: block;
+// 				padding: 1em;
+// 				text-decoration: none;
+// 				white-space: nowrap;
+// 				color: black;
+// 				&:hover {
+// 					color: green;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	li {
+//         background: none;
+// 		ul {
+// 			display: none;
+// 		}
+// 		&:hover {
+// 			& > ul {
+// 				display: block;
+// 				position: absolute;
+// 			}
+// 			li {
+// 				float: none;
+//                 background:  #151e27;
+//                 opacity: 0.7;
+//                 &:hover {
+//                     background: #08090a;
+//                 }
+// 			}
+// 		}
+// 	}
+	
 // }
 
 
+//************************************************************************************************ 
 
 // .multilevelMenu {
 // 	ul {
@@ -132,18 +143,76 @@
 // 			}
 // 		}
 // 	}
-// 	.main-navigation {
-// 		li {
-// 			ul {
-// 				li {
-// 					border-top: 0;
-// 				}
-// 			}
-// 		}
-// 	}
+	// .main-navigation {
+	// 	li {
+	// 		ul {
+	// 			li {
+	// 				border-top: 0;
+	// 			}
+	// 		}
+	// 	}
+	// }
 // }
 // .multilevelMenu ul:before,
 // .multilevelMenu ul:after {
 // 	content: " ";
 // 	display: table;
+// }
+
+
+// div {
+//    ul {
+//        display: relative;
+//        position: fixed;
+//        width: 150px;
+//        top: 4rem;
+//        right: 0;
+//        text-align: left;
+//        list-style: none;
+//        transform: ${({ sidebar }) => sidebar ? "translate(0)" : "translate(100%)"};
+//        transition: all 0.5s ease 0s;
+//        li {
+//          display: block;
+//          position: relative;
+//          a {
+//            display: block;
+//            padding: 0.5em;
+//            text-decoration: none;
+//            color: black;
+//            &:hover {
+//              color: green;
+//            }
+//          }
+//        }
+//    }
+   
+//    li {
+//      background: none;
+//      ul {
+//        display: none;
+//      }
+//      &:hover {
+//        & > ul {
+//          display: block;
+//          position: relative;
+//          width: 100%;
+//          top: 0;
+//          right: 0;
+//          animation: ${animate} 0.15s ease;
+//          border: none;
+//          outline: none;
+//        }
+//        li {
+//          display: block;
+//          position: relative;
+//          background: #b9bbbd;
+//          opacity: 0.7;
+//          border: none;
+//          outline: none;
+//          &:hover {
+//            background: #828b92;
+//          }
+//        }
+//      }
+//    }
 // }

@@ -399,8 +399,8 @@ const DivSubmit = styled.div`
     opacity: 0.65;
     :hover {
       opacity: 1;
-      transition: transform 0.2s linear;
-      transform: translateY(2px);
+      transition: transform 0.15s linear;
+      transform: translateY(3px);
     }
   }
   p {

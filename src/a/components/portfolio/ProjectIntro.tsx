@@ -15,13 +15,18 @@ export const ProjectIntro = () => {
           <p>
             You can find here some of the projects I’ve been working on while
             practicing my skills as part of completing various programming
-            courses ( Udemy, L2C, ITA ). The projects are mainly focused on
-            React and Typescript. Other programming languages and tools used are
-            listed at the bottom of each project.
+            courses ( Udemy, L2C, ITA ).
+          </p>
+          <p>
+            The projects are mainly focused on React and Typescript. Other
+            programming languages and tools used are listed at the bottom of
+            each project.
           </p>
         </DivText>
         <DivImg>
-          <IconReact />
+          <div>
+            <IconReact />
+          </div>
         </DivImg>
       </DivContent>
     </DivMain>
@@ -33,16 +38,17 @@ const DivMain = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  min-height: 70vh;
+  height: 100%;
   box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
 `;
 const DivContent = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   max-width: 1300px;
   width: 100%;
-  padding: 6em 3em;
+  padding: 5em 3em;
   @media screen and (max-width: 1128px) {
     padding: 5em 3em;
   }
@@ -53,15 +59,15 @@ const DivContent = styled.div`
 `;
 
 const DivText = styled.div`
+  width: 50%;
   display: flex;
-  flex: 2;
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
   line-height: 1.5;
   h1 {
     margin: 0.5em 0 0;
-    font-size: 5em;
+    font-size: 4.5em;
   }
   h2 {
     margin-bottom: 0.5em;
@@ -71,7 +77,11 @@ const DivText = styled.div`
   }
   p {
     font-weight: 300;
-    font-size: 1.4em;
+    font-size: 1.25em;
+    margin: 0.5em 0;
+  }
+  @media screen and (max-width: 900px) {
+    width: 100%;
   }
   @media screen and (max-width: 450px) {
     padding: 0 0.6em;
@@ -88,12 +98,17 @@ const DivText = styled.div`
 `;
 
 const DivImg = styled.div`
-  flex: 1;
-  align-self: center;
-  flex-wrap: wrap;
-  /* width: 40%; */
-  pointer-events: none;
-  @media (prefers-reduced-motion: no-preference) {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-content: center;
+  div {
+    align-self: center;
+    width: 400px;
+    height: 300px;
+  }
+
+  /* @media (prefers-reduced-motion: no-preference) {
     animation: IconReact infinite 80s linear;
   }
   @keyframes IconReact {
@@ -103,8 +118,8 @@ const DivImg = styled.div`
     to {
       transform: rotate(360deg);
     }
-  }
-  @media screen and (max-width: 780px) {
+  } */
+  @media screen and (max-width: 900px) {
     display: none;
   }
 `;

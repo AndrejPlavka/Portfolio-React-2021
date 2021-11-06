@@ -47,7 +47,6 @@ const DivMain = styled.div`
   height: 100%;
 `;
 const DivIntroSection = styled.div`
-  z-index: -1;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -63,14 +62,14 @@ const DivContent = styled.div`
   align-items: center;
   max-width: 1300px;
   width: 100%;
-  padding: 6em 3em 0;
   max-height: 100vh;
+  padding: 6em 3em 0;
+
   div {
     display: flex;
     width: 500px;
     height: 100%;
     img {
-      z-index: -1;
       background: transparent;
       left: 0;
       position: relative;

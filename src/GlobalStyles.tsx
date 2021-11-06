@@ -11,10 +11,8 @@ export const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
       margin: 0;
       padding:0;
-      html{scroll-behavior:smooth};
-      /* font: 62.5% / 1.15 'Source Sans Pro', sans-serif; */
+      html{scroll-behavior:smooth}
     }
-    
     
     body {
       height:100vh;
@@ -27,14 +25,9 @@ export const GlobalStyle = createGlobalStyle`
       padding: 0;
       background-color: #fcfcfc;
       color: #000000;
-      /* font-family: 'Source Sans Pro', sans-serif; */
       font-family: 'Roboto','Source Sans Pro', sans-serif;
       font-size: 1em;
-      line-height: 1.45;
-      /* @media screen and (min-width: 620px) {
-          font-size: 1.9rem;
-          line-height: 1.31579;
-      } */
+      /* line-height: 1.4; */
     }
 
     

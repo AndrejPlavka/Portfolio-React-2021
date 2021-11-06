@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { SiderbarType } from "./Sidebar";
-import { theme } from "../../PortfolioAppTheme";
+import { theme } from "../portfolio/PortfolioAppTheme";
 import React, { useState } from "react";
 import styled from "styled-components/macro";
 

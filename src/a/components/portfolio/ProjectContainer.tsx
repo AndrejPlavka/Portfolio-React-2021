@@ -1,10 +1,8 @@
-import { IoLogoGithub } from "react-icons/io";
-import { MdLaunch } from "react-icons/md";
 import { ProjectType } from "../../PortfolioData";
 
 // styles
 import { Link } from "react-router-dom";
-import { light } from "../../PortfolioAppTheme";
+import { light } from "./PortfolioAppTheme";
 import styled from "styled-components/macro";
 
 interface Props {
@@ -67,10 +65,10 @@ const DivProject = styled.div`
   @media screen and (max-width: 1128px) {
     flex-basis: 45%;
   }
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 780px) {
     flex-basis: 92%;
   }
-  @media screen and (max-width: 430px) {
+  @media screen and (max-width: 450px) {
     flex-basis: 100%;
   }
 `;
@@ -138,36 +136,3 @@ const DivFooter = styled.div`
     }
   }
 `;
-// .project {
-//     padding: 2em;
-//     margin: 0 auto;
-//     text-align: center;
-//     box-shadow: var(--shadow);
-//     transition: transform 0.2s linear;
-//   }
-
-//   .project:hover {
-//     transform: translateY(-7px);
-//   }
-
-//   .project__description {
-//     margin-top: 1em;
-//   }
-
-//   .project__stack {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//     margin: 1.2em 0;
-//   }
-
-//   .project__stack-item {
-//     margin: 0.5em;
-//     font-weight: 500;
-//     font-size: 0.8rem;
-//     color: var(--clr-fg-alt);
-//   }
-
-//   .project .link--icon {
-//     margin-left: 0.5em;
-//   }

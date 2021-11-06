@@ -1,5 +1,3 @@
-import * as AiIcons from "react-icons/ai";
-import * as FaIcons from "react-icons/fa";
 import { IconContext, IconType } from "react-icons/lib";
 import { Link, NavLink } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
@@ -8,8 +6,8 @@ import React, { useState } from "react";
 
 //Styles
 import "./Styles.scss";
-import { theme } from "../../PortfolioAppTheme";
-import styled from "styled-components/macro";
+import { theme } from "../portfolio/PortfolioAppTheme";
+import styled, { keyframes } from "styled-components/macro";
 
 // const Nav = styled.div`
 //   /* background: #15171c; */
@@ -61,25 +59,30 @@ export type SiderbarType = {
     cName: string;
   };
 };
+interface Props {
+  sidebar: boolean;
+  // showSubnav: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
 
-export const Sidebar = () => {
-  const [sidebar, setSidebar] = useState(false);
+export const Sidebar = (props: Props) => {
+  // const [sidebar, setSidebar] = useState(true);
   const data = SidebarData;
-  const showSidebar = () => setSidebar((p) => !p);
+  // const showSidebar = () => setSidebar((p) => !p);
 
   const renderMenuItems = (data) => {
     return data.map((item: SiderbarType, index: number) =>
       item?.subNav ? (
         <li key={index}>
+          {/* <button onClick={props.showSubnav}>{"<"}</button> */}
           <Link to={item.path}>
             {item.title}
-            <div>
-              {/* {item.subNav && subnav
+            {/*<div>
+               {item.subNav && subnav
                 ? item.iconOpened
                 : item.subNav
                 ? item.iconClosed
-                : null} */}
-            </div>
+                : null} 
+            </div>*/}
           </Link>
           <ul>{renderMenuItems(item.subNav)}</ul>
         </li>
@@ -94,9 +97,9 @@ export const Sidebar = () => {
   return (
     data && (
       <>
-        <div className="multilevelMenu">
-          <ul className="main-navigation">{renderMenuItems(data)}</ul>
-        </div>
+        <DivMenu sidebar={props.sidebar}>
+          <ul>{renderMenuItems(data)}</ul>
+        </DivMenu>
       </>
     )
   );
@@ -158,33 +161,90 @@ podmienka pre ikonu do styled commponent styled.-> chybove hlasenia na DOM
 //   font-size: 3rem;
 // }
 
-const DivMenu = styled.div`
+const animate = keyframes`
+    from {
+     opacity: 0;
+    }
+    to {
+      opacity: 0.7;
+    }
+`;
+const DivMenu = styled.div<{ sidebar: boolean }>`
+  height: 100%;
   ul {
-    list-style: none;
+    height: 100%;
     padding: 0;
     margin: 0;
-    background: #2c3e50;
+    list-style: none;
+    transition: all 0.5s ease 0s;
+    li {
+      font-size: 1.25rem;
+      /* padding: 1rem; */
+      display: block;
+      position: relative;
+      float: left;
+      a {
+        display: block;
+        text-decoration: none;
+        color: black;
+        &:hover {
+          color: green;
+        }
+      }
+    }
+    @media screen and (max-width: 780px) {
+      display: block;
+      position: fixed; //absolute
+      width: 150px;
+      top: 4rem;
+      right: 0;
+      text-align: left;
+      transform: ${({ sidebar }) =>
+        sidebar ? "translate(0)" : "translate(100%)"};
+      li {
+        float: none;
+        a {
+          padding: 0.5rem;
+        }
+      }
+    }
   }
-
   li {
+    background: none;
     ul {
       display: none;
     }
     &:hover {
       & > ul {
+        /* top: 4rem; */
         display: block;
         position: absolute;
+        animation: ${animate} 0.15s ease;
+        border: none;
+        outline: none;
       }
       li {
         float: none;
-        a {
-          &:hover {
-            background: #151e27;
-          }
+        background: #b9bbbd;
+        opacity: 0.7;
+        border: none;
+        outline: none;
+        &:hover {
+          background: #828b92;
         }
       }
-      a {
-        background: #2c3e50;
+      @media screen and (max-width: 780px) {
+        & > ul {
+          display: block;
+          position: relative;
+          width: 100%;
+          top: 0;
+          right: 0;
+        }
+        li {
+          display: block;
+          position: relative;
+        }
       }
     }
   }

@@ -1,57 +1,56 @@
-import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
-import { about, cv } from "../PortfolioData";
-import PP from "../../img/PP.jpg";
+import { AboutIntro } from "../components/about/IntroAb";
 import React from "react";
 
 // Syles
+import { Experiences } from "../components/about/ExperiencesAb";
+import { Skills } from "../components/about/SkillsAb";
 import {
   animationOne,
   animationThree,
   transition,
 } from "../animations/animations";
+import { experiences, skills } from "../PortfolioData";
 import { motion } from "framer-motion";
 import styled from "styled-components/macro";
 
 // Component
 export const About = () => {
-  const { name, role, description, resume, social } = about;
-
   // Template
   return (
     <DivMain>
       <motion.div
         className="div"
-        initial="out"
-        animate="end"
-        exit="out"
+        initial="start"
+        animate="in"
+        exit="end"
         variants={animationThree}
         transition={transition}
       >
-        <DivIntroSection>
+        <AboutIntro />
+        <AboutExperiences id="exp">
           <DivContent>
-            {/* <div>
-          <img src={ProfilePicture} alt="bratislava" />
-        </div> */}
-
-            <DivText>
-              <h1>{"Hi, I'm Andrej."}</h1>
-              <h3>
-                {"I am a fromer mechanical engineer & present"}
-                <span>{" front-end web <developer>"}</span>
-                {" currently based in Bratislava, Slovakia."}
-              </h3>
-              <p>
-                {"Lets create some"} <span>{" practical "}</span>
-                {"&"} <span>{"uniqe"}</span>
-                {" projets "}
-                <span>{"togather"}</span>
-              </p>
-            </DivText>
+            <h2>Experiences</h2>
             <div>
-              <img src={PP} alt="bratislava" />
+              {experiences.map((experience, index) => (
+                <div key={index}>
+                  <Experiences experience={experience} />
+                </div>
+              ))}
             </div>
           </DivContent>
-        </DivIntroSection>
+        </AboutExperiences>
+        <AboutSkills id="abts">
+          <DivContent>
+            <h2>Skills</h2>
+            <div>
+              {skills.map((skill, index) => (
+                <div key={index}>
+                  <Skills skill={skill} />
+                </div>
+              ))}
+            </div>
+          </DivContent>
+        </AboutSkills>
       </motion.div>
       {/* <DivPreviewSection></DivPreviewSection> */}
     </DivMain>
@@ -67,149 +66,99 @@ const DivMain = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-  div {
-    z-index: -1;
+  .div {
     display: flex;
+    /* align-content: center; */
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
   }
 `;
-const DivIntroSection = styled.div`
-  z-index: -1;
+// Skills section ******************************************************************
+const AboutSkills = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  /* height: 100vh; */
-  box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
-  background: white;
+  height: 100%;
 `;
+
 const DivContent = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-content: center;
   align-items: center;
   max-width: 1300px;
-  width: 100%;
-  padding: 6em 3em 0;
-  max-height: 100vh;
+  padding: 6em 3em;
+  text-align: center;
+
+  /* background: lightcoral; */
+  h2 {
+    font-size: 4em;
+    padding: 2em 0.6em 1em;
+    /* margin: 2em 0.6 */
+  }
   div {
     display: flex;
-    width: 500px;
-    height: 100%;
-    img {
-      z-index: -1;
-      background: transparent;
-      left: 0;
-      position: relative;
-      bottom: 0;
-      max-width: 100%;
-      height: auto !important;
-    }
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0.6em;
   }
   @media screen and (max-width: 1128px) {
     padding: 5em 3em;
   }
+  @media screen and (max-width: 780px) {
+    justify-content: center;
+  }
   @media screen and (max-width: 450px) {
-    padding: 4em 1.2em;
-    flex-direction: column;
+    justify-content: center;
+    padding: 4em 0.5em;
   }
 `;
-
-const DivText = styled.div`
+// Skills section ******************************************************************
+const AboutExperiences = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: flex-start;
-  align-items: flex-start;
-  width: 40%;
-  span {
-    color: black;
-    font-weight: 400;
-  }
-
-  h1 {
-    font-size: 5em;
-    background: transparent;
-    margin-bottom: 30px;
-  }
-
-  h3 {
-    color: gray;
-    font-size: 2em;
-    font-weight: 300;
-    margin-bottom: 30px;
-  }
-  p {
-    color: gray;
-    font-size: 2em;
-    font-weight: 300;
-  }
+  align-items: center;
+  width: 100%;
+  height: 100%;
 `;
-// const DivInfoContent = styled.div`
+
+// const DivContent = styled.div`
 //   display: flex;
 //   flex-direction: column;
-//   align-items: stretch;
 //   justify-content: center;
+//   align-items: center;
 //   max-width: 1300px;
-//   width: 100%;
 //   padding: 6em 3em;
+//   text-align: center;
+//   /* background: lightcoral; */
+//   h2 {
+//     font-size: 4em;
+//     padding: 2em 0.6 1em;
+//   }
+//   div {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 10px;
+//     padding: 0.6em;
+//   }
 //   @media screen and (max-width: 1128px) {
 //     padding: 5em 3em;
 //   }
-//   @media screen and (max-width: 450px) {
-//     padding: 4em 1.2em;
-//     flex-direction: column;
-//   }
-// `;
-// // Text area:  *****************************
-// const DivTextSection = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: stretch;
-//   align-content: stretch;
-//   flex-wrap: wrap;
-//   padding: 1em 0 1em 0;
-//   text-align: center;
-//   line-height: 1.5;
-//   h1 {
-//     font-size: 5em;
-//   }
-//   h2 {
-//     margin-bottom: 0.5em;
-//     font-size: 2.25em;
-//     font-family: Roboto;
-//     font-weight: 300;
-//   }
-//   p {
-//     text-align: center;
-//     font-weight: 300;
-//     font-size: 1.25em;
+//   @media screen and (max-width: 780px) {
+//     justify-content: center;
 //   }
 //   @media screen and (max-width: 450px) {
-//     padding: 0 0.6em;
-//     h1 {
-//       font-size: 4em;
-//     }
-//     h2 {
-//       font-size: 2em;
-//     }
-//     p {
-//       font-size: 1.25em;
-//     }
-//   }
-//   @media screen and (max-width: 375px) {
-//     padding: 0 0.6em;
+//     justify-content: center;
+//     padding: 4em 0.5em;
 //   }
 // `;
-
-const DivPreviewSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100px;
-  width: 100%;
-  padding-top: 10em;
-`;
