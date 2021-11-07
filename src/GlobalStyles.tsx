@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
       color: #000000;
       font-family: 'Roboto','Source Sans Pro', sans-serif;
       
-      font-size:14px;
+      /* font-size:14px;
       line-height:1.4;
 
       @media screen and (${theme.sx_min_425}){
@@ -57,7 +57,7 @@ export const GlobalStyle = createGlobalStyle`
       }
       @media screen and (${theme.xl_min_1600}){
           font-size:20px;
-      }
+      } */
       /* h1 { font-size: 2.4rem;}
       h2 { font-size: 2rem; }
       h3 { font-size: 1.6rem; }
