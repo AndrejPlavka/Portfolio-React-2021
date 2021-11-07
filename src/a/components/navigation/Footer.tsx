@@ -1,5 +1,5 @@
 // Styles:
-import { light } from "../../PortfolioAppTheme";
+import { light } from "../portfolio/PortfolioAppTheme";
 import styled from "styled-components/macro";
 
 export const Footer = () => {

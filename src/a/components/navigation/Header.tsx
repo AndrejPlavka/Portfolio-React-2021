@@ -3,10 +3,13 @@ import { Sidebar } from "./Sidebar";
 import { header } from "../../PortfolioData";
 // Styles:
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import styled from "styled-components/macro";
 // Component:
 export const Navbar = () => {
   const { homepage, title } = header;
+  const [sidebar, setSidebar] = useState(false);
+  const showSidebar = () => setSidebar((p) => !p);
 
   // Tempplate:
   return (
@@ -16,42 +19,36 @@ export const Navbar = () => {
           <LinkLogo to="/">{title}</LinkLogo>
         </DivLogoSection>
         <DivNavbarSection>
-          <Sidebar />
+          <button onClick={showSidebar}>X</button>
+          <Sidebar sidebar={sidebar} />
         </DivNavbarSection>
       </DivContent>
     </DivHeader>
   );
 };
-// width1000: "max-width: 1000px",
-//   width530: "max-width: 530px",
-//   width760: "max-width: 760px",
-//   width800: "max-width: 800px",
-//   width400: "max-width: 400px",
-//   width300: "max-width: 300px",
 
 // Styled components
 const DivHeader = styled.header`
-  z-index: 10;
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 6em;
-  margin: 0;
-  padding: 0;
-  flex-basis: 100%;
-  /* box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3); */
-  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
-  @media (max-width: 760px) {
-    height: 4em;
+  height: 4rem;
+  width: 100%;
+  box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
+  /* box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3); */
+  @media (max-width: 780px) {
+    height: 3.5rem;
   }
 `;
 
 const DivContent = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
-  flex-basis: 100%;
+  /* font-size: 24px; */
+  width: 100%;
   max-width: 1300px;
   padding: 0 3em;
   @media screen and (max-width: 1128px) {
@@ -72,20 +69,26 @@ const DivLogoSection = styled.div`
 `;
 const LinkLogo = styled(Link)`
   color: inherit;
-  text-decoration: inherit;
+  text-decoration: none;
   font-family: RobotoThin;
   font-weight: 100;
   font-style: normal;
-  font-size: 5em;
-  @media screen and (max-width: 780px) {
-    font-size: 4em;
-  }
+  font-size: 3.5em;
+  margin: none;
+  padding: none;
+  background-color: green;
+  /* @media screen and (max-width: 780px) {
+    font-size: 2.5em;
+  } */
 `;
 
 const DivNavbarSection = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  @media screen and (max-width: 780px) {
+  button {
     display: none;
+  }
+  @media screen and (max-width: 780px) {
+    button {
+      display: flex;
+    }
   }
 `;

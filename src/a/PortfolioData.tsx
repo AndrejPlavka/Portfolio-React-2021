@@ -1,11 +1,14 @@
-import { SidebarData } from "./components/navigation2/SidebarData";
+import { SidebarData } from "./components/navigation/SidebarData";
 //@ts-ignore
 import Pdf from "../a/documents/CV-Andrej plavka.pdf";
 // icon imports
 import {
+  IconBootstrap,
   IconCSS2,
+  IconEducation,
   IconFB,
   IconFBC,
+  IconGit,
   IconGitHub,
   IconHTML2,
   IconIG,
@@ -18,8 +21,12 @@ import {
   IconReact,
   IconRedux,
   IconRouter,
+  IconSASS,
+  IconStar,
   IconStyledComponent,
   IconTS,
+  IconUdemy,
+  IconUdemyText,
 } from "./assets/icons";
 
 // Project icons:
@@ -38,9 +45,17 @@ const LinkedIn = <IconLinkedInC />;
 const Instagram = <IconIGC />;
 const Facebook = <IconFBC />;
 const Mail = <IconMailPlane2 />;
+// skils icons:
+const Star = <IconStar />;
+const Git = <IconGit />;
+const SASS = <IconSASS />;
+const Bootstrap = <IconBootstrap />;
+const University = <IconEducation />;
+const UdemyLogo = <IconUdemy />;
+const UdemyText = <IconUdemyText />;
 
+// Page Sections: *********************************************************
 const header = {
-  // all the properties are optional - can be left empty or deleted
   homepage: "https://",
   title: "AP.", // nahradit logom
   logo: "",
@@ -51,14 +66,8 @@ const footer = {
   homepage: "https://",
   logo: "",
 };
-
-const intro = {
-  greeting: "Hi, I'm Andrej",
-  introduction:
-    "I'm a mechanical engineer and web <developer> living in Bratislava",
-};
+// About page:
 const about = {
-  // all the properties are optional - can be left empty or deleted
   name: "Andrej Plavka",
   role: "Front End Engineer",
   description: "bla bla bla bla bla bla bla bla bla bla bla bla bla",
@@ -68,7 +77,7 @@ const about = {
     github: "https://github.com",
   },
 };
-
+// Projects Section ***************************************************************************
 export type ProjectType = {
   name: string;
   description: string;
@@ -146,17 +155,144 @@ const projects = [
     bgImg: "",
   },
 ];
+// Skils section ***************************************************************
+export type SkillType = {
+  name: string;
+  img: JSX.Element;
+  level: string;
+  lvl: JSX.Element;
+};
 
 const skills = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Node.js",
-  "SASS",
-  "Basics of UI/UX",
-  "Git",
+  {
+    name: "HTML",
+    img: HTML,
+    level: "basic",
+    lvl: Star,
+  },
+  {
+    name: "CSS",
+    img: CSS,
+    level: "basic",
+    lvl: Star,
+  },
+  {
+    name: "SASS",
+    img: SASS,
+    level: "basic",
+    lvl: Star,
+  },
+  {
+    name: "Bootstrap",
+    img: Bootstrap,
+    level: "basic",
+    lvl: Star,
+  },
+  {
+    name: "JavaScript",
+    img: JS,
+    level: "basic",
+    lvl: Star,
+  },
+  {
+    name: "TypeScript",
+    img: TS,
+    level: "basic",
+    lvl: Star,
+  },
+  {
+    name: "React",
+    img: React,
+    level: "basic",
+    lvl: Star,
+  },
+  {
+    name: "Git",
+    img: Git,
+    level: "basic",
+    lvl: Star,
+  },
+];
+
+// Experiences section ************************************************************
+const L2C = (
+  <div
+    style={{
+      borderRadius: "1px",
+      color: "white",
+      background: "rgb(52, 184, 186)",
+      margin: "0",
+      padding: "3px 10px",
+      height: "30px",
+      width: "100%",
+      lineHeight: "100%",
+      fontFamily: "Milion, Roboto",
+      fontSize: "0.65em",
+    }}
+  >
+    LEARN 2CODE
+  </div>
+);
+
+const Cleverlance = (
+  <div
+    style={{
+      // display: "flex",
+      // justifyContent: "center",
+      // alignContent: "center",
+      borderRadius: "1px",
+      color: "white",
+      background: "rgb(70, 5, 112)",
+      margin: "0",
+      padding: "3px 10px",
+      height: "30px",
+      width: "100%",
+      lineHeight: "100%",
+      fontFamily: "'Baloo 2', cursive",
+      fontSize: "0.65em",
+    }}
+  >
+    Cleverlance
+  </div>
+);
+export type ExpType = {
+  name: string;
+  level?: string;
+  img: JSX.Element;
+  text?: string;
+};
+const experiences = [
+  {
+    name: "Mechanical Engineering",
+    level: "Master",
+    img: University,
+    text: "I studied at the Faculty of Mechanical Engineering in the field of Environmental Engineering, the subject Energy Machines and Equipment.",
+  },
+  {
+    name: "Web Development Bootcamp",
+    level: "",
+    // img: UdemyText,
+    img: UdemyLogo,
+    text: " ,,The Complete 2021 Web Development Bootcamp,, which covers the basics of web development - HTML, CSS, Botstrap, Javascript, SQL, Node.js. Expres.js, React",
+  },
+  {
+    name: "React",
+    level: "",
+    img: L2C,
+    text: ",,Learn to Code,, course which covers the basics of work with React.",
+  },
+  {
+    name: "Basics of OOP",
+    level: "",
+    img: L2C,
+    text: " ,,Learn to Code,, course which covers the basics OOP with PHP.",
+  },
+  {
+    name: "Testing Clever Academy",
+    level: "",
+    img: Cleverlance,
+    text: "Bootcamp which covers the basics of software testing, test software analysis, databases and SQL, ",
+  },
 ];
 
 export type ContactType = {
@@ -184,4 +320,4 @@ const cv = {
   resume: Pdf,
 };
 
-export { header, cv, footer, about, projects, skills, contact, intro };
+export { header, cv, footer, about, projects, skills, contact, experiences };

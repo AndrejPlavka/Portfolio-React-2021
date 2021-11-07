@@ -1,40 +1,78 @@
 import styled, { createGlobalStyle } from "styled-components/macro";
+export const theme = {
+  // media:
+  sx_min_425: "min-width: 425px",
+  sm_min_768: "min-width: 768px",
+  md_min_1024: "min-width: 1024px",
+  lg_min_1200: "min-width: 1200px",
+  xl_min_1600: "min-width: 1600px",
+  // fonts:
+  tinyFont: 100,
+  // colors:
+  grey: "#777",
+  primaryBackground: "#fefefe",
+};
 
 export const GlobalStyle = createGlobalStyle`
     *{
       margin: 0;
       padding:0;
+      html{scroll-behavior:smooth};
     }
-
-   
+    
     html {
       box-sizing: border-box;
       margin: 0;
       padding:0;
-      html{scroll-behavior:smooth};
-      /* font: 62.5% / 1.15 'Source Sans Pro', sans-serif; */
+      
     }
     
-    
     body {
-      height:100vh;
+      height:100%;
       width:100%;
-      overflow-x: hidden;
-      /* width: 100vw; */
-      /* margin-right: calc(100vw - 100%); */
-      /* margin-right: calc(-1 * (100vw - 100%)); */
       margin: 0;
-      padding: 0;
+      padding:0;
+      overflow-x: hidden;
       background-color: #fcfcfc;
       color: #000000;
-      /* font-family: 'Source Sans Pro', sans-serif; */
       font-family: 'Roboto','Source Sans Pro', sans-serif;
-      font-size: 1em;
-      line-height: 1.45;
-      /* @media screen and (min-width: 620px) {
-          font-size: 1.9rem;
-          line-height: 1.31579;
+      
+      font-size:14px;
+      line-height:1.4;
+
+      @media screen and (${theme.sx_min_425}){
+          font-size:16px;
+      }
+
+      @media screen and (${theme.sm_min_768}){
+          font-size:16px;
+      }
+    
+      @media screen and (${theme.md_min_1024}){
+          font-size:18px;
+      }
+    
+      @media screen and (${theme.lg_min_1200}){
+          font-size:20px;
+      }
+      @media screen and (${theme.xl_min_1600}){
+          font-size:20px;
+      }
+      /* h1 { font-size: 2.4rem;}
+      h2 { font-size: 2rem; }
+      h3 { font-size: 1.6rem; }
+      h4 { font-size: 1.2rem; }
+      h5 { font-size: 1rem; }
+
+      @media screen and (${theme.sm_min_768}){
+        h1 { font-size: 3rem;}
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 2rem; }
+        h4 { font-size: 1.5rem; }
+        h5 { font-size: 1rem; }
       } */
+      /* margin-right: calc(100vw - 100%); */
+      /* margin-right: calc(-1 * (100vw - 100%)); */
     }
 
     
@@ -109,38 +147,3 @@ export const GlobalStyle = createGlobalStyle`
       background: transparent;
     }
 `;
-// export const GlobalStyle = createGlobalStyle`
-//     *{
-//         box-sizing: border-box;
-//         margin: 0;
-//         padding:0;
-//         font-family: 'Source Sans Pro', sans-serif;
-//     }
-// `;
-
-// export const DivContainer = styled.div`
-//   z-index: 1;
-//   width: 100%;
-//   max-width: 1300px;
-//   margin-left: auto;
-//   margin-right: auto;
-
-//   @media screen and (max-width: 991px) {
-//     padding-left: 50 px;
-//     padding-right: 50 px;
-//   }
-// `;
-
-// body {
-//   margin: 0;
-//   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-//     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-//     sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
-
-// code {
-//   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-//     monospace;
-// }

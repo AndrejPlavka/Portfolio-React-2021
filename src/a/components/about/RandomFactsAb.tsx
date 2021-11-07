@@ -2,6 +2,6 @@ import React from "react";
 
 interface Props {}
 
-export const CV = (props: Props) => {
+export const RandomFacts = (props: Props) => {
   return <div></div>;
 };

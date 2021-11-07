@@ -1,19 +1,32 @@
 export const animationOne = {
+  start: {
+    opacity: 0,
+  },
+
   in: {
     opacity: 1,
   },
-  out: {
+
+  end: {
     opacity: 0,
+    x: "-100vh",
   },
 };
 
 export const animationTwo = {
+  start: {
+    opacity: 0,
+    y: "-100vh",
+    scale: 0.3,
+  },
+
   in: {
     opacity: 1,
     y: 0,
     scale: 1,
   },
-  out: {
+
+  end: {
     opacity: 0,
     y: "-100vh",
     scale: 0.3,
@@ -23,23 +36,24 @@ export const animationTwo = {
 //   enter: { opacity: 1, transform: "translate(0%, 0)" },
 //   leave: { opacity: 0, transform: "translate(-50%, 0)" }
 export const animationThree = {
+  start: {
+    opacity: 0,
+    x: "100vh",
+  },
+
   in: {
     opacity: 1,
-    x: "-100%",
-  },
-  out: {
-    opacity: 0,
-    x: "100%",
-    scale: 1,
-  },
-  end: {
     x: 0,
-    opacity: 1,
+  },
+
+  end: {
+    x: "-100vh",
+    opacity: 0,
   },
 };
 
 export const transition = {
-  duration: 1,
+  duration: 0.4,
 };
 
 // export const animationTwo = {

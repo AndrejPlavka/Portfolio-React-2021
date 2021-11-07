@@ -1,4 +1,4 @@
-import { Intro } from "../components/home/Intro";
+import { Intro } from "../components/landing-page/IntroLP";
 import { ProjectList } from "../components/portfolio/ProjectList";
 import React, { useContext } from "react";
 
@@ -19,9 +19,9 @@ export const LandingPage = () => {
     <DivHome>
       <motion.div
         className="div"
-        initial="out"
+        initial="start"
         animate="in"
-        exit="out"
+        exit="end"
         variants={animationOne}
         transition={transition}
       >
@@ -34,14 +34,12 @@ export const LandingPage = () => {
 
 // Styled components:
 const DivHome = styled.div`
-  z-index: -1;
   display: flex;
   flex-direction: column;
   align-content: center;
   height: 100%;
   width: 100%;
   .div {
-    z-index: -1;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -50,7 +48,9 @@ const DivHome = styled.div`
   }
   //   margin-top: 3em;
 `;
-
+// from: { opacity: 0, transform: "translate(100%, 0)" },
+// enter: { opacity: 1, transform: "translate(0%, 0)" },
+// leave: { opacity: 0, transform: "translate(-50%, 0)" }
 // exm 1.
 // const ParentComponent = () => {
 //   const [loading, setLoading] = useState(true) // generally when doing http requests this is false initially and when starting the request you set it to true, but this case is a bit different
