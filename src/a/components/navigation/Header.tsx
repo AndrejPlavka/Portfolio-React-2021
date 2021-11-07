@@ -26,12 +26,6 @@ export const Navbar = () => {
     </DivHeader>
   );
 };
-// width1000: "max-width: 1000px",
-//   width530: "max-width: 530px",
-//   width760: "max-width: 760px",
-//   width800: "max-width: 800px",
-//   width400: "max-width: 400px",
-//   width300: "max-width: 300px",
 
 // Styled components
 const DivHeader = styled.header`
@@ -53,7 +47,7 @@ const DivContent = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
+  /* font-size: 24px; */
   width: 100%;
   max-width: 1300px;
   padding: 0 3em;
@@ -83,9 +77,9 @@ const LinkLogo = styled(Link)`
   margin: none;
   padding: none;
   background-color: green;
-  @media screen and (max-width: 780px) {
+  /* @media screen and (max-width: 780px) {
     font-size: 2.5em;
-  }
+  } */
 `;
 
 const DivNavbarSection = styled.div`

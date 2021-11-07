@@ -39,7 +39,7 @@ export const About = () => {
             </div>
           </DivContent>
         </AboutExperiences>
-        <AboutSkills id="abts">
+        <AboutSkills id="skills">
           <DivContent>
             <h2>Skills</h2>
             <div>

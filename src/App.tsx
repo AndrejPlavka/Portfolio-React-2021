@@ -16,11 +16,11 @@ import { TunesApp } from "./tunesapp/TunesApp";
 // Main page:
 import { About } from "./a/views/About";
 import { Contact } from "./a/views/Contact";
-import { Footer } from "./a/components/navigation2/Footer";
+import { Footer } from "./a/components/navigation/Footer";
 import { LandingPage } from "./a/views/LandingPage";
-import { Navbar } from "./a/components/navigation2/Header";
+import { Navbar } from "./a/components/navigation/Header";
 import { Portfolio } from "./a/views/Portfolio";
-import { ScrollComponent } from "./a/components/navigation2/ScrollComponent";
+import { ScrollComponent } from "./a/components/navigation/ScrollComponent";
 
 // Styled components:
 const Div = styled.div`

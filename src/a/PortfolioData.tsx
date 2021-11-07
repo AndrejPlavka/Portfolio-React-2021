@@ -1,4 +1,4 @@
-import { SidebarData } from "./components/navigation2/SidebarData";
+import { SidebarData } from "./components/navigation/SidebarData";
 //@ts-ignore
 import Pdf from "../a/documents/CV-Andrej plavka.pdf";
 // icon imports
