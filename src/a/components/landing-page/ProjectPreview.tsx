@@ -2,6 +2,7 @@ import { ProjectContainer } from "../portfolio/ProjectContainer";
 import { projects } from "../../PortfolioData";
 
 // Styles:
+import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 
 // Component:
@@ -11,6 +12,8 @@ export const ProjectPreview = () => {
   // Template - show only the last three projects:
   return (
     <DivMain>
+      <H2>Some of my latest work</H2>
+
       <DivProjectsList>
         {projects.slice(-3).map((project, index) => (
           <ProjectContainer key={index} project={project} />
@@ -24,19 +27,32 @@ export const ProjectPreview = () => {
 const DivMain = styled.section`
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
   width: 100%;
   height: 100%;
 `;
 
+const H2 = styled.h1`
+  padding: 3em 10% 0.5em;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 300;
+  font-family: Roboto;
+  text-transform: uppercase;
+  color: #746b6b;
+`;
+
 const DivProjectsList = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column nowrap;
+  align-items: center;
   justify-content: space-between;
   max-width: 1300px;
-  width: 100%;
-  padding: 6em 3em;
-  @media screen and (max-width: 1128px) {
+  width: 95%;
+  padding: 2em 0 4em;
+
+  /* @media screen and (max-width: 1128px) {
     padding: 5em 3em;
   }
   @media screen and (max-width: 780px) {
@@ -45,5 +61,16 @@ const DivProjectsList = styled.div`
   @media screen and (max-width: 450px) {
     justify-content: center;
     padding: 4em 0.5em;
+  } */
+`;
+const MediaScreen = styled.div`
+  @media screen and (${theme.md_min_1024}) {
+    flex-basis: 30%;
+  }
+  @media screen and (${theme.sm_min_768}) {
+    flex-basis: 45%;
+  }
+  @media screen and (${theme.sx_min_425}) {
+    flex-basis: 95%;
   }
 `;

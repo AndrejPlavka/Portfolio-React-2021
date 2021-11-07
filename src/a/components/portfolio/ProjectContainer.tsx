@@ -2,7 +2,8 @@ import { ProjectType } from "../../PortfolioData";
 
 // styles
 import { Link } from "react-router-dom";
-import { light } from "./PortfolioAppTheme";
+
+import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 
 interface Props {
@@ -52,7 +53,7 @@ export const ProjectContainer = (props: Props) => {
 const DivProject = styled.div`
   display: flex;
   flex-direction: column;
-  flex-basis: 30%;
+  width: 90%;
   height: 20em;
   padding: 0 0.5em;
   margin-bottom: 2em;
@@ -62,14 +63,15 @@ const DivProject = styled.div`
   :hover {
     transform: translateY(-7px);
   }
-  @media screen and (max-width: 1128px) {
+  //!!!!!!!!!!!!!!!!!!!!! flex-basis => width
+  @media screen and (${theme.md_min_1024}) {
+    flex-basis: 30%;
+  }
+  @media screen and (${theme.sm_min_768}) {
     flex-basis: 45%;
   }
-  @media screen and (max-width: 780px) {
-    flex-basis: 92%;
-  }
-  @media screen and (max-width: 450px) {
-    flex-basis: 100%;
+  @media screen and (${theme.sx_min_425}) {
+    flex-basis: 95%;
   }
 `;
 
@@ -109,12 +111,18 @@ const LinkDemo = styled(Link)`
 const DivContent = styled.div`
   background: gray;
   flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
   padding: 0.6em;
-  border-radius: 2.5px;
+  border-radius: 2px;
+  /* text-align: center; */
   p {
     font-size: 1.2em;
+    opacity: 0.65;
     &:hover {
-      color: gray;
+      opacity: 1;
     }
   }
 `;

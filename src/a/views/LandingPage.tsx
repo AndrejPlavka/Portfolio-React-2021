@@ -14,7 +14,7 @@ import styled from "styled-components/macro";
 export const LandingPage = () => {
   // Template:
   return (
-    <DivHome>
+    <DivMain>
       <motion.div
         className="div"
         initial="start"
@@ -26,21 +26,20 @@ export const LandingPage = () => {
         <Intro />
         <ProjectPreview />
       </motion.div>
-    </DivHome>
+    </DivMain>
   );
 };
 
 // Styled components:
-const DivHome = styled.div`
+const DivMain = styled.div`
   display: flex;
-  flex-direction: column;
-  align-content: center;
-  height: 100%;
+  align-items: center;
+  min-height: 100vh;
   width: 100%;
   .div {
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
   }

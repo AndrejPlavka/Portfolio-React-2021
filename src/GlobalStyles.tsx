@@ -8,9 +8,12 @@ export const theme = {
   xl_min_1600: "min-width: 1600px",
   // fonts:
   tinyFont: 100,
-  // colors:
-  grey: "#777",
+  // Colors:
+  // Portfolio:
+  intro_bg_w: "white",
+  shadow_intro_s: "0 3px 5px -3px rgba(57, 63, 72, 0.3)",
   primaryBackground: "#fefefe",
+  opacity_m: "0.65",
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -37,11 +40,11 @@ export const GlobalStyle = createGlobalStyle`
       color: #000000;
       font-family: 'Roboto','Source Sans Pro', sans-serif;
       
-      /* font-size:14px;
+      font-size:10px;
       line-height:1.4;
-
+       
       @media screen and (${theme.sx_min_425}){
-          font-size:16px;
+          font-size:15px;
       }
 
       @media screen and (${theme.sm_min_768}){
@@ -57,7 +60,7 @@ export const GlobalStyle = createGlobalStyle`
       }
       @media screen and (${theme.xl_min_1600}){
           font-size:20px;
-      } */
+      } 
       /* h1 { font-size: 2.4rem;}
       h2 { font-size: 2rem; }
       h3 { font-size: 1.6rem; }

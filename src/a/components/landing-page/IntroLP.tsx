@@ -1,4 +1,6 @@
+import { theme } from "../../../GlobalStyles";
 import PP from "../../../img/PP.jpg";
+import PPC from "../../../img/PPC.png";
 import ProfilePicture from "../../../img/ProfilePicture.png";
 import React from "react";
 import styled from "styled-components/macro";
@@ -6,32 +8,28 @@ import styled from "styled-components/macro";
 export const Intro = () => {
   return (
     <DivMain>
-      <DivIntroSection>
-        <DivContent>
-          {/* <div>
-          <img src={ProfilePicture} alt="bratislava" />
-        </div> */}
-
-          <DivText>
-            <h1>{"Hi, I'm Andrej."}</h1>
-            <h3>
-              {"I am a fromer mechanical engineer & present"}
-              <span>{" front-end web <developer>"}</span>
-              {" currently based in Bratislava, Slovakia."}
-            </h3>
-            <p>
-              {"Lets create some"} <span>{" practical "}</span>
-              {"&"} <span>{"uniqe"}</span>
-              {" projets "}
-              <span>{"togather"}</span>
-            </p>
-          </DivText>
-          <div>
-            <img src={PP} alt="bratislava" />
-          </div>
-        </DivContent>
-      </DivIntroSection>
-      {/* <DivPreviewSection></DivPreviewSection> */}
+      <DivContent>
+        <DivText>
+          <h1>{"Hi, I'm Andrej."}</h1>
+          <h3>
+            {"I am a fromer mechanical engineer & present"}
+            <span>{" front-end web <developer>"}</span>
+            {" currently based in Bratislava, Slovakia."}
+          </h3>
+          <h4>
+            {"Lets create some"} <span>{" practical "}</span>
+            {"&"} <span>{"uniqe"}</span>
+            {" projets "}
+            <span>{"togather"}</span>
+          </h4>
+        </DivText>
+        <DivImgMain>
+          <DivImg>
+            <img className="img" src={PP} alt="profile_picture" />
+            {/* <img className="img" src={PPC} alt="bratislava" /> */}
+          </DivImg>
+        </DivImgMain>
+      </DivContent>
     </DivMain>
   );
 };
@@ -45,45 +43,45 @@ const DivMain = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-`;
-const DivIntroSection = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
-  background: white;
+  box-shadow: ${theme.shadow_intro_s};
+  background: ${theme.intro_bg_w};
 `;
 const DivContent = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
   align-items: center;
-  max-width: 1300px;
-  width: 100%;
-  max-height: 100vh;
-  padding: 6em 3em 0;
+  width: 95%;
+  height: 100%;
+  padding: 5em 0 0;
+  //max-width: 1300px;
+  //width: 100%;
+  //max-height: 100vh;
+  //padding: 6em 3em 0;
+  //@media screen and (max-width: 1128px) {
+  //  padding: 5em 3em;
+  //}
+  //@media screen and (max-width: 450px) {
+  //  padding: 4em 1.2em;
+  //  flex-direction: column;
+  //}
+`;
+const DivImgMain = styled.div`
+  display: flex;
+  align-items: flex-end;
+  width: 90%;
+  max-width: 640px;
+`;
 
-  div {
-    display: flex;
-    width: 500px;
-    height: 100%;
-    img {
-      background: transparent;
-      left: 0;
-      position: relative;
-      bottom: 0;
-      max-width: 100%;
-      height: auto !important;
-    }
-  }
-  @media screen and (max-width: 1128px) {
-    padding: 5em 3em;
-  }
-  @media screen and (max-width: 450px) {
-    padding: 4em 1.2em;
-    flex-direction: column;
+const DivImg = styled.div`
+  position: relative;
+  width: 200px; //auto
+  height: 220px; //100%
+  margin: 0 auto;
+  overflow: hidden;
+  .img {
+    max-width: 100%;
+    max-height: auto;
   }
 `;
 
@@ -91,29 +89,32 @@ const DivText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: flex-start;
-  align-items: flex-start;
-  width: 40%;
+  align-items: center;
+  align-content: center;
+  width: 90%;
+  text-align: center;
+  /* text-justify: inter-character; */
+  /* text-align: center; */
   span {
     color: black;
     font-weight: 400;
   }
 
   h1 {
-    font-size: 5em;
+    font-size: 3.5em;
     background: transparent;
-    margin-bottom: 30px;
+    margin-bottom: 1em;
   }
 
   h3 {
     color: gray;
     font-size: 2em;
     font-weight: 300;
-    margin-bottom: 30px;
+    margin-bottom: 1.5em;
   }
-  p {
+  h4 {
     color: gray;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 300;
   }
 `;
