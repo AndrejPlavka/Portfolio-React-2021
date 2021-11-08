@@ -3,6 +3,7 @@ import { projects } from "../../PortfolioData";
 import React from "react";
 
 // Styles:
+import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 
 // Component:
@@ -37,7 +38,19 @@ const DivProjectsList = styled.div`
   max-width: 1300px;
   width: 100%;
   padding: 6em 3em;
-  @media screen and (max-width: 1128px) {
+  /* 
+  @media screen and (${theme.sx_min_425}) {
+    width: 80%;
+  } 
+  @media screen and (${theme.sm_min_768}) {
+    flex-basis: 45%;
+  }
+  @media screen and (${theme.md_min_1024}) {
+    flex-basis: 30%;
+  }
+  
+  */
+  /* @media screen and (max-width: 1128px) {
     padding: 5em 3em;
   }
   @media screen and (max-width: 780px) {
@@ -46,7 +59,7 @@ const DivProjectsList = styled.div`
   @media screen and (max-width: 450px) {
     justify-content: center;
     padding: 4em 0.5em;
-  }
+  } */
 `;
 
 // // grid

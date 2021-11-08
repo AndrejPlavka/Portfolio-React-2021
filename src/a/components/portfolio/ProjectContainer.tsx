@@ -27,7 +27,7 @@ export const ProjectContainer = (props: Props) => {
   return (
     <DivProject>
       <DivHeader>
-        <h2>{project.name}</h2>
+        <h3>{project.name}</h3>
         <div>
           {Demo}
           {GitHub}
@@ -64,14 +64,17 @@ const DivProject = styled.div`
     transform: translateY(-7px);
   }
   //!!!!!!!!!!!!!!!!!!!!! flex-basis => width
-  @media screen and (${theme.md_min_1024}) {
-    flex-basis: 30%;
+
+  @media screen and (${theme.sx_min_425}) {
+    width: 80%;
   }
   @media screen and (${theme.sm_min_768}) {
-    flex-basis: 45%;
+    /* flex-basis: 45%; */
+    width: 45%;
   }
-  @media screen and (${theme.sx_min_425}) {
-    flex-basis: 95%;
+  @media screen and (${theme.md_min_1024}) {
+    width: 30%;
+    height: 20em;
   }
 `;
 
@@ -97,12 +100,15 @@ const AIcon = styled.a`
   &:hover {
     opacity: 1;
   }
+  @media screen and (${theme.md_min_1024}) {
+    width: 1.5em;
+  }
 `;
 const LinkDemo = styled(Link)`
   opacity: 0.5;
   color: black;
   text-decoration: none;
-  font-size: 1;
+  font-size: 0.8em;
   &:hover {
     opacity: 1;
   }
@@ -125,6 +131,11 @@ const DivContent = styled.div`
       opacity: 1;
     }
   }
+  @media screen and (${theme.md_min_1024}) {
+    p {
+      font-size: 1em;
+    }
+  }
 `;
 
 const DivFooter = styled.div`
@@ -141,6 +152,11 @@ const DivFooter = styled.div`
     opacity: 0.5;
     &:hover {
       opacity: 1;
+    }
+  }
+  @media screen and (${theme.md_min_1024}) {
+    div > div {
+      width: 1.55em;
     }
   }
 `;

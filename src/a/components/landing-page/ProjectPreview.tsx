@@ -8,7 +8,6 @@ import styled from "styled-components/macro";
 // Component:
 export const ProjectPreview = () => {
   if (!projects.length) return null;
-
   // Template - show only the last three projects:
   return (
     <DivMain>
@@ -40,7 +39,7 @@ const H2 = styled.h1`
   font-weight: 300;
   font-family: Roboto;
   text-transform: uppercase;
-  color: #746b6b;
+  color: ${theme.text_gr_l};
 `;
 
 const DivProjectsList = styled.div`
@@ -49,9 +48,23 @@ const DivProjectsList = styled.div`
   align-items: center;
   justify-content: space-between;
   max-width: 1300px;
-  width: 95%;
+  width: 80%;
   padding: 2em 0 4em;
 
+  @media screen and (${theme.sx_min_425}) {
+    max-width: 540px;
+  }
+  @media screen and (${theme.sm_min_768}) {
+    width: 70%;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+  }
+
+  @media screen and (${theme.md_min_1024}) {
+    /* flex-basis: 30%; */
+  }
   /* @media screen and (max-width: 1128px) {
     padding: 5em 3em;
   }
@@ -62,15 +75,4 @@ const DivProjectsList = styled.div`
     justify-content: center;
     padding: 4em 0.5em;
   } */
-`;
-const MediaScreen = styled.div`
-  @media screen and (${theme.md_min_1024}) {
-    flex-basis: 30%;
-  }
-  @media screen and (${theme.sm_min_768}) {
-    flex-basis: 45%;
-  }
-  @media screen and (${theme.sx_min_425}) {
-    flex-basis: 95%;
-  }
 `;

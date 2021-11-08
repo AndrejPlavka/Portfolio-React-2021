@@ -2,53 +2,55 @@ import PP from "../../../img/PP.jpg";
 import React from "react";
 
 // Syles
+import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 
 // Component
 export const AboutIntro = () => {
   // Template
   return (
-    <>
-      <DivMain>
-        <DivContent>
-          <DivText>
-            <h1>{"About."}</h1>
-            <h3>
-              {"I am a "}
-              <span>{"web <developer>"}</span>
-              {" currently based in Bratislava, Slovakia."}
-            </h3>
-            <p>
-              {"As a former "} <span>{"mechanical engineer, "}</span>
-              {"I like "} <span>{"functional "}</span>
-              {"and "}
-              <span>{"reliable "}</span>
-              {"construct. "}
-              <span>{"The Same apply "}</span>
-              {"for "}
-              <span>{"web design "}</span>
-              {"& "}
-              <span>{"development. "}</span>
-            </p>
+    <DivMain>
+      <DivContent>
+        <DivText>
+          <h1>{"About."}</h1>
+          <h3>
+            {"I am a "}
+            <span>{"web <developer>"}</span>
+            {" currently based in Bratislava, Slovakia."}
+          </h3>
+          <h4>
+            {"As a former "} <span>{"mechanical engineer, "}</span>
+            {"I like "} <span>{"functional "}</span>
+            {"and "}
+            <span>{"reliable "}</span>
+            {"construct. "}
+            <span>{"The Same apply "}</span>
+            {"for "}
+            <span>{"web design "}</span>
+            {"& "}
+            <span>{"development. "}</span>
+          </h4>
 
-            <p>
-              {
-                "If not behind a desk coding or maneuvering with pixels, you'll find me "
-              }
-              <span>{"hiking"}</span>
-              {", "}
-              <span>{"running "}</span>
-              {"around or "}
-              <span>{"working out "}</span>
-              {"somwhere."}
-            </p>
-          </DivText>
-          <DivImge className="img">
-            <img src={PP} alt="profile-picture" />
-          </DivImge>
-        </DivContent>
-      </DivMain>
-    </>
+          <h4>
+            {
+              "If not behind a desk coding or maneuvering with pixels, you'll find me "
+            }
+            <span>{"hiking"}</span>
+            {", "}
+            <span>{"running "}</span>
+            {"around or "}
+            <span>{"working out "}</span>
+            {"somwhere."}
+          </h4>
+        </DivText>
+        <DivImgMain>
+          <DivImg>
+            <img className="img" src={PP} alt="profile_picture" />
+            {/* <img className="img" src={PPC} alt="bratislava" /> */}
+          </DivImg>
+        </DivImgMain>
+      </DivContent>
+    </DivMain>
   );
 };
 
@@ -69,27 +71,71 @@ const DivMain = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-  box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
-  background: white;
+  box-shadow: ${theme.shadow_intro_l};
+  background: ${theme.intro_bg_w};
 `;
 const DivContent = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
   align-items: center;
-  max-width: 1300px;
-  width: 100%;
-  max-height: 90vh;
-  padding: 5em 3em 0;
+  width: 95%;
+  height: 100%;
+  padding: 5em 0 0;
 
-  @media screen and (max-width: 1020px) {
-    padding: 4em 3em 0;
-    flex-direction: column;
+  @media screen and (${theme.sx_min_425}) {
+    max-width: 540px;
   }
-  @media screen and (max-width: 450px) {
-    padding: 3em 1.2em 0;
-    flex-direction: column;
+  @media screen and (${theme.sm_min_768}) {
+    flex-flow: row nowrap;
+    justify-content: center;
+    max-width: 710px;
+    width: 90%;
+    text-align: left;
+  }
+  @media screen and (${theme.md_min_1024}) {
+    max-width: 800px;
+    padding: 3em 0 0;
+  }
+  @media screen and (${theme.lg_min_1200}) {
+    max-width: 1200px;
+    padding: 3em 0 0;
+  }
+`;
+
+const DivImgMain = styled.div`
+  display: flex;
+  align-items: flex-end;
+  width: 90%;
+  max-width: 640px;
+`;
+
+const DivImg = styled.div`
+  position: relative;
+  width: 200px; //auto
+  height: 220px; //100%
+  margin: 0 auto;
+  overflow: hidden;
+  .img {
+    max-width: 100%;
+    max-height: auto;
+  }
+
+  @media screen and (${theme.sx_min_425}) {
+    width: 300px;
+    height: 328px;
+  }
+  @media screen and (${theme.sm_min_768}) {
+    width: 340px;
+    height: 388px;
+  }
+  @media screen and (${theme.md_min_1024}) {
+    width: 416px;
+    height: 460px;
+  }
+  @media screen and (${theme.lg_min_1200}) {
+    width: 600px;
+    height: 680px;
   }
 `;
 
@@ -99,56 +145,53 @@ const DivText = styled.div`
   justify-content: center;
   align-content: flex-start;
   align-items: flex-start;
-  width: 40%;
-  padding: 0 0 6em;
+  width: 90%;
+  margin: 0 0 1em;
   span {
     color: black;
     font-weight: 400;
   }
 
   h1 {
-    font-size: 4em;
+    font-size: 3.4em;
     background: transparent;
-    margin-bottom: 30px;
+    /* margin-bottom: 1em; */
   }
 
   h3 {
-    color: gray;
+    color: ${theme.text_gr_l};
     font-size: 1.8em;
     font-weight: 300;
-    margin-bottom: 20px;
+    margin: 1em 0 0;
   }
-  p {
-    color: gray;
-    font-size: 1.5em;
+  h4 {
+    color: ${theme.text_gr_l};
+    font-size: 1.4em;
     font-weight: 300;
-    margin: 15px 0;
+    margin: 1em 0 0;
   }
-  @media screen and (max-width: 1020px) {
-    width: 70%;
-    padding: 0 0 1em;
-  }
-  @media screen and (max-width: 780px) {
-    width: 90%;
-  }
-`;
-const DivImge = styled.div`
-  display: flex;
-  width: 500px;
-  height: 100%;
-  /* height: 100%; */
-  img {
-    background: transparent;
-    left: 0;
-    position: relative;
-    bottom: 0;
+  @media screen and (${theme.sm_min_768}) {
+    flex-flow: column wrap;
+    justify-content: center;
     width: 100%;
-    height: auto;
+    text-align: left;
+    align-items: flex-start;
+    h3 {
+      font-size: 1.5em;
+    }
+    h4 {
+      font-size: 1em;
+    }
   }
-  @media screen and (max-width: 1020px) {
-    width: 40%;
+  @media screen and (${theme.md_min_1024}) {
   }
-  @media screen and (max-width: 780px) {
-    width: 60%;
+  @media screen and (${theme.lg_min_1200}) {
+    width: 85%;
+    h3 {
+      font-size: 1.8em;
+    }
+    h4 {
+      font-size: 1.3em;
+    }
   }
 `;

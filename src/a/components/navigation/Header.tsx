@@ -3,6 +3,7 @@ import { Sidebar } from "./Sidebar";
 import { header } from "../../PortfolioData";
 // Styles:
 import { Link } from "react-router-dom";
+import { theme } from "../../../GlobalStyles";
 import { useState } from "react";
 import styled from "styled-components/macro";
 // Component:
@@ -29,16 +30,15 @@ export const Navbar = () => {
 
 // Styled components
 const DivHeader = styled.header`
-  z-index: 100;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 4rem;
+  height: 3.2rem;
   width: 100%;
-  box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
-  /* box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3); */
-  @media (max-width: 780px) {
-    height: 3.5rem;
+  box-shadow: ${theme.shadow_intro_l};
+  @media screen and (${theme.sm_min_768}) {
+    height: 4rem;
   }
 `;
 
@@ -47,18 +47,17 @@ const DivContent = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* font-size: 24px; */
   width: 100%;
-  max-width: 1300px;
+  max-width: 1200px;
   padding: 0 3em;
-  @media screen and (max-width: 1128px) {
-    padding: 0 3em;
+
+  @media screen and (${theme.sx_min_425}) {
   }
-  @media screen and (max-width: 450px) {
-    padding: 0 1.7em;
+  @media screen and (${theme.sm_min_768}) {
   }
-  @media screen and (max-width: 375px) {
-    padding: 0 1em;
+  @media screen and (${theme.md_min_1024}) {
+  }
+  @media screen and (${theme.lg_min_1200}) {
   }
 `;
 
@@ -67,6 +66,7 @@ const DivLogoSection = styled.div`
   justify-content: flex-start;
   align-items: center;
 `;
+
 const LinkLogo = styled(Link)`
   color: inherit;
   text-decoration: none;
@@ -76,10 +76,6 @@ const LinkLogo = styled(Link)`
   font-size: 3.5em;
   margin: none;
   padding: none;
-  background-color: green;
-  /* @media screen and (max-width: 780px) {
-    font-size: 2.5em;
-  } */
 `;
 
 const DivNavbarSection = styled.div`

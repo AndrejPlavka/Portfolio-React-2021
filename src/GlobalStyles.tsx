@@ -11,7 +11,10 @@ export const theme = {
   // Colors:
   // Portfolio:
   intro_bg_w: "white",
-  shadow_intro_s: "0 3px 5px -3px rgba(57, 63, 72, 0.3)",
+  text_gr_l: "#7a7a7a",
+  text_bl_s: "black",
+  shadow_intro_l: "0 3px 5px -3px rgba(57, 63, 72, 0.3)",
+  shadow_intro_s: "0px -1px 7px -2px rgba(0, 0, 0, 0.5)",
   primaryBackground: "#fefefe",
   opacity_m: "0.65",
 };
@@ -44,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
       line-height:1.4;
        
       @media screen and (${theme.sx_min_425}){
-          font-size:15px;
+          font-size:14px;
       }
 
       @media screen and (${theme.sm_min_768}){

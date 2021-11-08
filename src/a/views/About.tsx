@@ -63,14 +63,12 @@ export const About = () => {
 // e.g.: backdrop-filter: blur(5px) makes backround blury
 const DivMain = styled.div`
   display: flex;
-  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   .div {
     display: flex;
-    /* align-content: center; */
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -94,12 +92,9 @@ const DivContent = styled.div`
   max-width: 1300px;
   padding: 6em 3em;
   text-align: center;
-
-  /* background: lightcoral; */
   h2 {
     font-size: 4em;
     padding: 2em 0.6em 1em;
-    /* margin: 2em 0.6 */
   }
   div {
     display: flex;

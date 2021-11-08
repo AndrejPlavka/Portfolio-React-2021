@@ -1,5 +1,6 @@
 // Styles:
 import { light } from "../portfolio/PortfolioAppTheme";
+import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 
 export const Footer = () => {
@@ -26,11 +27,11 @@ const DivFooter = styled.footer`
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 6em;
+  height: 4.5em;
   background: white;
-  box-shadow: 0px -1px 7px -2px rgba(0, 0, 0, 0.5);
-  @media (max-width: 780px) {
-    height: 4em;
+  box-shadow: ${theme.shadow_intro_s};
+  @media screen and (${theme.sm_min_768}) {
+    height: 4rem;
   }
 `;
 const DivContent = styled.div`
@@ -41,14 +42,13 @@ const DivContent = styled.div`
   flex-basis: 100%;
   max-width: 1300px;
   padding: 0 3em;
-  @media screen and (max-width: 1128px) {
-    padding: 0 3em;
+  @media screen and (${theme.sx_min_425}) {
   }
-  @media screen and (max-width: 450px) {
-    padding: 0 1.7em;
+  @media screen and (${theme.sm_min_768}) {
   }
-  @media screen and (max-width: 450px) {
-    padding: 0 1.5em;
+  @media screen and (${theme.md_min_1024}) {
+  }
+  @media screen and (${theme.lg_min_1200}) {
   }
 `;
 const AFooterLink = styled.a`
@@ -56,7 +56,7 @@ const AFooterLink = styled.a`
   font-family: Roboto;
   font-size: 1.2em;
   font-weight: 300;
-  color: ${light.crlfg};
+  color: ${theme.text_gr_l};
   @media screen and (max-width: 780px) {
     font-size: 1em;
   }

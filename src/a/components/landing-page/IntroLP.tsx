@@ -43,7 +43,7 @@ const DivMain = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-  box-shadow: ${theme.shadow_intro_s};
+  box-shadow: ${theme.shadow_intro_l};
   background: ${theme.intro_bg_w};
 `;
 const DivContent = styled.div`
@@ -54,23 +54,31 @@ const DivContent = styled.div`
   width: 95%;
   height: 100%;
   padding: 5em 0 0;
-  //max-width: 1300px;
-  //width: 100%;
-  //max-height: 100vh;
-  //padding: 6em 3em 0;
-  //@media screen and (max-width: 1128px) {
-  //  padding: 5em 3em;
-  //}
-  //@media screen and (max-width: 450px) {
-  //  padding: 4em 1.2em;
-  //  flex-direction: column;
-  //}
+
+  @media screen and (${theme.sx_min_425}) {
+    max-width: 540px;
+  }
+  @media screen and (${theme.sm_min_768}) {
+    flex-flow: row nowrap;
+    justify-content: center;
+    max-width: 710px;
+    width: 90%;
+    text-align: left;
+  }
+  @media screen and (${theme.md_min_1024}) {
+    max-width: 800px;
+    padding: 3em 0 0;
+  }
+  @media screen and (${theme.lg_min_1200}) {
+    max-width: 1200px;
+    padding: 3em 0 0;
+  }
 `;
 const DivImgMain = styled.div`
   display: flex;
   align-items: flex-end;
   width: 90%;
-  max-width: 640px;
+  max-width: 640px; /// !!!!!!!!! check with min 1200 later
 `;
 
 const DivImg = styled.div`
@@ -82,6 +90,23 @@ const DivImg = styled.div`
   .img {
     max-width: 100%;
     max-height: auto;
+  }
+
+  @media screen and (${theme.sx_min_425}) {
+    width: 300px;
+    height: 328px;
+  }
+  @media screen and (${theme.sm_min_768}) {
+    width: 340px;
+    height: 388px;
+  }
+  @media screen and (${theme.md_min_1024}) {
+    width: 416px;
+    height: 460px;
+  }
+  @media screen and (${theme.lg_min_1200}) {
+    width: 600px;
+    height: 680px;
   }
 `;
 
@@ -96,26 +121,49 @@ const DivText = styled.div`
   /* text-justify: inter-character; */
   /* text-align: center; */
   span {
-    color: black;
+    color: ${theme.text_bl_s};
     font-weight: 400;
   }
 
   h1 {
-    font-size: 3.5em;
+    font-size: 3.4em;
     background: transparent;
-    margin-bottom: 1em;
   }
 
   h3 {
-    color: gray;
+    color: ${theme.text_gr_l};
     font-size: 2em;
     font-weight: 300;
-    margin-bottom: 1.5em;
+    margin: 1em 0;
   }
   h4 {
-    color: gray;
+    color: ${theme.text_gr_l};
     font-size: 1.5em;
     font-weight: 300;
+  }
+  @media screen and (${theme.sm_min_768}) {
+    flex-flow: column wrap;
+    justify-content: center;
+    width: 100%;
+    text-align: left;
+    align-items: flex-start;
+    h3 {
+      font-size: 1.5em;
+    }
+    h4 {
+      font-size: 1em;
+    }
+  }
+  @media screen and (${theme.md_min_1024}) {
+  }
+  @media screen and (${theme.lg_min_1200}) {
+    width: 85%;
+    h3 {
+      font-size: 1.8em;
+    }
+    h4 {
+      font-size: 1.3em;
+    }
   }
 `;
 // const DivInfoContent = styled.div`
