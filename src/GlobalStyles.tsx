@@ -13,6 +13,9 @@ export const theme = {
   intro_bg_w: "white",
   text_gr_l: "#7a7a7a",
   text_bl_s: "black",
+  text_w_l: "white",
+  focus_gr_l: "lightgray",
+  color_purple: "rgb(120, 81, 169)",
   shadow_intro_l: "0 3px 5px -3px rgba(57, 63, 72, 0.3)",
   shadow_intro_s: "0px -1px 7px -2px rgba(0, 0, 0, 0.5)",
   shadow_box_l:

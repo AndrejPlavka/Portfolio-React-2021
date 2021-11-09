@@ -8,6 +8,7 @@ import {
   transition,
 } from "../animations/animations";
 import { motion } from "framer-motion";
+import { theme } from "../../GlobalStyles";
 import styled from "styled-components/macro";
 
 // component:
@@ -38,7 +39,7 @@ export const Contact = () => {
             <DivTextSection>
               <h1>Contact.</h1>
               <h2>
-                Would you like to work on project together? Just email me!
+                Would you like to work on a project together? Just email me!
               </h2>
               <p>
                 {quoteText}
@@ -88,13 +89,12 @@ export const Contact = () => {
 const DivMain = styled.div`
   display: flex;
   justify-content: center;
-  flex-direction: column;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   .div {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 100%;
   }
@@ -103,96 +103,88 @@ const DivInfoSection = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100vh;
-  box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
+  min-height: 100vh;
+  box-shadow: ${theme.shadow_intro_l};
 `;
 const DivInfoContent = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  max-width: 1300px;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  max-width: 1200px;
   width: 100%;
-  padding: 3em 3em;
-  @media screen and (max-width: 1128px) {
-    padding: 5em 3em;
-  }
-  @media screen and (max-width: 450px) {
-    padding: 4em 1.2em;
-    flex-direction: column;
+  padding: 5em 3em;
+  @media screen and (${theme.sx_min_425}) {
+    align-items: center;
   }
 `;
 // Text area:  *****************************
 const DivTextSection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: stretch;
-  align-content: stretch;
-  flex-wrap: wrap;
-  padding: 1em 0 3em 0;
-  text-align: center;
-  line-height: 1.5;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 1.5em;
+  text-align: left;
+  margin: 0 0 2em;
   h1 {
+    width: 100%;
     font-size: 4.5em;
-    margin: 0 0 30px;
+    margin: 0 0 1em;
   }
   h2 {
     margin-bottom: 0.5em;
     font-size: 2.25em;
     font-family: Roboto;
     font-weight: 300;
-    margin: 0 0 20px;
+    margin: 0 0 1em;
   }
   p {
-    text-align: center;
     font-weight: 300;
-    font-size: 1.25em;
+    font-size: 1.4em;
   }
-  @media screen and (max-width: 450px) {
-    padding: 0 0.6em;
-    h1 {
-      font-size: 3em;
-    }
-    h2 {
-      font-size: 2em;
-    }
-    p {
-      font-size: 1.25em;
-    }
+  @media screen and (${theme.sx_min_425}) {
+    max-width: 540px;
   }
-  @media screen and (max-width: 375px) {
-    padding: 0 0.6em;
+  @media screen and (${theme.sm_min_768}) {
+    max-width: 800px;
+    text-align: center;
+  }
+  @media screen and (${theme.md_min_1024}) {
+    max-width: 1200px;
+    text-align: center;
+  }
+  @media screen and (${theme.lg_min_1200}) {
   }
 `;
 // Links area *****************************
 const DivLinksSection = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  padding: 1em 0 1em 0;
+  align-content: center;
+  width: 100%;
+  padding: 1em 0;
+  @media screen and (${theme.sx_min_425}) {
+    max-width: 540px;
+  }
+  @media screen and (${theme.sm_min_768}) {
+    min-width: 100%;
+  }
 `;
 
 const DivLink = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  align-content: center;
-  height: 5em;
-  padding: 0 0.6em;
-  @media screen and (max-width: 375px) {
-    flex-basis: 100%;
-    align-items: center;
-  }
-  /* margin-bottom: 2em; */
+  align-items: center;
+  width: 48%;
+  margin: 1em 0;
   a {
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    align-content: center;
-    flex-basis: 100%;
+    width: auto;
+    height: 100%;
     text-decoration: none;
     cursor: pointer;
     :hover {
@@ -201,26 +193,25 @@ const DivLink = styled.div`
       transform: translateY(3px);
     }
   }
+  @media screen and (${theme.sm_min_768}) {
+    width: auto;
+    justify-content: center;
+    a {
+      justify-content: center;
+    }
+  }
 `;
 
 const DivA = styled.div`
-  width: 60px;
-  height: 60px;
+  display: flex;
+  width: 4em;
+  height: 100%;
   margin: 0 1em 0 0;
-  @media screen and (max-width: 780px) {
-    width: 40px;
-    height: 40px;
-    margin: 0 0.5em 0 0;
-  }
 `;
 const DivB = styled.div`
-  font-size: 1.5em;
-  line-height: 2;
+  font-size: 1.6em;
+  line-height: 2em;
   color: black;
-  @media screen and (max-width: 780px) {
-    font-size: 1.2em;
-    line-height: 1.6;
-  }
 `;
 // Contact form section ******************************************************************
 const DivCFSection = styled.div`

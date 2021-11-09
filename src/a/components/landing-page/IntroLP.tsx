@@ -12,7 +12,7 @@ export const Intro = () => {
         <DivText>
           <h1>{"Hi, I'm Andrej."}</h1>
           <h3>
-            {"I am a fromer mechanical engineer & present"}
+            {"I am a former mechanical engineer & present"}
             <span>{" front-end web <developer>"}</span>
             {" currently based in Bratislava, Slovakia."}
           </h3>
@@ -118,8 +118,6 @@ const DivText = styled.div`
   align-content: center;
   width: 90%;
   text-align: center;
-  /* text-justify: inter-character; */
-  /* text-align: center; */
   span {
     color: ${theme.text_bl_s};
     font-weight: 400;

@@ -1,4 +1,5 @@
 import { IconScrollUp } from "../../assets/icons";
+import { theme } from "../../../GlobalStyles";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/macro";
 
@@ -44,15 +45,16 @@ const DivScrollButtonConteiner = styled.div`
   align-items: center;
   flex-direction: row;
   flex-basis: 100%;
-  max-width: 1600px;
-  padding: 0 0.5em;
+  max-width: 1500px;
+  padding: 0.5em;
+
   button {
     background: transparent;
     z-index: 100;
     display: flex;
     align-content: center;
     position: fixed;
-    bottom: 25px; /* Place the button at the bottom of the page */
+    bottom: 0.25em; /* Place the button at the bottom of the page */
     border: none;
     outline: none;
     transition: transform 0.2s linear;
@@ -64,12 +66,12 @@ const DivScrollButtonConteiner = styled.div`
       transform: translateY(-7px);
       opacity: 1;
     }
-    @media (max-width: 760px) {
-      bottom: 8px;
+    @media screen and (${theme.sm_min_768}) {
+      bottom: 0.6em;
     }
   }
-  @media screen and (max-width: 1128px) {
-    padding: 0.5em;
+  @media screen and (${theme.md_min_1024}) {
+    padding: 0 0.5em;
   }
   // display: flex;
   // align-content: center;

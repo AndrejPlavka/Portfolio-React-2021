@@ -3,6 +3,7 @@ import { useReducer, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
 // styles:
+import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 // emailjs:
 // emailjs.init("user_9NtwDnwudSGy35LXjGYNh");
@@ -99,7 +100,7 @@ export const ContactForm = (props: Props) => {
 
   return formSubmitted.title === "" ? (
     <DivMain>
-      <h3>Send me a message</h3>
+      <h2>Send me a message</h2>
       {!showCaptcha ? (
         <Form onSubmit={submitFormAndShowCaptcha}>
           <DivContent>
@@ -171,31 +172,19 @@ export const ContactForm = (props: Props) => {
 //Styled components:
 const DivMain = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  flex-flow: column nowrap;
   justify-content: center;
-  max-width: 1300px;
+  max-width: 1200px;
   width: 100%;
-  padding: 5em 3.6em 6em;
+  padding: 5em 3em;
   font-family: Roboto;
-  h3 {
-    margin: 20px auto;
+  h2 {
+    margin: 1em auto;
     font-family: Roboto;
-    font-size: 2.5em;
+    font-size: 2.25em;
     font-weight: 300;
-    color: white;
+    color: ${theme.text_w_l};
     text-transform: uppercase;
-  }
-  @media screen and (max-width: 1128px) {
-    padding: 4em 3em;
-  }
-  @media screen and (max-width: 450px) {
-    padding: 4em 1.2em;
-    flex-direction: column;
-  }
-  h3 {
-    font-size: 2em;
-    font-weight: 300;
   }
 `;
 
@@ -204,36 +193,55 @@ const DivAlert = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-content: center;
   margin: auto;
-  max-width: 880px;
-  height: 450px;
+  max-width: 400px;
+  height: auto;
   padding: 0;
+  h3 {
+    font-size: 2em;
+  }
+  p {
+    font-size: 1.5em;
+  }
 `;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: center;
 `;
 
 const DivContent = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  column-gap: 30px;
-  @media screen and (max-width: 600px) {
+  align-items: center;
+  align-self: center;
+  width: 100%;
+  @media screen and (${theme.sx_min_425}) {
+    width: 75%;
+  }
+  @media screen and (${theme.sm_min_768}) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    width: 85%;
+  }
+  @media screen and (${theme.md_min_1024}) {
+  }
+  /* @media screen and (max-width: 600px) {
     flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
     column-gap: 0px;
-  }
+  } */
 `;
 
 const DivContentData = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   div {
     display: flex;
@@ -241,161 +249,116 @@ const DivContentData = styled.form`
     justify-content: flex-start;
     label {
       position: absolute;
-      font-size: 1.25em;
+      font-size: 1.2em;
       font-weight: 300;
-      padding: 1.3rem 30px 1rem 30px;
+      padding: 1.25em 1em;
       -webkit-transition: all 0.25s ease;
       transition: all 0.25s ease;
       pointer-events: none;
     }
 
     input {
-      padding: 1.3rem 30px;
-      outline: none;
-      font-size: 1.25em;
+      font-size: 1.2em;
       font-weight: 300;
+      padding: 1.25em 1em;
       border: 1px solid black;
       border-radius: 2px;
       :focus ~ label {
-        outline: none;
-        padding: 0.5rem 30px;
-        font-size: 0.75em;
-        color: black;
+        padding: 0.65em 1.8em;
+        font-size: 0.7em;
+        color: ${theme.text_bl_s};
         -webkit-transition: all 0.225s ease;
         transition: all 0.225s ease;
       }
       :valid ~ label {
-        outline: none;
-        padding: 0.5rem 30px;
-        font-size: 0.75em;
-        color: black;
+        padding: 0.65em 1.8em;
+        font-size: 0.7em;
+        color: ${theme.text_bl_s};
         -webkit-transition: all 0.225s ease;
         transition: all 0.225s ease;
       }
 
       :focus {
-        background: lightgray;
+        background: ${theme.focus_gr_l};
         -webkit-transition: all 0.225s ease;
         transition: all 0.225s ease;
       }
       :hover {
-        background: lightgray;
+        background: ${theme.focus_gr_l};
       }
     }
   }
-  /* @media screen and (max-width: 600px) {
-    div {
-      label {
-        font-size: 1.25em;
-        font-weight: 300;
-        padding: 1.3rem 30px 1rem 30px;
-      }
-      input {
-        padding: 1.3rem 30px;
-        font-size: 1.25em;
-        font-weight: 300;
-        :focus ~ label {
-          padding: 0.5rem 30px;
-          font-size: 0.75em;
-        }
-        :valid ~ label {
-          padding: 0.5rem 30px;
-          font-size: 0.75em;
-        }
-      }
-    }
-  } */
+  @media screen and (${theme.sm_min_768}) {
+    justify-content: space-between;
+    height: 100%;
+  }
 `;
 const DivContentMessage = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  height: 100%;
   width: 100%;
   div {
     display: flex;
     flex-direction: column;
     label {
-      font-size: 1.25em;
-      font-weight: 300;
       position: absolute;
-      padding: 1.3rem 30px 1rem 30px;
+      font-size: 1.2em;
+      font-weight: 300;
+      padding: 1.25em 1em;
       -webkit-transition: all 0.25s ease;
       transition: all 0.25s ease;
       pointer-events: none;
     }
     textarea {
-      font-size: 1.25em;
+      font-size: 1.2em;
       font-weight: 300;
-      height: 120px;
-      padding: 2rem 30px 1rem 30px;
+      height: 6em;
+      padding: 1.25em 1em;
       border: 1px solid black;
       border-radius: 2px;
       :focus ~ label {
-        padding: 1rem 30px 1rem 30px;
-        font-size: 0.75em;
-        color: #999;
+        padding: 0.65em 1.8em;
+        font-size: 0.7em;
+        color: ${theme.text_bl_s};
         -webkit-transition: all 0.225s ease;
         transition: all 0.225s ease;
       }
       :valid ~ label {
-        padding: 1rem 30px 1rem 30px;
-        font-size: 0.75em;
-        color: #999;
+        padding: 0.65em 1.8em;
+        font-size: 0.7em;
+        color: ${theme.text_bl_s};
         -webkit-transition: all 0.225s ease;
         transition: all 0.225s ease;
       }
       :focus {
-        background: lightgray;
+        background: ${theme.focus_gr_l};
         -webkit-transition: all 0.225s ease;
         transition: all 0.225s ease;
         outline: none;
       }
       :hover {
-        background: lightgray;
+        background: ${theme.focus_gr_l};
       }
     }
   }
-  /* @media screen and (max-width: 600px) {
-    div {
-      label {
-        font-size: 1.25em;
-        font-weight: 300;
-        position: absolute;
-        padding: 1.3rem 30px 1rem 30px;
-      }
-      textarea {
-        font-size: 1.25em;
-        font-weight: 300;
-        padding: 2rem 30px 1rem 30px;
-        :focus ~ label {
-          padding: 1rem 30px 1rem 30px;
-          font-size: 0.75em;
-        }
-        :valid ~ label {
-          padding: 1rem 30px 1rem 30px;
-          font-size: 0.75em;
-        }
-      }
-    } */
 `;
 
 const DivSubmit = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 30px;
-  justify-content: flex-end;
+  align-self: center;
+  margin: 1em 0 0;
+  width: 100%;
   button {
-    width: 20%;
-    height: 3em;
+    width: 100%;
+    font-size: 2em;
+    height: 2.5em;
     text-align: center;
-    font-size: 1.5em;
     border: 1px solid black;
     border-radius: 2px;
-    outline: none;
-    background: rgb(120, 81, 169);
-    color: white;
+    background: ${theme.color_purple};
+    color: ${theme.text_w_l};
     opacity: 0.65;
     :hover {
       opacity: 1;
@@ -404,10 +367,33 @@ const DivSubmit = styled.div`
     }
   }
   p {
-    margin: 30px auto;
+    margin: 1em auto;
     font-size: 1.5em;
     font-weight: 300;
     color: lightcoral;
+  }
+  @media screen and (${theme.sx_min_425}) {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 75%;
+    button {
+      width: 25%;
+      height: 2em;
+      font-size: 1.5em;
+      text-align: center;
+    }
+    p {
+      margin: 0 auto;
+      font-size: 1.5em;
+      font-weight: 300;
+      color: lightcoral;
+    }
+  }
+  @media screen and (${theme.sm_min_768}) {
+    width: 85%;
+  }
+  @media screen and (${theme.md_min_1024}) {
   }
   /* @media screen and (max-width: 450px) {
     display: flex;
