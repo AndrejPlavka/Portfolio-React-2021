@@ -330,40 +330,59 @@ export const IconLinkedIn = (props) => {
 // General page icons ************************************************************************
 // icons8
 export const IconMenu = (props) => {
+  // return (
+  //   <svg
+  //     xmlns="http://www.w3.org/2000/svg"
+  //     version="1.1"
+  //     data-icon="menu"
+  //     data-container-transform="translate(0 4)"
+  //     viewBox="0 0 32 40"
+  //     x="0px"
+  //     y="0px"
+  //   >
+  //     <path
+  //       d="M0 0v3h32v-3h-32zm0 10v3h32v-3h-32zm0 10v3h32v-3h-32z"
+  //       transform="translate(0 4)"
+  //     />
+  //   </svg>
+  // );
   return (
     <svg
-      fill="#000000"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 50 50"
-      width="100px"
-      height="100px"
+      version="1.1"
+      data-icon="menu"
+      data-container-transform="translate(0 1)"
+      viewBox="0 0 16 20"
+      x="0px"
+      y="0px"
     >
       <path
-        fill="none"
-        stroke="#000000"
-        strokeMiterlimit="10"
-        strokeWidth="2"
-        d="M50 25L0 25M50 10L0 10M0 40L50 40"
+        d="M0 0v2h16v-2h-16zm0 6v2h16v-2h-16zm0 6v2h16v-2h-16z"
+        transform="translate(0 3)"
       />
     </svg>
   );
 };
 
 export const IconDelete = (props) => {
+  // return (
+  //   <svg
+  //     xmlns="http://www.w3.org/2000/svg"
+  //     data-name="Layer 1"
+  //     viewBox="0 -8 64 80"
+  //   >
+  //     <path d="M56.88379,11.11621l-4-4a1.24954,1.24954,0,0,0-1.76758,0L32,26.23242,12.88379,7.11621a1.24954,1.24954,0,0,0-1.76758,0l-4,4a1.24954,1.24954,0,0,0,0,1.76758L26.23242,32,7.11621,51.11621a1.24954,1.24954,0,0,0,0,1.76758l4,4a1.24954,1.24954,0,0,0,1.76758,0L32,37.76758,51.11621,56.88379a1.24954,1.24954,0,0,0,1.76758,0l4-4a1.24954,1.24954,0,0,0,0-1.76758L37.76758,32,56.88379,12.88379A1.24954,1.24954,0,0,0,56.88379,11.11621Z" />
+  //   </svg>
+  // );
   return (
     <svg
-      fill="#000000"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 50 50"
-      width="100px"
-      height="100px"
+      viewBox="-1 -7 53 65.25"
+      fill="none"
     >
       <path
-        fill="none"
-        stroke="#000000"
-        strokeMiterlimit="10"
-        strokeWidth="2"
-        d="M7 7L43 43M43 7L7 43"
+        d="M48.7488 4.50943L44.9781 0.73877L24.7488 20.9681L4.51944 0.73877L0.748779 4.50943L20.9781 24.7388L0.748779 44.9681L4.51944 48.7388L24.7488 28.5094L44.9781 48.7388L48.7488 44.9681L28.5194 24.7388L48.7488 4.50943Z"
+        fill="black"
       />
     </svg>
   );

@@ -1,6 +1,6 @@
 // import { Navbar } from "./Navbar";
 import { Sidebar } from "./Sidebar";
-import { header } from "../../PortfolioData";
+import { header, navbar } from "../../PortfolioData";
 // Styles:
 import { Link } from "react-router-dom";
 import { theme } from "../../../GlobalStyles";
@@ -20,7 +20,9 @@ export const Navbar = () => {
           <LinkLogo to="/">{title}</LinkLogo>
         </DivLogoSection>
         <DivNavbarSection>
-          <button onClick={showSidebar}>X</button>
+          <button onClick={showSidebar}>
+            {sidebar ? navbar.close : navbar.open}
+          </button>
           <Sidebar sidebar={sidebar} />
         </DivNavbarSection>
       </DivContent>
@@ -38,7 +40,7 @@ const DivHeader = styled.header`
   width: 100%;
   box-shadow: ${theme.shadow_intro_l};
   @media screen and (${theme.sm_min_768}) {
-    height: 4rem;
+    height: 4.25rem;
   }
 `;
 
@@ -81,6 +83,12 @@ const LinkLogo = styled(Link)`
 const DivNavbarSection = styled.div`
   button {
     display: flex;
+    width: 2.5em;
+    height: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    align-items: center;
   }
   @media screen and (${theme.sm_min_768}) {
     button {

@@ -3,6 +3,8 @@ import { SidebarData } from "./components/navigation/SidebarData";
 import Pdf from "../a/documents/CV-Andrej plavka.pdf";
 // icon imports
 import {
+  IconArrowDown,
+  IconArrowUp,
   IconBadminton,
   IconBaking,
   IconBeer,
@@ -10,23 +12,22 @@ import {
   IconBootstrap,
   IconCSS2,
   IconCzech,
+  IconDelete,
   IconEducation,
   IconEnglish,
-  IconFB,
   IconFBC,
   IconGerman,
   IconGit,
   IconGitHub,
   IconHTML2,
   IconHiking,
-  IconIG,
   IconIGC,
   IconIcebathing,
   IconJS,
-  IconLinkedIn,
   IconLinkedInC,
   IconMailPlane2,
   IconMarkdown,
+  IconMenu,
   IconReact,
   IconRedux,
   IconRouter,
@@ -37,7 +38,6 @@ import {
   IconStyledComponent,
   IconTS,
   IconUdemy,
-  IconUdemyText,
   IconUkulele,
   IconWorkout,
 } from "./assets/icons";
@@ -80,6 +80,11 @@ const Slovak = <IconSlovak />;
 const Czech = <IconCzech />;
 const English = <IconEnglish />;
 const German = <IconGerman />;
+// Sidebar icons:
+const MenuOpen = <IconMenu />;
+const MenuClose = <IconDelete />;
+const ArrowUp = <IconArrowUp />;
+const ArrowDown = <IconArrowDown />;
 
 // Page Sections: *********************************************************
 const header = {
@@ -87,7 +92,12 @@ const header = {
   title: "AP.", // nahradit logom
   logo: "",
 };
-
+const navbar = {
+  open: MenuOpen,
+  close: MenuClose,
+  ArrowUp: ArrowUp,
+  ArrowDown: ArrowDown,
+};
 const footer = {
   text: "Andrej Plavka",
   homepage: "https://",
@@ -456,4 +466,5 @@ export {
   experiences,
   hobbies,
   languages,
+  navbar,
 };

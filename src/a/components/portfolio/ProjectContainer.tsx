@@ -95,7 +95,7 @@ const AIcon = styled.a`
   width: 1.7em;
   margin: 0 0 0 0.6em;
   opacity: 0.5;
-  color: black;
+  color: ${theme.color_bl_s};
   text-decoration: none;
   &:hover {
     opacity: 1;
@@ -106,7 +106,7 @@ const AIcon = styled.a`
 `;
 const LinkDemo = styled(Link)`
   opacity: 0.5;
-  color: black;
+  color: ${theme.color_bl_s};
   text-decoration: none;
   font-size: 0.8em;
   &:hover {
@@ -115,7 +115,7 @@ const LinkDemo = styled(Link)`
 `;
 
 const DivContent = styled.div`
-  background: gray;
+  background: ${theme.bg_gr_l};
   flex: 1;
   display: flex;
   flex-flow: row wrap;
