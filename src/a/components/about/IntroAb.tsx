@@ -79,9 +79,9 @@ const DivContent = styled.div`
   flex-flow: column nowrap;
   justify-content: flex-end;
   align-items: center;
-  width: 95%;
+  width: 100%;
   height: 100%;
-  padding: 5em 0 0;
+  padding: 5em 3em 0;
 
   @media screen and (${theme.sx_min_425}) {
     max-width: 540px;
@@ -90,7 +90,7 @@ const DivContent = styled.div`
     flex-flow: row nowrap;
     justify-content: center;
     max-width: 710px;
-    width: 90%;
+    /* width: 90%; */
     text-align: left;
   }
   @media screen and (${theme.md_min_1024}) {
@@ -145,7 +145,7 @@ const DivText = styled.div`
   justify-content: center;
   align-content: flex-start;
   align-items: flex-start;
-  width: 90%;
+  width: 100%;
   margin: 0 0 1em;
   span {
     color: black;
@@ -155,7 +155,6 @@ const DivText = styled.div`
   h1 {
     font-size: 3.4em;
     background: transparent;
-    /* margin-bottom: 1em; */
   }
 
   h3 {
@@ -184,6 +183,9 @@ const DivText = styled.div`
     }
   }
   @media screen and (${theme.md_min_1024}) {
+    h3 {
+      font-size: 1.45em;
+    }
   }
   @media screen and (${theme.lg_min_1200}) {
     width: 85%;

@@ -1,4 +1,4 @@
-import { ExpType, experiences } from "../../PortfolioData";
+import { HobbiesType, hobbies } from "../../PortfolioData";
 import React from "react";
 
 // Styles:
@@ -6,24 +6,25 @@ import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 
 interface Props {
-  experience: ExpType;
+  hobbie: HobbiesType;
 }
-
-export const Experiences = (props: Props) => {
-  const { experience } = props;
-  if (!experiences.length) return null;
+// Component:
+export const Hobbies = (props: Props) => {
+  const { hobbie } = props;
+  if (!hobbies.length) return null;
 
   // Template:
   return (
     <DivMain>
-      <div>{experience.img}</div>
-      <span>{experience.name}</span>
-      <br />
-      <p>{experience.text}</p>
+      <div>{hobbie.img}</div>
+      <span>{hobbie.name}</span>
+      <span>/</span>
+      <span>{hobbie.level}</span>
     </DivMain>
   );
 };
 
+// styled components:
 const DivMain = styled.div`
   display: flex;
   flex-flow: row nowrap;
@@ -39,16 +40,13 @@ const DivMain = styled.div`
   opacity: 0.65;
   div {
     display: flex;
-    width: 2.5em;
-    height: 2.5em;
+    width: 2em;
+    height: 100%;
     margin: 0 5px 0 0;
   }
   span {
     font-size: 1.25em;
     margin: 0 0.1em;
-  }
-  p {
-    display: none;
   }
   :hover {
     filter: grayscale(0%);

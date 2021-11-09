@@ -80,11 +80,11 @@ const LinkLogo = styled(Link)`
 
 const DivNavbarSection = styled.div`
   button {
-    display: none;
+    display: flex;
   }
-  @media screen and (max-width: 780px) {
+  @media screen and (${theme.sm_min_768}) {
     button {
-      display: flex;
+      display: none;
     }
   }
 `;

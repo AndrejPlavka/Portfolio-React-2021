@@ -3,16 +3,25 @@ import { SidebarData } from "./components/navigation/SidebarData";
 import Pdf from "../a/documents/CV-Andrej plavka.pdf";
 // icon imports
 import {
+  IconBadminton,
+  IconBaking,
+  IconBeer,
+  IconBook,
   IconBootstrap,
   IconCSS2,
+  IconCzech,
   IconEducation,
+  IconEnglish,
   IconFB,
   IconFBC,
+  IconGerman,
   IconGit,
   IconGitHub,
   IconHTML2,
+  IconHiking,
   IconIG,
   IconIGC,
+  IconIcebathing,
   IconJS,
   IconLinkedIn,
   IconLinkedInC,
@@ -21,12 +30,16 @@ import {
   IconReact,
   IconRedux,
   IconRouter,
+  IconRunning,
   IconSASS,
+  IconSlovak,
   IconStar,
   IconStyledComponent,
   IconTS,
   IconUdemy,
   IconUdemyText,
+  IconUkulele,
+  IconWorkout,
 } from "./assets/icons";
 
 // Project icons:
@@ -51,8 +64,22 @@ const Git = <IconGit />;
 const SASS = <IconSASS />;
 const Bootstrap = <IconBootstrap />;
 const University = <IconEducation />;
-const UdemyLogo = <IconUdemy />;
-const UdemyText = <IconUdemyText />;
+const Udemy = <IconUdemy />;
+// hobbies icons:
+const Hiking = <IconHiking />;
+const Workout = <IconWorkout />;
+const Runnig = <IconRunning />;
+const Badminton = <IconBadminton />;
+const Icebathing = <IconIcebathing />;
+const Ukulele = <IconUkulele />;
+const Baking = <IconBaking />;
+const Beer = <IconBeer />;
+const Books = <IconBook />;
+// languages icons:
+const Slovak = <IconSlovak />;
+const Czech = <IconCzech />;
+const English = <IconEnglish />;
+const German = <IconGerman />;
 
 // Page Sections: *********************************************************
 const header = {
@@ -86,12 +113,6 @@ export type ProjectType = {
   sourceCode: string;
   livePreview: string;
 };
-
-// export const PortfolioIntro = {
-//   tile: "Portfolio",
-//   intro: "Chceck out some of my latest work",
-//   text: "The portfolio currently consists of a selection of projects that I developed during the completion of various trainings (udemy, L2C, ITA). The projects are mainly focused on work in React.",
-// };
 
 const projects = [
   {
@@ -218,16 +239,21 @@ const skills = [
 const L2C = (
   <div
     style={{
+      // display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      alignSelf: "center",
+      height: "100%",
+      width: "100%",
+      margin: "0",
+      padding: "0 0.5em",
+      fontFamily: "Milion, Roboto",
+      fontSize: "0.75em",
+      lineHeight: "1em",
       borderRadius: "1px",
       color: "white",
       background: "rgb(52, 184, 186)",
-      margin: "0",
-      padding: "3px 10px",
-      height: "30px",
-      width: "100%",
-      lineHeight: "100%",
-      fontFamily: "Milion, Roboto",
-      fontSize: "0.65em",
+      overflow: "hidden",
     }}
   >
     LEARN 2CODE
@@ -238,21 +264,23 @@ const Cleverlance = (
   <div
     style={{
       // display: "flex",
-      // justifyContent: "center",
-      // alignContent: "center",
+      justifyContent: "center",
+      alignItems: "center",
+      alignSelf: "center",
+      height: "100%",
+      width: "100%",
+      margin: "0",
+      padding: "0 0.5em",
+      fontFamily: "'Baloo 2', cursive",
+      fontSize: "0.8em",
+      lineHeight: "1em",
       borderRadius: "1px",
       color: "white",
       background: "rgb(70, 5, 112)",
-      margin: "0",
-      padding: "3px 10px",
-      height: "30px",
-      width: "100%",
-      lineHeight: "100%",
-      fontFamily: "'Baloo 2', cursive",
-      fontSize: "0.65em",
+      overflow: "hidden",
     }}
   >
-    Cleverlance
+    Clever lance
   </div>
 );
 export type ExpType = {
@@ -271,8 +299,7 @@ const experiences = [
   {
     name: "Web Development Bootcamp",
     level: "",
-    // img: UdemyText,
-    img: UdemyLogo,
+    img: Udemy,
     text: " ,,The Complete 2021 Web Development Bootcamp,, which covers the basics of web development - HTML, CSS, Botstrap, Javascript, SQL, Node.js. Expres.js, React",
   },
   {
@@ -295,6 +322,104 @@ const experiences = [
   },
 ];
 
+// Hobbies section ***************************************************************
+export type HobbiesType = {
+  name: string;
+  img: JSX.Element;
+  level?: string;
+  lvl?: JSX.Element;
+};
+
+const hobbies = [
+  {
+    name: "Hiking",
+    img: Hiking,
+    level: "bilbo",
+    lvl: Star,
+  },
+  {
+    name: "Workout",
+    img: Workout,
+    level: "adv",
+    lvl: Star,
+  },
+  {
+    name: "Runnig",
+    img: Runnig,
+    level: "adv",
+    lvl: Star,
+  },
+  {
+    name: "Badminton",
+    img: Badminton,
+    level: "basic",
+    lvl: Star,
+  },
+  {
+    name: "Icebathing",
+    img: Icebathing,
+    level: "buff",
+    lvl: Star,
+  },
+  {
+    name: "Ukulele",
+    img: Ukulele,
+    level: "basic",
+    lvl: Star,
+  },
+  {
+    name: "Baking",
+    img: Baking,
+    level: "wizard",
+    lvl: Star,
+  },
+  {
+    name: "Beer",
+    img: Beer,
+    level: "jedi",
+    lvl: Star,
+  },
+  {
+    name: "Books",
+    img: Books,
+    level: "geek",
+    lvl: Books,
+  },
+];
+// Hobbies section ***************************************************************
+export type LanguagesType = {
+  name: string;
+  img: JSX.Element;
+  level?: string;
+  lvl?: JSX.Element;
+};
+
+const languages = [
+  {
+    name: "Slovak",
+    img: Slovak,
+    level: "native",
+    lvl: Star,
+  },
+  {
+    name: "Czech",
+    img: Czech,
+    level: "C2",
+    lvl: Star,
+  },
+  {
+    name: "English",
+    img: English,
+    level: "B2",
+    lvl: Star,
+  },
+  {
+    name: "German",
+    img: German,
+    level: "A2",
+    lvl: Star,
+  },
+];
 export type ContactType = {
   email: string;
   instagram: string;
@@ -320,4 +445,15 @@ const cv = {
   resume: Pdf,
 };
 
-export { header, cv, footer, about, projects, skills, contact, experiences };
+export {
+  header,
+  cv,
+  footer,
+  about,
+  projects,
+  skills,
+  contact,
+  experiences,
+  hobbies,
+  languages,
+};

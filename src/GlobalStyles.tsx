@@ -15,7 +15,9 @@ export const theme = {
   text_bl_s: "black",
   shadow_intro_l: "0 3px 5px -3px rgba(57, 63, 72, 0.3)",
   shadow_intro_s: "0px -1px 7px -2px rgba(0, 0, 0, 0.5)",
-  primaryBackground: "#fefefe",
+  shadow_box_l:
+    "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+  box_bg_w: "#fefefe",
   opacity_m: "0.65",
 };
 
