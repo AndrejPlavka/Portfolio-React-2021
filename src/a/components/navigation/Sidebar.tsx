@@ -57,13 +57,9 @@ export const Sidebar = (props: Props) => {
   };
 
   return (
-    data && (
-      <>
-        <DivMenu sidebar={props.sidebar}>
-          <ul>{renderMenuItems(data)}</ul>
-        </DivMenu>
-      </>
-    )
+    <DivMenu sidebar={props.sidebar}>
+      <ul>{renderMenuItems(data)}</ul>
+    </DivMenu>
   );
 };
 
