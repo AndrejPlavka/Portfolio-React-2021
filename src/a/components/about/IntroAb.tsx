@@ -166,7 +166,7 @@ const DivText = styled.div`
   }
   h4 {
     color: ${theme.text_gr_l};
-    font-size: 1.4em;
+    font-size: 1.25em;
     font-weight: 300;
     margin: 1em 0 0;
   }
