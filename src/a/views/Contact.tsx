@@ -128,19 +128,19 @@ const DivTextSection = styled.div`
   margin: 0 0 2em;
   h1 {
     width: 100%;
-    font-size: 4.5em;
-    margin: 0 0 1em;
+    font-size: 4em;
+    margin: 0.5em 0 1em;
   }
   h2 {
     margin-bottom: 0.5em;
-    font-size: 2.25em;
+    font-size: 2em;
     font-family: Roboto;
     font-weight: 300;
     margin: 0 0 1em;
   }
   p {
     font-weight: 300;
-    font-size: 1.4em;
+    font-size: 1.25em;
   }
   @media screen and (${theme.sx_min_425}) {
     max-width: 540px;
@@ -204,7 +204,7 @@ const DivLink = styled.div`
 
 const DivA = styled.div`
   display: flex;
-  width: 4em;
+  width: 3em;
   height: 100%;
   margin: 0 1em 0 0;
 `;
