@@ -2,6 +2,7 @@ import React from "react";
 // Styles:
 // import { PortfolioIntro } from "../../PortfolioData";
 import { IconReact } from "../../assets/icons";
+import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 // import ReactSpin
 
@@ -39,12 +40,12 @@ const DivMain = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
-  box-shadow: 0 3px 5px -3px rgba(57, 63, 72, 0.3);
+  box-shadow: ${theme.shadow_intro_l};
 `;
 const DivContent = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   align-items: center;
   max-width: 1300px;
   width: 100%;

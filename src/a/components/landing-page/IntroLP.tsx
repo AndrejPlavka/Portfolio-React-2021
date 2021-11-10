@@ -124,6 +124,7 @@ const DivText = styled.div`
   }
 
   h1 {
+    margin: 0.5em 0 0;
     font-size: 3.4em;
     background: transparent;
   }

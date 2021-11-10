@@ -80,7 +80,7 @@ const DivContent = styled.div`
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   padding: 5em 3em 0;
 
   @media screen and (${theme.sx_min_425}) {
@@ -153,6 +153,7 @@ const DivText = styled.div`
   }
 
   h1 {
+    margin: 0.5em 0 0;
     font-size: 3.4em;
     background: transparent;
   }

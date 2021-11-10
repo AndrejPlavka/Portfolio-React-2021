@@ -12,24 +12,24 @@ export const SidebarData = [
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
-    subNav: [
-      {
-        title: "About",
-        path: "#about",
-      },
-      {
-        title: "Experiences",
-        path: "#exp",
-      },
-      {
-        title: "Skills",
-        path: "#skills",
-      },
-      {
-        title: "Random Facts",
-        path: "#rf",
-      },
-    ],
+    // subNav: [
+    //   {
+    //     title: "About",
+    //     path: "#about",
+    //   },
+    //   {
+    //     title: "Experiences",
+    //     path: "#exp",
+    //   },
+    //   {
+    //     title: "Skills",
+    //     path: "#skills",
+    //   },
+    //   {
+    //     title: "Random Facts",
+    //     path: "#rf",
+    //   },
+    // ],
   },
   {
     title: "Portfolio",
