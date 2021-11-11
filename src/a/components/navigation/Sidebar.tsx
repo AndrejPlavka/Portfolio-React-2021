@@ -14,6 +14,7 @@ export type SiderbarType = {
   icon?: JSX.Element;
   iconClosed: JSX.Element;
   iconOpened: JSX.Element;
+  cv: string;
   subNav: {
     title: string;
     path: string;
@@ -48,6 +49,12 @@ export const Sidebar = (props: Props) => {
           </Link>
           <ul>{renderMenuItems(item.subNav)}</ul>
         </li>
+      ) : item?.title === "CV" ? (
+        <li key={index}>
+          <a href={item.path} target="_blank" rel="noreferrer">
+            {item.title}
+          </a>
+        </li>
       ) : (
         <li key={index}>
           <Link to={item.path}>{item.title}</Link>
@@ -79,20 +86,21 @@ const animate = keyframes`
      opacity: 0;
     }
     to {
-      opacity: 0.7;
+      opacity: 1;
     }
 `;
 const DivMenu = styled.div<{ sidebar: boolean }>`
   height: 100%;
   ul {
-    height: 100%;
+    height: auto;
     padding: 0;
     margin: 0;
     list-style: none;
-    transition: all 0.5s ease 0s;
+    transition: all 0.5s ease;
     li {
-      font-size: 1.25rem;
-      padding: 1rem;
+      /* height: 2em; */
+      font-size: 1.25em;
+      padding: 0.5em;
       display: block;
       position: relative;
       float: left;

@@ -627,7 +627,7 @@ export const IconGerman = (props) => {
       version="1.1"
       x="0px"
       y="0px"
-      viewBox="0 0 100 125"
+      viewBox="0 -8 100 125"
       enableBackground="new 0 0 100 100"
       xmlSpace="preserve"
     >

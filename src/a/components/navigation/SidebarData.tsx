@@ -2,6 +2,7 @@ import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
+import { cv } from "../../../a/PortfolioData";
 import React from "react";
 
 export const SidebarData = [
@@ -86,7 +87,7 @@ export const SidebarData = [
   },
   {
     title: "CV",
-    path: "/cv",
+    path: cv.resume,
   },
 ];
 

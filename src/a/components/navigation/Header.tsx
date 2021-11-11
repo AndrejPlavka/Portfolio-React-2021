@@ -38,6 +38,7 @@ const DivHeader = styled.header`
   align-items: center;
   height: 3.2rem;
   width: 100%;
+  background: ${theme.intro_bg_w};
   box-shadow: ${theme.shadow_intro_l};
   @media screen and (${theme.sm_min_768}) {
     height: 4.25rem;
