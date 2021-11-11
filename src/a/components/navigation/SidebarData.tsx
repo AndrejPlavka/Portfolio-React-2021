@@ -2,6 +2,7 @@ import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
+import { IconArrowDown, IconArrowUp } from "../../assets/icons";
 import { cv } from "../../../a/PortfolioData";
 import React from "react";
 
@@ -10,13 +11,13 @@ export const SidebarData = [
     title: "About",
     path: "/about",
     // icon: <AiIcons.AiFillHome />,
-    iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
+    iconClosed: <IconArrowDown />,
+    iconOpened: <IconArrowUp />,
 
     // subNav: [
     //   {
     //     title: "About",
-    //     path: "#about",
+    //     path: "/about",
     //   },
     //   {
     //     title: "Experiences",
@@ -35,8 +36,8 @@ export const SidebarData = [
   {
     title: "Portfolio",
     path: "/portfolio",
-    iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
+    iconClosed: <IconArrowDown />,
+    iconOpened: <IconArrowUp />,
 
     subNav: [
       {
