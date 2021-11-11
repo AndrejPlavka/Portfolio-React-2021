@@ -77,7 +77,7 @@ export const Sidebar = (props: Props) => {
   };
 
   return (
-    <DivMenu sidebar={props.sidebar}>
+    <DivMenu subnav={subnav} sidebar={props.sidebar}>
       <ul>{renderMenuItems(data)}</ul>
     </DivMenu>
   );
@@ -99,10 +99,10 @@ const animate = keyframes`
      opacity: 0;
     }
     to {
-      opacity: 1;
+      opacity: 0.8;
     }
 `;
-const DivMenu = styled.div<{ sidebar: boolean }>`
+const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
   /* height: 100%; */
   ul {
     display: block;
@@ -116,7 +116,7 @@ const DivMenu = styled.div<{ sidebar: boolean }>`
     text-align: left;
     transform: ${({ sidebar }) =>
       sidebar ? "translate(0)" : "translate(100%)"};
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     list-style: none;
     background: black;
     opacity: 0.95;
@@ -133,10 +133,12 @@ const DivMenu = styled.div<{ sidebar: boolean }>`
         display: flex;
         align-items: center;
         width: 100%;
+
         button {
           display: inline-block;
-          width: 1.25em;
+          width: 0.85em;
           color: white;
+          margin-left: 0.1em;
         }
         a {
           display: inline-block;
@@ -150,7 +152,7 @@ const DivMenu = styled.div<{ sidebar: boolean }>`
       }
     }
     @media screen and (${theme.sm_min_768}) {
-      width: auto;
+      /* width: auto; */
       position: relative;
       top: 0;
       right: 100%;
@@ -159,15 +161,14 @@ const DivMenu = styled.div<{ sidebar: boolean }>`
       background: none;
       opacity: 1;
       li {
-        font-size: 1em;
-        padding: 0.5em 0 0.5em 1em;
+        font-size: 0.8em;
+        font-weight: 400;
+        padding: 0.5em 0 0.5em 2.5em;
         display: inline-block;
         position: relative;
-        font-weight: 400;
         div {
-          opacity: 1;
           button {
-            width: 1.25em;
+            width: 0.8em;
             color: black;
           }
           a {
@@ -192,7 +193,8 @@ const DivMenu = styled.div<{ sidebar: boolean }>`
       top: 0.5em;
       right: 79%;
       padding: 0;
-      animation: ${animate} 0.15s ease;
+      transition: all 0.2s ease;
+      animation: ${animate} 0.2s ease;
       border: none;
       outline: none;
       background: #292929;
@@ -202,23 +204,18 @@ const DivMenu = styled.div<{ sidebar: boolean }>`
       display: block;
       width: 100%;
       position: relative;
-      font-size: 0.9em;
+      font-size: 0.8em;
       line-height: 1;
-      padding: 0.5em 0 0.5em 43%;
+      padding: 0.4em 0 0.4em 44%;
       float: none;
       div {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         width: 100%;
-        button {
-          display: inline-block;
-          width: 1.25em;
-          color: white;
-        }
         a {
           display: inline-block;
-          padding: 0.25em 0;
+          padding: 0.2em 0;
           text-decoration: none;
           color: white;
           &:hover {
@@ -227,292 +224,52 @@ const DivMenu = styled.div<{ sidebar: boolean }>`
         }
       }
       &:hover {
-        background: #5d5e5f;
+        background: #6c6d6e;
       }
     }
     @media screen and (${theme.sm_min_768}) {
       ul {
-        width: 10em;
+        width: 8em;
         position: absolute;
-        top: 5em;
-        right: 8em;
-        padding: 1em 0;
+        top: 3.5em;
+        right: 5em;
+        padding: 0.5em 0;
         margin: 0;
         text-align: left;
-        opacity: 0.8;
-        background: #000000;
-        border: 1px solid black;
-        border-radius: 4px;
-        &:hover {
-          opacity: 0.9;
-        }
+        opacity: 1;
+        background: #00000045;
+        border-radius: 3px;
+        overflow: hidden;
       }
       li {
-        width: 100%;
         margin: 0;
         padding: 0.25em 0;
         margin: 0;
         font-size: 0.9em;
-        font-weight: 400;
+        font-weight: 300;
+        /* border-bottom: 1px solid #4d515531; */
         div {
           display: flex;
           flex-flow: row nowrap;
           align-items: center;
           width: auto;
-          padding: 0.25em 0 0.25em 2.5em;
+          padding: 0.25em 0 0.25em 1.25em;
           a {
             display: inline-block;
             padding: 0;
             text-decoration: none;
             color: white;
-            &:hover {
-              color: #000000;
-            }
           }
         }
         &:hover {
-          background: #828b92;
+          background: #878b919d;
+          /* border-left: 1px solid #33a3ff; */
+          border-left: 1px solid #000000;
         }
       }
-    }
-    &:hover {
-      /* & > ul {
-        display: block;
-        width: 100%;
-        position: relative;
-        top: 0;
-        right: 0;
-        animation: ${animate} 0.15s ease;
-        border: none;
-        outline: none;
-      }
-      li {
-        display: block;
-        position: relative;
-        float: none;
-        background: #b9bbbd;
-        opacity: 0.85;
-        &:hover {
-          background: #828b92;
-        }
-      }
-      @media screen and (${theme.sm_min_768}) {
-        > ul {
-          width: 200px;
-          position: absolute;
-          top: 4.25rem;
-          left: 0;
-        }
-        li {
-          background: #b9bbbd;
-          opacity: 0.7;
-          &:hover {
-            background: #828b92;
-          }
-        }
-      } */
     }
   }
 `;
-
-// 2.vs without arrow
-// const animate = keyframes`
-//     from {
-//      opacity: 0;
-//     }
-//     to {
-//       opacity: 1;
-//     }
-// `;
-// const DivMenu = styled.div<{ sidebar: boolean }>`
-//   /* height: 100%; */
-//   ul {
-//     display: block;
-//     position: absolute;
-//     width: 100%;
-//     height: auto;
-//     top: 3.2rem;
-//     right: 0;
-//     padding: 0;
-//     margin: 0;
-//     text-align: center;
-//     transform: ${({ sidebar }) =>
-//       sidebar ? "translate(0)" : "translate(100%)"};
-//     transition: all 0.5s ease;
-//     list-style: none;
-
-//     li {
-//       display: block;
-//       position: relative;
-//       font-size: 1.25em;
-//       padding: 0.5em;
-//       float: none;
-//       a {
-//         display: block;
-//         padding: 0.5em;
-//         text-decoration: none;
-//         color: black;
-//         &:hover {
-//           color: green;
-//         }
-//       }
-//     }
-//     @media screen and (${theme.sm_min_768}) {
-//       width: auto;
-//       position: relative;
-//       top: 0;
-//       padding: 0;
-//       li {
-//         font-size: 1.25em;
-//         padding: 0.5em;
-//         display: inline-block;
-//         position: relative;
-//         a {
-//           display: block;
-//           text-decoration: none;
-//           color: black;
-//           &:hover {
-//             color: green;
-//           }
-//         }
-//       }
-//     }
-//   }
-//   li {
-//     background: none;
-//     ul {
-//       display: none;
-//     }
-//     &:hover {
-//       & > ul {
-//         display: block;
-//         width: 100%;
-//         position: relative;
-//         top: 0;
-//         right: 0;
-//         animation: ${animate} 0.15s ease;
-//         border: none;
-//         outline: none;
-//       }
-//       li {
-//         display: block;
-//         position: relative;
-//         float: none;
-//         background: #b9bbbd;
-//         opacity: 0.85;
-//         &:hover {
-//           background: #828b92;
-//         }
-//       }
-//       @media screen and (${theme.sm_min_768}) {
-//         > ul {
-//           width: 200px;
-//           position: absolute;
-//           top: 4.25rem;
-//         }
-//         li {
-//           background: #b9bbbd;
-//           opacity: 0.7;
-//           &:hover {
-//             background: #828b92;
-//           }
-//         }
-//       }
-
-//     }
-//   }
-// `;
-
-// const animate = keyframes`
-//     from {
-//      opacity: 0;
-//     }
-//     to {
-//       opacity: 1;
-//     }
-// `;
-// const DivMenu = styled.div<{ sidebar: boolean }>`
-//   height: 100%;
-//   ul {
-//     height: auto;
-//     padding: 0;
-//     margin: 0;
-//     list-style: none;
-//     transition: all 0.5s ease;
-//     li {
-//       /* height: 2em; */
-//       font-size: 1.25em;
-//       padding: 0.5em;
-//       display: block;
-//       position: relative;
-//       float: left;
-//       a {
-//         display: block;
-//         text-decoration: none;
-//         color: black;
-//         &:hover {
-//           color: green;
-//         }
-//       }
-//     }
-//     @media screen and (max-width: 780px) {
-//       display: block;
-//       position: fixed; //absolute
-//       width: 200px;
-//       top: 4rem;
-//       right: 0;
-//       text-align: left;
-//       transform: ${({ sidebar }) =>
-//         sidebar ? "translate(0)" : "translate(100%)"};
-//       li {
-//         float: none;
-//         a {
-//           padding: 0.5rem;
-//         }
-//       }
-//     }
-//   }
-//   li {
-//     background: none;
-//     ul {
-//       display: none;
-//     }
-//     &:hover {
-//       & > ul {
-//         display: block;
-//         width: 200px;
-//         position: absolute;
-//         padding-top: 1.25rem;
-//         animation: ${animate} 0.15s ease;
-//         border: none;
-//         outline: none;
-//       }
-//       li {
-//         float: none;
-//         background: #b9bbbd;
-//         opacity: 0.7;
-//         border: none;
-//         outline: none;
-//         &:hover {
-//           background: #828b92;
-//         }
-//       }
-//       @media screen and (max-width: 780px) {
-//         & > ul {
-//           display: block;
-//           position: relative;
-//           width: 100%;
-//           top: 0;
-//           right: 0;
-//         }
-//         li {
-//           display: block;
-//           position: relative;
-//         }
-//       }
-//     }
-//   }
-// `;
 
 // previous design - sidebar (flex box) *****************************************************************************
 // const Nav = styled.div`

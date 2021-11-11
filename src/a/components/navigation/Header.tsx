@@ -36,12 +36,12 @@ const DivHeader = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3.2rem;
+  height: 3.25rem;
   width: 100%;
   background: ${theme.intro_bg_w};
   box-shadow: ${theme.shadow_intro_l};
   @media screen and (${theme.sm_min_768}) {
-    height: 4.3rem;
+    height: 4.5rem;
   }
 `;
 
@@ -74,9 +74,9 @@ const LinkLogo = styled(Link)`
   color: inherit;
   text-decoration: none;
   font-family: RobotoThin;
-  font-weight: 100;
+  font-weight: 200;
   font-style: normal;
-  font-size: 3.5em;
+  font-size: 3em;
   line-height: 1;
   margin: none;
   padding: none;
@@ -91,7 +91,7 @@ const DivNavbarSection = styled.div`
     outline: none;
     border: none;
     align-items: center;
-    opacity: 0.5;
+    /* opacity: 0.5; */
   }
   &:hover {
     opacity: 1;

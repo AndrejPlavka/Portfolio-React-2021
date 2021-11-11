@@ -392,7 +392,7 @@ export const IconArrowDown = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="-5 -10 24 24"
+      viewBox="-1 -6 15 15"
       width="currentWidth"
       fill="currentColor"
     >
@@ -405,7 +405,7 @@ export const IconArrowUp = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="-5 -9.5 24 24"
+      viewBox="-1 -6 15 15"
       width="currentWidth"
       fill="currentColor"
     >
