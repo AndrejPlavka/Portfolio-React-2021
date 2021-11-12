@@ -20,7 +20,7 @@ export const Intro = () => {
             {"Lets create some"} <span>{" practical "}</span>
             {"&"} <span>{"uniqe"}</span>
             {" projets "}
-            <span>{"togather"}</span>
+            <span>{"together"}</span>
           </h4>
         </DivText>
         <DivImgMain>

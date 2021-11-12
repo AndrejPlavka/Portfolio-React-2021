@@ -152,7 +152,6 @@ const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
       }
     }
     @media screen and (${theme.sm_min_768}) {
-      /* width: auto; */
       position: relative;
       top: 0;
       right: 100%;
@@ -237,9 +236,13 @@ const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
         margin: 0;
         text-align: left;
         opacity: 1;
-        background: #00000045;
-        border-radius: 3px;
+        background: white;
+        opacity: 0.95;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
         overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+          rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
       }
       li {
         margin: 0;
@@ -247,7 +250,6 @@ const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
         margin: 0;
         font-size: 0.9em;
         font-weight: 300;
-        /* border-bottom: 1px solid #4d515531; */
         div {
           display: flex;
           flex-flow: row nowrap;
@@ -258,18 +260,64 @@ const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
             display: inline-block;
             padding: 0;
             text-decoration: none;
-            color: white;
+            color: #000000;
           }
         }
         &:hover {
-          background: #878b919d;
-          /* border-left: 1px solid #33a3ff; */
+          background: #f8f8f89d;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+            rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
           border-left: 1px solid #000000;
         }
       }
     }
   }
 `;
+
+// @media screen and (${theme.sm_min_768}) {
+//   ul {
+//     width: 8em;
+//     position: absolute;
+//     top: 3.5em;
+//     right: 5em;
+//     padding: 0.5em 0;
+//     margin: 0;
+//     text-align: left;
+//     opacity: 1;
+//     /* background: #00000045; */
+//     border-radius: 3px;
+//     overflow: hidden;
+//     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+//       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+//   }
+//   li {
+//     margin: 0;
+//     padding: 0.25em 0;
+//     margin: 0;
+//     font-size: 0.9em;
+//     font-weight: 300;
+//     /* border-bottom: 1px solid #4d515531; */
+//     div {
+//       display: flex;
+//       flex-flow: row nowrap;
+//       align-items: center;
+//       width: auto;
+//       padding: 0.25em 0 0.25em 1.25em;
+//       a {
+//         display: inline-block;
+//         padding: 0;
+//         text-decoration: none;
+//         color: white;
+//       }
+//     }
+//     &:hover {
+//       background: #878b919d;
+//       /* border-left: 1px solid #33a3ff; */
+//       border-left: 1px solid #000000;
+//     }
+//   }
+// }
+// }
 
 // previous design - sidebar (flex box) *****************************************************************************
 // const Nav = styled.div`
