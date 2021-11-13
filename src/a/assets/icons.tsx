@@ -710,7 +710,7 @@ export const IconSlovak = (props) => {
       version="1.1"
       x="0px"
       y="0px"
-      viewBox="0 0 100 125"
+      viewBox="0 -5 100 125"
       enableBackground="new 0 0 100 100"
       xmlSpace="preserve"
     >

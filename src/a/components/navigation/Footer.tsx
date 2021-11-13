@@ -27,7 +27,7 @@ const DivFooter = styled.footer`
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 4.5em;
+  height: 4em;
   background: white;
   box-shadow: ${theme.shadow_intro_s};
   @media screen and (${theme.sm_min_768}) {
@@ -40,7 +40,7 @@ const DivContent = styled.div`
   align-items: center;
   flex-direction: row;
   flex-basis: 100%;
-  max-width: 1300px;
+  max-width: 1200px;
   padding: 0 3em;
   @media screen and (${theme.sx_min_425}) {
   }
@@ -54,10 +54,10 @@ const DivContent = styled.div`
 const AFooterLink = styled.a`
   text-decoration: none;
   font-family: Roboto;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 300;
   color: ${theme.text_gr_l};
-  @media screen and (max-width: 780px) {
-    font-size: 1em;
+  @media screen and (${theme.sm_min_768}) {
+    font-size: 0.8em;
   }
 `;

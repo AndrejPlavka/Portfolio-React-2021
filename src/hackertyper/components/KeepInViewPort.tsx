@@ -7,7 +7,7 @@ export function KeepInViewPort() {
   useEffect(() => {
     const interval = setInterval(
       () => ref.current?.scrollIntoView({ behavior: "smooth" }),
-      200
+      100
     );
     return () => clearInterval(interval);
   }, []);

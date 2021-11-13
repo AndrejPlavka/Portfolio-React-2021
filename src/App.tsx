@@ -31,7 +31,7 @@ const Div = styled.div`
 const DivContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   /* justify-content: center; // apps workspace !! */
