@@ -1,11 +1,13 @@
 .about {
-	
-    strong {
-        
+	color: white;
+    span {
         color: #61dafb;
         &:hover {
             color: violet
         }
     } 
+    h1{
+        margin: 1.25em 0 1.5em;
+    }
     
 }

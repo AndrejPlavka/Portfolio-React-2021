@@ -2,24 +2,24 @@ import { SongType } from "../../types/TunesTypes";
 import { truncate } from "lodash";
 import React from "react";
 
-//STYLES
+// Styles:
 import "./TunesSong.scss";
 
-//COMPONENT
+// Component:
 export const TunesSong = (props: { song: SongType }) => {
   const { song } = props;
-  //FILTER SONG TITLE DESCRIPTION BALAST
+  // filter song description balast
   const songFilter = (song: SongType): string => {
     const newTitle = song.artist + " - " + song.title;
     return shorten(newTitle, 100);
   };
 
-  //--> FILTER SONG DESCRIPTION BALAST
+  // --> filter song description balast
   const shorten = (str: string, len: number): string => {
     return truncate(str, { length: len });
   };
 
-  //TEMPLATE
+  // Template:
   return (
     <article className="song">
       <div className="inside">

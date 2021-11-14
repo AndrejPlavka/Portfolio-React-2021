@@ -69,19 +69,22 @@ const DivHackerApp = styled.div`
   box-sizing: border-box;
   display: block;
   width: 100vw;
-  height: calc(100vh - 10em);
+  height: calc(100vh - 9em);
   padding: 3em;
   overflow: hidden;
   font-family: monospace;
   font-size: 1em;
-  line-height: 1em;
+  line-height: 1.2em;
   background-color: ${tht.black};
   color: ${tht.textGreen};
   opacity: 0.85;
   @media screen and (${theme.sx_min_425}) {
     font-size: 0.8em;
-    line-height: 1em;
+    line-height: 1.2em;
     height: calc(100vh - 9em);
+  }
+  @media screen and (${theme.sm_min_768}) {
+    height: calc(100vh - 9.4em);
   }
   @media screen and (${theme.md_min_1024}) {
     height: calc(100vh - 8.5em);

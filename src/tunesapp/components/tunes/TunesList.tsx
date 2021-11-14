@@ -1,17 +1,14 @@
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { SongType } from "../../types/TunesTypes";
-
-//STYLES
+import { TunesSong } from "./TunesSong";
+// Styles:
 import "./TunesList.scss";
 
-//CHILDREN
-import { TunesSong } from "./TunesSong";
-
-//COMPONENT
+// Component:
 export const TunesList = (props: { songs: SongType[] }) => {
   const { songs } = props;
 
-  //TEMPLATE
+  // Template:
   return (
     <TransitionGroup component="ul" className="tunes-list">
       {songs.map((song) => (

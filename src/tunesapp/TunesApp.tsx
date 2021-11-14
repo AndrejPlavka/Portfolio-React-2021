@@ -12,6 +12,7 @@ import { Tunes } from "./views/Tunes";
 
 export const TunesApp = () => {
   return (
+    // <div>
     <Router basename="/tunesapp">
       <div className="App">
         <header>
@@ -27,5 +28,6 @@ export const TunesApp = () => {
         </main>
       </div>
     </Router>
+    // </div>
   );
 };

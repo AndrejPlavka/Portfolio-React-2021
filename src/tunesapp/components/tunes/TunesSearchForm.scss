@@ -1,26 +1,20 @@
 .search {
+	box-sizing: border-box;
 	width: 100%;
 	display: block;
-
 	padding: {
 		top: 0.5em;
 		bottom: 0.5em;
 		left: 2.95em;
 		right: 0.75em;
 	}
-
-	color: #333;
-	font-size: 1.5em;
+	font-size: 1.25em;
 	font-weight: 700;
 
 	border: none;
 	border-radius: 0.5em;
 	background: white;
-	box-sizing: border-box;
-
-	outline: none;
-	appearance: none;
-
+	color: #333;
 	background: {
 		image: url('../../assets/search.svg');
 		repeat: no-repeat;
@@ -31,8 +25,3 @@
 	}
 }
 
-@media screen and (max-width: 520px) {
-	.search {
-		font-size: 1.15em;
-	}
-}
