@@ -8,7 +8,7 @@ import styled from "styled-components/macro";
 //Components:
 // Projects:
 import { Blog } from "./blog/BlogApp";
-import { Counter } from "./counter/Counter";
+import { CounterApp } from "./counter/CounterApp";
 import { HackerApp } from "./hackertyper/HackerApp";
 import { PexesoApp } from "./pexeso/PexesoApp";
 import { TodoApp } from "./todoapp/TodoApp";
@@ -60,7 +60,7 @@ function App() {
               <Route path="/about" component={About} />
               <Route path="/portfolio" component={Portfolio} />
               <Route path="/contact" component={Contact} />
-              <Route path="/counter" component={Counter} />
+              <Route path="/counter" component={CounterApp} />
               <Route path="/todoapp" component={TodoApp} />
               <Route path="/hackertyper" component={HackerApp} />
               <Route path="/pexeso" component={PexesoApp} />
