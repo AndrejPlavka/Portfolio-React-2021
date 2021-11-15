@@ -1,35 +1,47 @@
 import { PostType } from "./BlogContext";
-import { theme } from "./theme";
-import styled from "styled-components";
 
+// Styles:
+import { theme as blog } from "./theme";
+import styled from "styled-components/macro";
+
+// Stylecomponents:
+const A = styled.a`
+  text-decoration: none;
+  width: 100%;
+  :visited {
+    color: ${blog.visitedSecondary};
+  }
+`;
+const DivCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6em;
+  margin: 1.5em 0 0;
+  padding: 0.5em 1.5em;
+  font-size: 1em;
+  font-weight: 300;
+  border: ${blog.borderBasic};
+  border-radius: ${blog.borderRadius};
+  transition: 150ms linear;
+  h1 {
+    font-weight: 300;
+  }
+  :hover {
+    opacity: 0.5;
+  }
+`;
 const DivInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 `;
 
-const DivCard = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 5rem;
-  border: ${theme.borderBasic};
-  border-radius: ${theme.borderRadius};
-  margin: 2rem 0;
-  width: 60vw;
-  padding: 0.5rem 1rem 0.5rem 2rem;
-  transition: 300ms linear;
-  :hover {
-    opacity: 0.8;
-  }
-`;
-
-const A = styled.a`
-  text-decoration: none;
-`;
-
+// Component:
 export const PostPreview = (props: { post: PostType }) => {
   const date = new Date(props.post.dateCreated);
+
+  // Template:
   return (
     <A href={"/blog/post/" + props.post.id}>
       <DivCard>

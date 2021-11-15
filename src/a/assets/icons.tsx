@@ -447,13 +447,41 @@ export const IconArrowUp = (props) => {
     </svg>
   );
 };
+export const IconTrash = (props) => {
+  // return (
+  //   <svg
+  //     width="currentWidth"
+  //     height="currentHeight"
+  //     xmlns="http://www.w3.org/2000/svg"
+  //     viewBox="-2 -2 28 28"
+  //     // fillRule="evenodd"
+  //     // clipRule="evenodd"
+  //   >
+  //     <path d="M19 24h-14c-1.104 0-2-.896-2-2v-16h18v16c0 1.104-.896 2-2 2m-9-14c0-.552-.448-1-1-1s-1 .448-1 1v9c0 .552.448 1 1 1s1-.448 1-1v-9zm6 0c0-.552-.448-1-1-1s-1 .448-1 1v9c0 .552.448 1 1 1s1-.448 1-1v-9zm6-5h-20v-2h6v-1.5c0-.827.673-1.5 1.5-1.5h5c.825 0 1.5.671 1.5 1.5v1.5h6v2zm-12-2h4v-1h-4v1z" />
+  //   </svg>
+  // );
+  return (
+    <svg
+      width="currentWidth"
+      height="currentHeight"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="-2 -2 28 28"
+      fill="currentColor"
+      // fillRule="evenodd"
+      // clipRule="evenodd"
+    >
+      <path d="M19 24h-14c-1.104 0-2-.896-2-2v-17h-1v-2h6v-1.5c0-.827.673-1.5 1.5-1.5h5c.825 0 1.5.671 1.5 1.5v1.5h6v2h-1v17c0 1.104-.896 2-2 2zm0-19h-14v16.5c0 .276.224.5.5.5h13c.276 0 .5-.224.5-.5v-16.5zm-9 4c0-.552-.448-1-1-1s-1 .448-1 1v9c0 .552.448 1 1 1s1-.448 1-1v-9zm6 0c0-.552-.448-1-1-1s-1 .448-1 1v9c0 .552.448 1 1 1s1-.448 1-1v-9zm-2-7h-4v1h4v-1z" />
+    </svg>
+  );
+};
 
 export const IconEdit = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="-2.5 -2.5 24 24"
-      width="24"
+      width="currentWidth"
+      height="currentHeight"
       fill="currentColor"
     >
       <path d="M12.238 5.472L3.2 14.51l-.591 2.016 1.975-.571 9.068-9.068-1.414-1.415zM13.78 3.93l1.414 1.414 1.318-1.318a.5.5 0 0 0 0-.707l-.708-.707a.5.5 0 0 0-.707 0L13.781 3.93zm3.439-2.732l.707.707a2.5 2.5 0 0 1 0 3.535L5.634 17.733l-4.22 1.22a1 1 0 0 1-1.237-1.241l1.248-4.255 12.26-12.26a2.5 2.5 0 0 1 3.535 0z"></path>

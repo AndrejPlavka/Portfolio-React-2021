@@ -7,7 +7,7 @@ import { animationOne, transition } from "../a/animations/animations";
 import { motion } from "framer-motion";
 import { theme } from "../GlobalStyles";
 import { theme as tht } from "./theme";
-import styled from "styled-components/macro";
+import styled, { keyframes } from "styled-components/macro";
 
 //Props
 interface Props {}
@@ -40,29 +40,32 @@ export const HackerApp = (props: Props) => {
   //Template
   return (
     <DivMain>
-      <motion.div
+      {/* <motion.div
         className="div"
         initial="start"
         animate="in"
         exit="end"
         variants={animationOne}
         transition={transition}
-      >
-        <DivHackerApp>
-          <Console text={HackerCode} numberOfLetters={sizeOfText} />
-        </DivHackerApp>
-      </motion.div>
+      > */}
+      <DivHackerApp>
+        <Console text={HackerCode} numberOfLetters={sizeOfText} />
+      </DivHackerApp>
+      {/* </motion.div> */}
     </DivMain>
   );
 };
 
 // Styled components:
+const fadeIn = keyframes`
+0% {opacity: 0}
+100% {opacity: 1}`;
+
 const DivMain = styled.div`
-  .div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: 1s ${fadeIn} forwards;
 `;
 
 const DivHackerApp = styled.div`

@@ -1,67 +1,81 @@
 import { BlogContext, PostType } from "./BlogContext";
-import { theme } from "./theme";
 import { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
-import styled from "styled-components/macro";
 
-const DivErrorInfo = styled.div`
-  font-size: 1.1rem;
-  align-self: center;
-  color: ${theme.errorColor};
-  padding: 1rem 0;
-`;
+// Styles:
+import { theme as blog } from "./theme";
+import styled, { keyframes } from "styled-components/macro";
 
-const Label = styled.label`
-  margin-top: 1.5rem;
-  font-size: 1.4rem;
-`;
-
-const ButtonSubmit = styled.button`
-  background: ${theme.basicBg};
-  border: ${theme.borderBasic};
-  border-radius: ${theme.borderRadius};
-  height: 3rem;
-  width: 7rem;
-  margin-top: 2rem;
-  align-self: flex-end;
-  cursor: pointer;
-`;
-
-const TextareaContent = styled.textarea`
-  background: ${theme.basicBg};
-  border: ${theme.borderBasic};
-  border-radius: ${theme.borderRadius};
-  padding: 1rem;
-  min-height: 18rem;
-  max-width: 57.5vw;
-  margin-top: 2rem;
-  font-size: 1.2rem;
-  ::-webkit-input-placeholder {
-    color: #e91d1d;
-  }
-`;
-
-const InputText = styled.input`
-  background: ${theme.basicBg};
-  border: ${theme.borderBasic};
-  border-radius: ${theme.borderRadius};
-  padding: 0.5rem 1rem;
-  height: 2rem;
-  font-size: 1.3rem;
-  ::-webkit-input-placeholder {
-    color: #e91d1d;
-  }
-`;
+// Styled components
+const fadeIn = keyframes`
+0% {opacity: 0}
+100% {opacity: 1}`;
 
 const DivPostManager = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50vw;
+  width: 100%;
+  animation: 1s ${fadeIn} forwards;
 `;
 
+const DivErrorInfo = styled.div`
+  display: block;
+  position: absolute;
+  font-size: 1em;
+  align-self: center;
+  color: ${blog.errorColor};
+  margin: 0.5em;
+`;
+
+const Label = styled.label`
+  margin-top: 1em;
+  font-size: 1.5em;
+  font-weight: 300;
+`;
+const InputText = styled.input`
+  height: 2em;
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+  background: ${blog.backgroundPrimary};
+  border: ${blog.borderBasic};
+  border-radius: ${blog.borderRadius};
+
+  ::-webkit-input-placeholder {
+    color: ${blog.errorColor};
+  }
+`;
+const TextareaContent = styled.textarea`
+  background: ${blog.backgroundPrimary};
+  border: ${blog.borderBasic};
+  border-radius: ${blog.borderRadius};
+  height: 6em;
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+  ::-webkit-input-placeholder {
+    color: ${blog.errorColor};
+  }
+`;
+
+const ButtonSubmit = styled.button`
+  align-self: flex-end;
+  height: 3em;
+  width: 7em;
+  margin-top: 2em;
+  font-size: 1.25em;
+  background: ${blog.backgroundPrimary};
+  border: ${blog.borderBasic};
+  border-radius: ${blog.borderRadius};
+  cursor: pointer;
+  transition: 100ms linear;
+  :hover {
+    background: ${blog.backgroundSecondary};
+    color: ${blog.textSecondary};
+  }
+`;
 // inspiration: https://gist.github.com/6174/6062387#file-random-string
 const randomID = () => Math.random().toString(36).substr(2, 15);
 
+// Component:
 export const PostManager = (props: { post?: PostType }) => {
   const { addOrEditPost } = useContext(BlogContext);
   const [content, setContent] = useState(props.post ? props.post.content : "");
@@ -97,12 +111,13 @@ export const PostManager = (props: { post?: PostType }) => {
     history.push("/");
   };
 
+  // Template:
   return (
     <DivPostManager>
       <DivErrorInfo>{error}</DivErrorInfo>
       <Label htmlFor="title">Title</Label>
       <InputText
-        placeholder={error}
+        // placeholder={error}
         id="title"
         type="text"
         value={title}
@@ -110,13 +125,14 @@ export const PostManager = (props: { post?: PostType }) => {
       />
       <Label htmlFor="author">Author</Label>
       <InputText
-        placeholder={error}
+        // placeholder={error}
         type="text"
         value={author}
         onChange={(e) => setAuthor(e.target.value)}
       />
+      <Label htmlFor="text">Text</Label>
       <TextareaContent
-        placeholder={error}
+        // placeholder={error}
         value={content}
         onChange={(e) => setContent(e.target.value)}
       />

@@ -1,7 +1,11 @@
 export const theme = {
   errorColor: "red",
-  textPrimary: "#19609c",
-  borderBasic: "2px solid",
-  borderRadius: "1rem",
-  basicBg: "transparent",
+  textPrimary: "black",
+  textSecondary: "white",
+  visitedPrimary: "black",
+  visitedSecondary: "gray",
+  borderBasic: "1px solid black",
+  borderRadius: "0.2em",
+  backgroundPrimary: "transparent",
+  backgroundSecondary: "black",
 };

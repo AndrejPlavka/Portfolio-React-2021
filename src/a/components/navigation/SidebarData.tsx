@@ -41,7 +41,7 @@ export const SidebarData = [
 
     subNav: [
       {
-        title: "Counter",
+        title: "Redux Counter",
         path: "/counter",
         cName: "sub-nav",
       },

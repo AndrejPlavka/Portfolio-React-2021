@@ -105,9 +105,11 @@ const Button = styled.button`
   margin-bottom: 1em;
   padding: 1em 2em;
   font-weight: ${counter.boldFont};
-  border: 1px solid ${counter.black};
+  border: none;
+  /* border: 1px solid ${counter.black}; */
   border-radius: 2em;
   background: ${counter.white};
+  box-shadow: ${counter.shadow_l};
   cursor: pointer;
   outline: none;
   :hover {

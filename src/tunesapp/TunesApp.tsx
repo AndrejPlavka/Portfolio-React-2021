@@ -2,14 +2,15 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { TheNavigation } from "./components/TheNavigation";
 import React from "react";
 
-//STYLES & ASSETS
+// Styles:
 import "./TunesApp.scss";
 
-//VIEWS
+// Views:
 import { About } from "./views/About";
 import { Home } from "./views/Home";
 import { Tunes } from "./views/Tunes";
 
+// Component:
 export const TunesApp = () => {
   return (
     // <div>
