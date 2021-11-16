@@ -1,5 +1,8 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
-
+// Styles:
+import { IconAdd } from "../../a/assets/icons";
+import { theme as todo } from "../theme";
+import styled from "styled-components/macro";
 interface Props {
   // addTask: (taskContent: string) => void;
   handleSubmitIF: (e: FormEvent<HTMLFormElement>) => void;
@@ -11,6 +14,7 @@ interface Props {
   // taskInputRefContent: React.MutableRefObject<null>;
 }
 
+// Component:
 export const InputForm = (props: Props) => {
   const {
     handleSubmitIF,
@@ -32,28 +36,86 @@ export const InputForm = (props: Props) => {
   // const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
   //   setTaskContent(e.target.value);
   // };
+
   // template
   return (
-    <form onSubmit={handleSubmitIF} onKeyDown={handleKeyDownIF}>
-      <h2 className="label-wrapper">
-        <label htmlFor="new-todo-input" className="label__lg">
-          What needs to be done?
-        </label>
-      </h2>
-      <input
-        type="text"
-        autoComplete="off"
-        placeholder={error}
-        id="new-todo-input"
-        className="input input__lg"
-        name="text"
-        value={taskContent}
-        onChange={handleChangeIF}
-        ref={contentInputFormRef}
-      />
-      <button type="submit" className="btn btn__primary btn__lg">
-        Add
-      </button>
-    </form>
+    <FormContent onSubmit={handleSubmitIF} onKeyDown={handleKeyDownIF}>
+      {/* <h2 className="h2">
+        <label htmlFor="new-todo-input">What needs to be done?</label>
+      </h2> */}
+      <DivContent>
+        <input
+          type="text"
+          autoComplete="off"
+          placeholder={error}
+          id="new-todo-input"
+          name="text"
+          value={taskContent}
+          onChange={handleChangeIF}
+          ref={contentInputFormRef}
+        />
+        <button type="submit">{add}</button>
+      </DivContent>
+    </FormContent>
   );
 };
+
+// Styled components:
+const add = <IconAdd />;
+const FormContent = styled.form`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 1.25em;
+  /* .h2 {
+    font-size: 2em;
+    font-weight: 400;
+    margin: 1em 0;
+    text-align: center;
+  } */
+`;
+
+const DivContent = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  height: 5em;
+  border-radius: 0.15em;
+  box-shadow: ${todo.shadow_btn};
+  input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 0 0.5em;
+    padding: 0.5em;
+    font-size: 1.5em;
+    border: none;
+    background: ${todo.backgroundPrimary};
+    ::placeholder {
+      font-size: 1em;
+      font-weight: 400;
+      color: ${todo.textFaded};
+    }
+  }
+  button {
+    display: flex;
+    align-self: center;
+    width: 3em;
+    height: auto;
+    margin: 0.5em 1em 0.5em 0.5em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    background: none;
+    color: ${todo.textFaded};
+    transition: 100ms linear;
+    :hover {
+      box-shadow: ${todo.shadow_btn};
+      color: ${todo.textPrimary};
+    }
+  }
+`;

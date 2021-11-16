@@ -363,7 +363,7 @@ export const IconMenu = (props) => {
     </svg>
   );
 };
-
+// header
 export const IconDelete = (props) => {
   // return (
   //   <svg
@@ -386,6 +386,61 @@ export const IconDelete = (props) => {
       />
     </svg>
   );
+};
+
+export const IconCancel = (props) => {
+  // x mark
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="currentwidth"
+      height="currentHeight"
+      viewBox="-7 -7 38 38"
+    >
+      <path d="M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z" />
+    </svg>
+  );
+
+  //undo arrow
+  // return (
+  //   <svg
+  //     xmlns="http://www.w3.org/2000/svg"
+  //     version="1.1"
+  //     x="0px"
+  //     y="0px"
+  //     viewBox="20 20 60 85"
+  //     enableBackground="new 0 0 100 100"
+  //     xmlSpace="preserve"
+  //   >
+  //     <g>
+  //       <defs>
+  //         <rect id="b" width="100" height="100" />
+  //       </defs>
+  //       <clipPath id="a">
+  //         <use xlinkHref="#b" overflow="visible" />
+  //       </clipPath>
+  //       <path
+  //         clipPath="url(#a)"
+  //         d="M73.888,68.947c0,0-6.581-25.694-26.326-18.421l3.174,4.836l-24.625-0.244l9.487-22.913   l2.958,4.875C38.557,37.081,73.4,20.62,73.888,68.947"
+  //       />
+  //     </g>
+  //   </svg>
+  // );
+  // return (
+  //   <svg
+  //     xmlns="http://www.w3.org/2000/svg"
+  //     version="1.1"
+  //     x="0px"
+  //     y="0px"
+  //     viewBox="2 0 24 30"
+  //     xmlSpace="preserve"
+  //   >
+  //     <g>
+  //       <path d="M14,13.4l1.3,1.3c0,0,0,0,0,0l1,1c0.4,0.4,1,0.4,1.4,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0.1-0.1,0.1-0.2,0.2-0.3   c0,0,0-0.1,0-0.1c0-0.1,0-0.1,0-0.2c0-0.1,0-0.2-0.1-0.4c0,0,0,0,0,0c0-0.1-0.1-0.2-0.2-0.3L15.4,12l2.3-2.3   c0.1-0.1,0.2-0.2,0.2-0.3c0,0,0,0,0,0C18,9.2,18,9.1,18,9c0-0.1,0-0.2,0-0.2c0,0,0-0.1,0-0.1c0-0.1-0.1-0.2-0.2-0.3c0,0,0,0,0,0   c0,0,0,0,0,0c0,0,0,0,0,0c-0.4-0.4-1-0.4-1.4,0l-1,1c0,0,0,0,0,0L14,10.6l-2.3-2.3c-0.4-0.4-1-0.4-1.4,0c-0.1,0.1-0.2,0.2-0.2,0.3   c0,0,0,0,0,0c0,0.1-0.1,0.2-0.1,0.3c0,0,0,0,0,0.1c0,0,0,0.1,0,0.1c0,0.2,0.1,0.4,0.3,0.6l2.3,2.3l-2.3,2.3   c-0.2,0.2-0.2,0.4-0.3,0.6c0,0,0,0.1,0,0.1c0,0,0,0,0,0.1c0,0.1,0,0.2,0.1,0.3c0,0,0,0,0,0c0,0.1,0.1,0.2,0.2,0.3   c0.4,0.4,1,0.4,1.4,0L14,13.4z" />
+  //       <path d="M21,4H8c0,0-0.1,0-0.1,0c0,0-0.1,0-0.1,0C7.7,4,7.6,4.1,7.5,4.1c0,0,0,0-0.1,0C7.3,4.2,7.3,4.3,7.2,4.4l-5,7   C2.1,11.6,2,11.8,2,12c0,0.2,0.1,0.4,0.2,0.6l5,7c0.1,0.1,0.2,0.2,0.3,0.2c0,0,0,0,0.1,0C7.6,19.9,7.7,20,7.8,20c0,0,0.1,0,0.1,0   c0,0,0.1,0,0.1,0h13c0.6,0,1-0.4,1-1v0V5v0C22,4.4,21.6,4,21,4z M8.5,18l-4.3-6l4.3-6h2.9c0,0,0,0,0,0H20v12h-8.5c0,0,0,0,0,0H8.5z   " />
+  //     </g>
+  //   </svg>
+  // );
 };
 
 export const IconArrowDown = (props) => {
@@ -474,6 +529,20 @@ export const IconTrash = (props) => {
     </svg>
   );
 };
+// plus
+export const IconAdd = (props) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="currentWidth"
+      height="currentHeight"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z" />
+    </svg>
+  );
+};
 
 export const IconEdit = (props) => {
   return (
@@ -493,13 +562,16 @@ export const IconCheck = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="-5 -7 24 24"
-      width="24"
+      viewBox="-3 -5 20 20"
+      width="currentWidth"
       fill="currentColor"
     >
       <path d="M5.486 9.73a.997.997 0 0 1-.707-.292L.537 5.195A1 1 0 1 1 1.95 3.78l3.535 3.535L11.85.952a1 1 0 0 1 1.415 1.414L6.193 9.438a.997.997 0 0 1-.707.292z"></path>
     </svg>
   );
+  // return (
+
+  // );
 };
 
 export const IconSun = (props) => {

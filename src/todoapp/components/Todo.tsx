@@ -8,7 +8,16 @@ import React, {
 } from "react";
 
 //styles
-import "../styles.css";
+//Styled-components
+import {
+  IconCancel,
+  IconCheck,
+  IconDelete,
+  IconEdit,
+  IconTrash,
+} from "../../a/assets/icons";
+import { theme as todo } from "../theme";
+import styled, { keyframes } from "styled-components/macro";
 
 interface Props {
   task: TaskType;
@@ -35,8 +44,7 @@ export const Todo = (props: Props) => {
 
   // templates
   const editingTemplate = (
-    <form
-      className="stack-small"
+    <FormContent
       onSubmit={(e) => handleSubmitT(e, task.id)}
       onKeyDown={(e) => {
         if (e.key === "Escape") {
@@ -44,52 +52,56 @@ export const Todo = (props: Props) => {
         }
       }}
     >
-      <div className="form-group">
-        <label className="todo-label" htmlFor={task.id}>
-          New name for {task.taskContent}
+      <DivContentInput>
+        <label className="labelE" htmlFor={task.id}>
+          Change to:
+          {/* {task.taskContent} */}
         </label>
         <input
           id={task.id}
-          className="todo-text"
+          className="inputE"
           type="text"
           value={newTaskContent}
           onChange={handleChangeT}
           autoFocus
           autoComplete="off"
         />
-      </div>
-      <div className="btn-group">
+      </DivContentInput>
+      <DivContentButton className="btn-group">
         <button
           type="button"
           className="btn todo-cancel"
           onClick={() => setEditing("")}
         >
-          Cancel
-          <span className="visually-hidden">renaming {task.taskContent}</span>
+          {cancel}
+          {/* <span className="visually-hidden">renaming {task.taskContent}</span> */}
         </button>
         <button type="submit" className="btn btn__primary todo-edit">
-          Save
-          <span className="visually-hidden">
+          {save}
+          {/* <span className="visually-hidden">
             new name for {task.taskContent}
-          </span>
+          </span> */}
         </button>
-      </div>
-    </form>
+      </DivContentButton>
+    </FormContent>
   );
   const viewTemplate = (
-    <div className="stack-small">
-      <div className="c-cb">
+    <DivContent>
+      <DivContentInput>
         {/* If we were to use checked, as we would in regular HTML, React would log some warnings into our browser console relating to handling events on the checkbox, which we want to avoid. */}
         {/* When used as an attribute of <label>, the for attribute has a value which is the id of the form element it relates to. => <label for="username">Your name</label>
                                                                                                                                     <input type="text" id="username"> */}
-        <input
-          id={task.id}
-          type="checkbox"
-          defaultChecked={task.completed}
-          onChange={() => toggleTaskCompleted(task.id)}
-        />
+        <div>
+          <input
+            className="inputW"
+            id={task.id}
+            type="checkbox"
+            defaultChecked={task.completed}
+            onChange={() => toggleTaskCompleted(task.id)}
+          />
+        </div>
         <label
-          className="todo-label"
+          className="labelW"
           htmlFor={task.id}
           onDoubleClick={(e) => {
             setEditing(task.id);
@@ -97,28 +109,128 @@ export const Todo = (props: Props) => {
         >
           {task.taskContent}
         </label>
-      </div>
-      <div className="btn-group">
-        <button
-          type="button"
-          className="btn"
-          onClick={() => setEditing(task.id)}
-        >
-          Edit <span className="visually-hidden">{task.taskContent}</span>
+      </DivContentInput>
+      <DivContentButton>
+        <button type="button" onClick={() => setEditing(task.id)}>
+          {edit}
+          {/* <span className="visually-hidden">{task.taskContent}</span> */}
         </button>
-        <button
-          type="button"
-          className="btn btn__danger"
-          onClick={() => deleteTask(task.id)}
-        >
-          Delete <span className="visually-hidden">{task.taskContent}</span>
+        <button type="button" onClick={() => deleteTask(task.id)}>
+          {trash}
+          {/* <span className="visually-hidden">{task.taskContent}</span> */}
         </button>
-      </div>
-    </div>
+      </DivContentButton>
+    </DivContent>
   );
   return (
-    <li className="todo stack-small">
-      {isEditing === task.id ? editingTemplate : viewTemplate}
-    </li>
+    <LiMain>{isEditing === task.id ? editingTemplate : viewTemplate}</LiMain>
   );
 };
+
+// Styled components:
+const edit = <IconEdit />;
+const trash = <IconTrash />;
+const cancel = <IconCancel />;
+const save = <IconCheck />;
+
+const fadeIn = keyframes`
+0% {opacity: 0}
+100% {opacity: 1}
+`;
+
+const LiMain = styled.li`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  animation: 1s ${fadeIn} forwards;
+  margin: 1.2em 0;
+  padding: 0 0 0 0.25em;
+  box-shadow: ${todo.shadow_btn};
+  min-height: 4em;
+  border-radius: 0.15em;
+`;
+
+const DivContent = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  animation: 1s ${fadeIn} forwards;
+`;
+
+const FormContent = styled.form`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  animation: 1s ${fadeIn} forwards;
+`;
+
+const DivContentInput = styled.div`
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  /* justify-content: center; */
+  align-items: center;
+  .inputW {
+    display: flex;
+    align-self: center;
+    width: 2em;
+    height: 2em;
+    margin: 0.5em;
+  }
+
+  .labelW {
+    display: flex;
+    width: 100%;
+    min-width: 15.5em;
+    align-items: center;
+    font-size: 1em;
+    padding: 0.5em;
+  }
+
+  .inputE {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size: 1em;
+    padding: 0.5em;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    background: ${todo.backgroundPrimary};
+  }
+
+  .labelE {
+    display: flex;
+    font-size: 1.2em;
+    width: auto;
+    height: 2.5em;
+    margin: 0.5em;
+  }
+`;
+
+const DivContentButton = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  button {
+    display: flex;
+    align-self: center;
+    width: 2.2em;
+    height: 2.2em;
+    margin: 0.5em;
+    padding: 0.3em;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    background: none;
+    transition: 100ms linear;
+    :hover {
+      box-shadow: ${todo.shadow_btn};
+    }
+  }
+`;

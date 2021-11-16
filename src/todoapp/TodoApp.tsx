@@ -6,9 +6,9 @@ import { Todo } from "./components/Todo";
 // hooks
 import { useTaskLocalStorage } from "./hooks/useTaskLocalStorage";
 
-//Styled-components
-import "./styles.css";
-import { MdDragHandle } from "react-icons/md";
+// Styles:
+import { theme as todo } from "./theme";
+import styled, { keyframes } from "styled-components/macro";
 
 // others
 /* We are defining these constants outside our App() function because if they were defined inside it, 
@@ -17,7 +17,7 @@ This information will never change no matter what our application does. */
 const FILTER_TODO_LIST = {
   all: () => true,
   active: (task: TaskType) => !task.completed,
-  completed: (task: TaskType) => task.completed,
+  done: (task: TaskType) => task.completed,
 };
 
 const FILTER_LIST_CATEGORY_NAMES = Object.keys(FILTER_TODO_LIST);
@@ -173,27 +173,96 @@ export const TodoApp = () => {
 
   // Template ***************************************************************************************************************************
   return (
-    <div className="todoapp stack-large">
-      <h1>TodoMatic</h1>
-      <InputForm
-        handleKeyDownIF={handleKeyDownIF}
-        handleSubmitIF={handleSubmitIF}
-        handleChangeIF={handleChangeIF}
-        taskContent={taskContent}
-        error={error}
-        contentInputFormRef={contentInputFormRef}
-      />
-      <div className="filters btn-group stack-exception">
-        {filterListButtons}
-      </div>
-      <h2 id="list-heading">{headingText}</h2>
-      <ul
-        role="list"
-        className="todo-list stack-large stack-exception"
-        aria-labelledby="list-heading"
-      >
-        {taskList}
-      </ul>
-    </div>
+    <DivMain>
+      <DivContent>
+        <h1>TodoMate</h1>
+        <InputForm
+          handleKeyDownIF={handleKeyDownIF}
+          handleSubmitIF={handleSubmitIF}
+          handleChangeIF={handleChangeIF}
+          taskContent={taskContent}
+          error={error}
+          contentInputFormRef={contentInputFormRef}
+        />
+        <Div>{filterListButtons}</Div>
+        <h2 id="list-heading">{headingText}</h2>
+        <ul role="list" aria-labelledby="list-heading">
+          {taskList}
+        </ul>
+      </DivContent>
+    </DivMain>
   );
 };
+
+// Styled components:
+const fadeIn = keyframes`
+0% {opacity: 0}
+100% {opacity: 1}
+`;
+
+const DivMain = styled.section`
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: ${todo.textPrimary};
+  background: ${todo.backgroundPrimary};
+  animation: 1s ${fadeIn} forwards;
+`;
+const DivContent = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 26em;
+  width: 100%;
+  padding: 5em 3em;
+  h1 {
+    width: 100%;
+    font-size: 2em;
+    margin: 0 0 1em;
+    text-align: center;
+  }
+  h2 {
+    width: 100%;
+    font-size: 1.25em;
+    margin: 2em 0 0;
+    text-align: left;
+    /* text-transform: uppercase; */
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: none;
+  }
+`;
+
+const Div = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 31%;
+    height: 2.5em;
+    padding: 0.5em;
+    font-size: 1.25em;
+    border: none;
+    box-shadow: ${todo.shadow_btn2};
+    border-radius: 0.15em;
+    color: ${todo.textFaded};
+    background: ${todo.backgroundPrimary};
+    transition: 100ms linear;
+    :hover {
+      background: ${todo.backgroundSecondary};
+      color: ${todo.textSecondary};
+    }
+    :focus {
+      background: ${todo.backgroundSecondary};
+      color: ${todo.textSecondary};
+    }
+  }
+`;

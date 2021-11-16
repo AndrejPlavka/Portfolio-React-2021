@@ -54,7 +54,7 @@ const DivCounter = styled.div`
   display: flex;
   flex-flow: column nowrap;
   overflow: hidden;
-  padding: 6em 3em;
+  padding: 4em 3em 3em;
   animation: 1s ${fadeIn} forwards;
 `;
 
@@ -65,7 +65,7 @@ const H1 = styled.h1`
   text-align: center;
   color: ${counter.black};
   @media (${theme.sm_min_768}) {
-    font-size: 4em;
+    font-size: 3.5em;
   }
 `;
 const DivNumber = styled.div`
@@ -78,7 +78,7 @@ const DivNumber = styled.div`
   margin: 0 auto;
   margin-bottom: 0.5em;
   @media (${theme.sm_min_768}) {
-    font-size: 4em;
+    font-size: 3em;
   }
 `;
 
