@@ -9,6 +9,7 @@ export const theme = {
   borderRadius: "0.2em",
   backgroundPrimary: "transparent",
   backgroundSecondary: "black",
+  backgroundFaded: "rgba(0, 0, 0, 0.747)",
 
   shadow_btn2:
     "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",

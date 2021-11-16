@@ -253,16 +253,15 @@ const Div = styled.div`
     border: none;
     box-shadow: ${todo.shadow_btn2};
     border-radius: 0.15em;
-    color: ${todo.textFaded};
-    background: ${todo.backgroundPrimary};
     transition: 100ms linear;
+    background: ${todo.backgroundSecondary};
+    color: ${todo.textSecondary};
     :hover {
-      background: ${todo.backgroundSecondary};
-      color: ${todo.textSecondary};
+      opacity: 1;
+      transform: translateY(3px);
     }
     :focus {
-      background: ${todo.backgroundSecondary};
-      color: ${todo.textSecondary};
+      background: ${todo.backgroundFaded};
     }
   }
 `;
