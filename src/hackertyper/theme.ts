@@ -1,4 +1,15 @@
 export const theme = {
   black: "#000000",
   textGreen: "#00fc00",
+  errorColor: "red",
+  textPrimary: "black",
+  textFaded: "lightgray",
+  textSecondary: "white",
+  visitedPrimary: "black",
+  visitedSecondary: "gray",
+  borderBasic: "1px solid black",
+  borderRadius: "0.2em",
+  backgroundPrimary: "transparent",
+  backgroundSecondary: "black",
+  backgroundFaded: "rgba(0, 0, 0, 0.747)",
 };

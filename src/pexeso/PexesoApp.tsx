@@ -111,9 +111,9 @@ export const PexesoApp = () => {
           moves={moves}
           handleReset={handleReset}
         />
-        <button type="button" onClick={() => setShowModal(true)}>
+        {/* <button type="button" onClick={() => setShowModal(true)}>
           <span>Open Modal</span>
-        </button>
+        </button> */}
 
         <DivModal>
           <Modal showModal={showModal}>
