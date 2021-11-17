@@ -1,15 +1,18 @@
 import { createPortal } from "react-dom";
 import React, { FC } from "react";
-import styled from "styled-components";
+// Styles:
+import { theme as mg } from "../theme";
+import styled from "styled-components/macro";
 
 const Wrapper = styled.div`
   z-index: 3;
-  background-color: rgba(255, 255, 255, 0.6);
+  position: fixed;
   bottom: 0;
   left: 0;
-  position: fixed;
   right: 0;
   top: 0;
+  background: ${mg.backgroundFaded};
+  /* opacity: 0.9; */
 `;
 
 type Props = {

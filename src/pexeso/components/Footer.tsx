@@ -1,53 +1,67 @@
 import React from "react";
-import styled from "styled-components";
 
-// Styles
+// Styles:
+import { theme as mg } from "../theme";
+import styled from "styled-components/macro";
+
+// Styled components:
 const Footer = styled.footer`
-  background-color: white;
-  border-radius: 4px;
-  width: 26.6rem;
-  position: relative;
-  margin: 0 auto;
-  margin-top: 10px;
-  border-radius: 4px;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  align-items: center;
+  margin: 1.5em 0;
+  background: ${mg.backgroundPrimary};
 `;
 
 const DivScore = styled.div`
-  background-color: white;
-  color: black;
-  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.151);
-  justify-content: space-between;
   display: flex;
-  padding: 8px 20px;
-  border-radius: 3px;
+  width: 100%;
+  justify-content: space-evenly;
+  background: ${mg.backgroundPrimary};
+  color: ${mg.textPrimary};
+  box-shadow: ${mg.shadow_btn1};
+  border-radius: ${mg.borderRadius};
 `;
 
 const DivMoves = styled.div`
-  font-weight: bold;
-  font-size: 24px;
+  display: flex;
+  justify-content: flex-start;
+  width: 35%;
+  padding: 0.5em;
+  font-size: 1.5em;
+  font-weight: 400;
+  span {
+    margin-right: 0.25em;
+    background: ${mg.backgroundPrimary};
+  }
 `;
-
-const Span = styled.span`
-  background-color: white;
+const DivMatched = styled(DivMoves)`
+  justify-content: flex-end;
 `;
 
 const DivReset = styled.div`
-  width: 100%;
   display: flex;
   justify-content: center;
+  width: 100%;
 `;
 
 const ResetButton = styled.button`
   width: 100%;
-  margin-top: 10px;
-  padding: 16px 32px;
-  border-radius: 3px;
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
+  font-size: 1.75em;
+  border-radius: ${mg.borderRadius};
   border: none;
-  background: #141414;
-  color: #fff;
-  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.151);
-  font-size: 24px;
+  background: ${mg.backgroundSecondary};
+  color: ${mg.textSecondary};
   cursor: pointer;
+  box-shadow: ${mg.shadow_btn1};
+  transition: 100ms linear;
+  :hover {
+    opacity: 1;
+    transform: translateY(2px);
+  }
 `;
 interface Props {
   matchedPairs: number;
@@ -55,16 +69,17 @@ interface Props {
   handleReset(): void;
 }
 
+// Component:
 export const PexesoFooter = ({ matchedPairs, moves, handleReset }: Props) => {
   return (
     <Footer>
       <DivScore>
         <DivMoves>
-          <Span>Moves:</Span> {moves}
+          <span>Moves:</span> {moves}
         </DivMoves>
-        <DivMoves>
-          <Span>Matched:</Span> {matchedPairs}/8
-        </DivMoves>
+        <DivMatched>
+          <span>Matched:</span> {matchedPairs}/8
+        </DivMatched>
       </DivScore>
       <DivReset>
         <ResetButton onClick={handleReset}>New Game</ResetButton>

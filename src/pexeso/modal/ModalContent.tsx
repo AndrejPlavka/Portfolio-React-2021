@@ -1,28 +1,36 @@
 import { ImgSrc } from "./ModalBackground";
 import React, { useRef } from "react";
-import styled from "styled-components/macro";
+// Styled:
+import { theme as mg } from "../theme";
+import { theme } from "../../GlobalStyles";
+import styled, { keyframes } from "styled-components/macro";
+
+// Styled components:
+const fadeIn = keyframes`
+0% {opacity: 0}
+100% {opacity: 1}
+`;
 
 const DivBackdrop = styled.div`
   z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.6);
+  animation: 1s ${fadeIn} forwards;
 `;
 
 const DivWrapper = styled.div`
   z-index: 3;
-  position: fixed;
-  width: 40vw;
-  height: 35vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  top: 23%;
+  position: fixed;
+  width: 90%;
+  max-width: 26em;
   border: 1px solid black;
   border-radius: 3px;
   text-align: center;
@@ -32,50 +40,50 @@ const DivWrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 
-  @media (min-width: 600px) {
-    min-width: 600px;
-  }
-
   img {
     width: 100%;
     object-fit: contain;
     height: auto;
-    border-radius: 10px 0 0 10px;
-    background: #000;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: ${mg.backgroundPrimary};
   }
 
   button {
-    min-width: 100px;
-    padding: 16px 32px;
+    padding: 0.75em 1em;
     border-radius: 4px;
     border: none;
-    background: #141414;
-    color: #fff;
-    font-size: 24px;
+    margin: 0.5em 0 1em;
+    background: ${mg.backgroundSecondary};
+    color: ${mg.textSecondary};
+    font-size: 2em;
     cursor: pointer;
+    opacity: 0.92;
+    :hover {
+      opacity: 1;
+    }
   }
 `;
 const DivScore = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  padding: 50px 70px;
+  align-items: center;
   border-radius: 3px;
-  background-color: transparent;
-  color: white;
-  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.151);
 `;
 
 const DivMoves = styled.div`
-  font-weight: bold;
-  font-size: 24px;
+  margin: 0.5em;
+  font-weight: 400;
+  font-size: 1.5em;
+  color: ${mg.errorColor};
 `;
 
 const DivTitle = styled.div`
-  font-weight: bold;
-  font-size: 50px;
+  margin: 0.5em;
+  font-weight: 700;
+  font-size: 3em;
+  color: ${mg.errorColor};
 `;
 
 type Props = {
@@ -86,6 +94,7 @@ type Props = {
   matchedPairs: number;
 };
 
+// Component:
 export const ModalContent = ({
   handleReset,
   moves,
@@ -101,7 +110,7 @@ export const ModalContent = ({
       onClose();
     }
   };
-
+  // Template:
   return (
     <DivBackdrop ref={backDropRef} onClick={handleCloseOnOverlay}>
       <DivWrapper>
@@ -110,9 +119,6 @@ export const ModalContent = ({
         <DivScore>
           <DivMoves>
             <span>Moves:</span> {moves}
-          </DivMoves>
-          <DivMoves>
-            <span>Matched:</span> {matchedPairs}/8
           </DivMoves>
         </DivScore>
 
