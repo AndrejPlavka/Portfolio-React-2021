@@ -26,7 +26,7 @@ export const ProjectList = () => {
 const DivMain = styled.section`
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 `;
@@ -34,52 +34,21 @@ const DivMain = styled.section`
 const DivProjectsList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1300px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
   width: 100%;
   padding: 6em 3em;
-  /* 
+
   @media screen and (${theme.sx_min_425}) {
     width: 80%;
-  } 
+    justify-content: space-around;
+  }
   @media screen and (${theme.sm_min_768}) {
-    flex-basis: 45%;
+    width: 100%;
   }
+
   @media screen and (${theme.md_min_1024}) {
-    flex-basis: 30%;
+    justify-content: space-between;
   }
-  
-  */
-  /* @media screen and (max-width: 1128px) {
-    padding: 5em 3em;
-  }
-  @media screen and (max-width: 780px) {
-    justify-content: center;
-  }
-  @media screen and (max-width: 450px) {
-    justify-content: center;
-    padding: 4em 0.5em;
-  } */
 `;
-
-// // grid
-// const DivGrid = styled.div`
-//   max-width: 1010px;
-//   width: 100%;
-//   padding: 6em 0.5em;
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
-//   grid-gap: 1em;
-//   @media screen and (max-width: 1128px) {
-//     padding: 5em 3em;
-//   }
-// `;
-
-// section__title
-// const H2 = styled.h2`
-//   width: 100%;
-//   margin: 2.5em 0;
-//   font-size: 2rem;
-//   text-align: center;
-//   text-transform: uppercase;
-// `;

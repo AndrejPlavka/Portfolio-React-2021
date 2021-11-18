@@ -40,7 +40,9 @@
 	min-height: 100vh;
 	text-align: center;
 	background: black;
-	
+	animation-name: fade-in;
+	animation-fill-mode: both;
+	animation-duration: 1s;
 	font: {
 		size: 1em;
 		family: 'Nunito Sans', helvetica, arial, sans-serif;
@@ -57,7 +59,10 @@
 		text-align: left;
 	}
 }
-
+@keyframes fade-in {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+  }
 
 .content {
 	align-self: center;

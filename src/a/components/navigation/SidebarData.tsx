@@ -70,16 +70,11 @@ export const SidebarData = [
         path: "/tunesapp",
         cName: "sub-nav",
       },
-      {
-        title: "7",
-        path: "",
-        cName: "sub-nav",
-      },
-      {
-        title: "8",
-        path: "",
-        cName: "sub-nav",
-      },
+      // {
+      //   title: "Tic-tac-tou",
+      //   path: "",
+      //   cName: "sub-nav",
+      // },
     ],
   },
   {

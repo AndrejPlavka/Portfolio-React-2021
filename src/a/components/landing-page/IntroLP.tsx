@@ -36,7 +36,7 @@ export const Intro = () => {
 
 // Styled components:
 //ex-eg -> exempli gratia (example)
-// e.g.: background: url(&{img}), import img from "./...";
+// e.g.: background: url(${img}), import img from "./...";
 // e.g.: backdrop-filter: blur(5px) makes backround blury
 const DivMain = styled.div`
   display: flex;

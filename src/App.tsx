@@ -34,26 +34,19 @@ const DivContent = styled.div`
   align-items: center;
   height: 100%;
   width: 100%;
-  /* justify-content: center; // apps workspace !! */
   padding-bottom: 3em;
   overflow-x: hidden;
 `;
 
-// const LinkProject = styled(LinkStyled)`
-//   &.active {
-//     filter: brightness(1.3);
-//     text-decoration: underline;
-//   }
-// `;
-
 function App() {
   const location = useLocation();
-  // Template - Projets Routesconst
+
   return (
     <>
       <Div>
         <DivContent>
           <Navbar />
+
           <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={location.pathname}>
               <Route path="/" component={LandingPage} exact />

@@ -26,6 +26,7 @@ const DivCard = styled.div`
   transition: 150ms linear;
   h1 {
     font-weight: 300;
+    font-size: 1.25em;
   }
   :hover {
     opacity: 0.5;
@@ -35,6 +36,7 @@ const DivInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  text-align: right;
 `;
 
 // Component:

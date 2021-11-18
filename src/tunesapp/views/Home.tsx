@@ -15,8 +15,10 @@ export const Home = () => {
   return (
     <div className="home">
       <img className="logo" src={logo} alt="react logo" />
-      <h1>{title}</h1>
-      <p>Search for your favrite music to your hart content by Tunes</p>
+      {/* <h1>{title}</h1> */}
+      {/* <p style={{ fontWeight: "lighter" }}>
+        Search for your favrite music to your hart content by Tunes
+      </p> */}
     </div>
   );
 };

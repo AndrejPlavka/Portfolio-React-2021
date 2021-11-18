@@ -30,7 +30,7 @@ export const Portfolio = () => {
 };
 
 // Styled compoentns:
-const DivMain = styled.section`
+const DivMain = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,6 +1,13 @@
 import { SidebarData } from "./components/navigation/SidebarData";
 //@ts-ignore
 import Pdf from "../a/documents/CV_Andrej Plavka.pdf";
+// img imports
+import Blog_Md from "./components/portfolio/img/Blog_Md.png";
+import Counter_Lg from "./components/portfolio/img/Counter_Lg.png";
+import HT_Md from "./components/portfolio/img/HT_Md.png";
+import Mg_Md from "./components/portfolio/img/Mg_Md.png";
+import Todo_Md2 from "./components/portfolio/img/Todo_Md2.png";
+import Tunes_Md1 from "./components/portfolio/img/Tunes_Md1.png";
 // icon imports
 import {
   IconArrowDown,
@@ -105,9 +112,9 @@ const footer = {
 };
 // About page:
 const about = {
-  name: "Andrej Plavka",
-  role: "Front End Engineer",
-  description: "bla bla bla bla bla bla bla bla bla bla bla bla bla",
+  name: "",
+  role: "",
+  description: "",
   resume: "https://",
   social: {
     linkedin: "https://linkedin.com",
@@ -122,6 +129,7 @@ export type ProjectType = {
   sourceIcon: JSX.Element;
   sourceCode: string;
   livePreview: string;
+  bgImg?: string;
 };
 
 const projects = [
@@ -133,37 +141,37 @@ const projects = [
     sourceIcon: GitHub,
     sourceCode: "https://github.com",
     livePreview: "/hackertyper",
-    bgImg: "",
+    bgImg: HT_Md,
   },
   {
-    name: "To-Do List",
+    name: "Counter",
     description:
-      "Get all those tasks out of your head and add them to the local storage list to get an overview. A simple task application in which you learn how to add, edit, delete and filter tasks. Connect with hooks ",
-    stack: [HTML, CSS, TS, React, SC, Router],
+      "Create your first simple React application and learn the basics of React. Built up on it and add Redux to manage actiones.",
+    stack: [HTML, CSS, TS, React, SC, Redux],
     sourceIcon: GitHub,
     sourceCode: "https://github.com",
-    livePreview: "/todoapp",
-    bgImg: "",
+    livePreview: "/counter",
+    bgImg: Counter_Lg,
   },
   {
     name: "Memory Game",
     description:
-      "Test your memory by playing! Memory games give space to critical thinking, which helps to develop attention to detail.",
+      "Test your memory by playing! Memory games provide space for critical thinking, which helps to develop attention to detail.",
     stack: [HTML, CSS, TS, React, SC],
     sourceIcon: GitHub,
     sourceCode: "https://github.com",
     livePreview: "/pexeso",
-    bgImg: "",
+    bgImg: Mg_Md,
   },
   {
     name: "Blog",
     description:
-      "Create a blog to learn how to use local storage and a react router. Learn how to add, edit, or delete posts. ",
+      "Create a blog to learn how to use local storage and a react router. Learn how to add, edit, or delete posts. You can also use MD.",
     stack: [HTML, CSS, TS, React, SC, Router, Markdown],
     sourceIcon: GitHub,
     sourceCode: "https://github.com",
     livePreview: "/blog",
-    bgImg: "",
+    bgImg: Blog_Md,
   },
   {
     name: "Tunes App",
@@ -173,17 +181,17 @@ const projects = [
     sourceIcon: GitHub,
     sourceCode: "https://github.com",
     livePreview: "/tunesapp",
-    bgImg: "",
+    bgImg: Tunes_Md1,
   },
   {
-    name: "Counter",
+    name: "To-Do List",
     description:
-      "Create your first simple React application and learn the basics of React. Find out what the previous state is and why it is important.",
-    stack: [HTML, CSS, TS, React, SC, Redux],
+      "Get all those tasks out of your head and add them to the local storage list to get an overview. A simple task application in which you learn how to add, edit, delete and filter tasks.",
+    stack: [HTML, CSS, TS, React, SC, Router],
     sourceIcon: GitHub,
     sourceCode: "https://github.com",
-    livePreview: "/counter",
-    bgImg: "",
+    livePreview: "/todoapp",
+    bgImg: Todo_Md2,
   },
 ];
 // Skils section ***************************************************************

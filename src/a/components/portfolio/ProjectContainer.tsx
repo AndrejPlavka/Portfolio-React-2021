@@ -2,9 +2,9 @@ import { ProjectType } from "../../PortfolioData";
 
 // styles
 import { Link } from "react-router-dom";
-
+import { theme as project } from "./theme";
 import { theme } from "../../../GlobalStyles";
-import styled from "styled-components/macro";
+import styled, { keyframes } from "styled-components/macro";
 
 interface Props {
   project: ProjectType;
@@ -26,6 +26,7 @@ export const ProjectContainer = (props: Props) => {
 
   return (
     <DivProject>
+      <p>{project.description}</p>
       <DivHeader>
         <h3>{project.name}</h3>
         <div>
@@ -33,8 +34,12 @@ export const ProjectContainer = (props: Props) => {
           {GitHub}
         </div>
       </DivHeader>
-      <DivContent>
-        <p>{project.description}</p>
+      <DivContent
+        style={{
+          backgroundImage: `url(${project.bgImg})`,
+        }}
+      >
+        {/* <p>{project.description}</p> */}
       </DivContent>
       <DivFooter>
         {project.stack && (
@@ -50,31 +55,63 @@ export const ProjectContainer = (props: Props) => {
 };
 
 // styled components:
+const fadeIn = keyframes`
+0% {opacity: 0}
+100% {opacity: 1}
+`;
+
 const DivProject = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 90%;
+  max-width: 23em;
+  min-width: 17em;
   height: 20em;
   padding: 0 0.5em;
-  margin-bottom: 2em;
+  margin: 1em 0.25em;
   border-radius: 2.5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: ${project.shadow_btn};
   transition: transform 0.2s linear;
-  :hover {
-    transform: translateY(-7px);
+  p {
+    z-index: 2;
+    display: none;
+    align-self: center;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 20em;
+    height: auto;
+    position: absolute;
+    padding: 1em;
+    font-size: 0.85em;
+    font-weight: 400;
+    border-radius: 4px;
+    background: ${project.backgroundFaded};
+    color: ${project.textSecondary};
+    animation: 0.35s ${fadeIn} forwards;
   }
-  //!!!!!!!!!!!!!!!!!!!!! flex-basis => width
-
+  :hover {
+    transform: translateY(-3px);
+    p {
+      display: flex;
+      transform: translateY(0);
+    }
+  }
   @media screen and (${theme.sx_min_425}) {
     width: 80%;
   }
   @media screen and (${theme.sm_min_768}) {
-    /* flex-basis: 45%; */
-    width: 45%;
+    width: 40%;
+    height: 18em;
+    max-width: 20em;
   }
   @media screen and (${theme.md_min_1024}) {
     width: 30%;
-    height: 20em;
+    min-width: 17em;
+    height: 17em;
+    p {
+      font-size: 0.75em;
+    }
   }
 `;
 
@@ -82,7 +119,7 @@ const DivHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.6em;
+  padding: 0.6em 0.5em;
   div {
     display: flex;
     flex-direction: row;
@@ -115,31 +152,23 @@ const LinkDemo = styled(Link)`
 `;
 
 const DivContent = styled.div`
-  background: ${theme.bg_gr_l};
   flex: 1;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-content: center;
-  padding: 0.6em;
+  align-self: center;
+  width: 90%;
+  padding: 0.5em;
+  box-shadow: ${project.shadow_btn2};
   border-radius: 2px;
-  /* text-align: center; */
-  p {
-    font-size: 1.2em;
-    opacity: 0.65;
-    &:hover {
-      opacity: 1;
-    }
-  }
-  @media screen and (${theme.md_min_1024}) {
-    p {
-      font-size: 1em;
-    }
-  }
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  filter: grayscale(100%);
 `;
 
 const DivFooter = styled.div`
-  padding: 0.6em;
+  padding: 0.6em 0.5em;
   div {
     display: flex;
     flex-direction: row;

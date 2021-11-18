@@ -47,7 +47,7 @@ const DivProjectsList = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-between;
-  max-width: 1300px;
+  max-width: 1200px;
   width: 80%;
   padding: 2em 0 4em;
 
@@ -55,24 +55,10 @@ const DivProjectsList = styled.div`
     max-width: 540px;
   }
   @media screen and (${theme.sm_min_768}) {
-    width: 70%;
+    width: 90%;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: space-between;
-    max-width: 1300px;
+    justify-content: space-evenly;
+    max-width: 1200px;
   }
-
-  @media screen and (${theme.md_min_1024}) {
-    /* flex-basis: 30%; */
-  }
-  /* @media screen and (max-width: 1128px) {
-    padding: 5em 3em;
-  }
-  @media screen and (max-width: 780px) {
-    justify-content: center;
-  }
-  @media screen and (max-width: 450px) {
-    justify-content: center;
-    padding: 4em 0.5em;
-  } */
 `;

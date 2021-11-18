@@ -1,8 +1,8 @@
 import { IconContext, IconType } from "react-icons/lib";
 import { Link, NavLink } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
-import { SubMenu } from "./SubMenu";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import useOnClickOutside from "../../hooks/OnClickOutside";
 
 //Styles
 
@@ -29,29 +29,24 @@ interface Props {
 }
 
 export const Sidebar = (props: Props) => {
-  // const [sidebar, setSidebar] = useState(true);
   const data = SidebarData;
   const [subnav, setSubnav] = useState(false);
-
   const showSubnav = () => setSubnav((p) => !p);
+  const ref = useRef(null);
 
-  // const showSidebar = () => setSidebar((p) => !p);
+  // Close subnav on click outside of subnav
+  const handleClickOutside = () => {
+    setSubnav(false);
+  };
+  useOnClickOutside(ref, handleClickOutside);
 
+  // Template:
   const renderMenuItems = (data) => {
     return data.map((item: SiderbarType, index: number) =>
       item?.subNav ? (
         <li key={index}>
           <div>
-            <Link to={item.path}>
-              {item.title}
-              {/*<div>
-               {item.subNav && subnav
-                ? item.iconOpened
-                : item.subNav
-                ? item.iconClosed
-                : null} 
-            </div>*/}
-            </Link>
+            <Link to={item.path}>{item.title}</Link>
             <button onClick={showSubnav}>
               {subnav ? item.iconOpened : item.iconClosed}
             </button>
@@ -77,22 +72,11 @@ export const Sidebar = (props: Props) => {
   };
 
   return (
-    <DivMenu subnav={subnav} sidebar={props.sidebar}>
+    <DivMenu ref={ref} subnav={subnav} sidebar={props.sidebar}>
       <ul>{renderMenuItems(data)}</ul>
     </DivMenu>
   );
 };
-
-/* 
-ex. zapisu podmienky 
-<FaIcons.FaBars
-            style={sidebar ? { color: "white" } : { color: "black" }}
-            onClick={showSidebar}
-          /> */
-
-/* 
-podmienka pre ikonu do styled commponent styled.-> chybove hlasenia na DOM 
-{color: ${({ sidebar }) => (sidebar ? "white" : "black")};} */
 
 const animate = keyframes`
     from {
@@ -103,9 +87,8 @@ const animate = keyframes`
     }
 `;
 const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
-  /* height: 100%; */
   ul {
-    display: block;
+    display: ${({ sidebar }) => (sidebar ? "block" : "none")};
     position: absolute;
     width: 100%;
     height: auto;
@@ -152,6 +135,7 @@ const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
       }
     }
     @media screen and (${theme.sm_min_768}) {
+      display: block;
       position: relative;
       top: 0;
       right: 100%;
@@ -274,108 +258,13 @@ const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
   }
 `;
 
-// @media screen and (${theme.sm_min_768}) {
-//   ul {
-//     width: 8em;
-//     position: absolute;
-//     top: 3.5em;
-//     right: 5em;
-//     padding: 0.5em 0;
-//     margin: 0;
-//     text-align: left;
-//     opacity: 1;
-//     /* background: #00000045; */
-//     border-radius: 3px;
-//     overflow: hidden;
-//     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-//       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-//   }
-//   li {
-//     margin: 0;
-//     padding: 0.25em 0;
-//     margin: 0;
-//     font-size: 0.9em;
-//     font-weight: 300;
-//     /* border-bottom: 1px solid #4d515531; */
-//     div {
-//       display: flex;
-//       flex-flow: row nowrap;
-//       align-items: center;
-//       width: auto;
-//       padding: 0.25em 0 0.25em 1.25em;
-//       a {
-//         display: inline-block;
-//         padding: 0;
-//         text-decoration: none;
-//         color: white;
-//       }
-//     }
-//     &:hover {
-//       background: #878b919d;
-//       /* border-left: 1px solid #33a3ff; */
-//       border-left: 1px solid #000000;
-//     }
-//   }
-// }
-// }
+/* 
+ex.1 - style condition: 
+<FaIcons.FaBars
+            style={sidebar ? { color: "white" } : { color: "black" }}
+            onClick={showSidebar}
+          /> */
 
-// previous design - sidebar (flex box) *****************************************************************************
-// const Nav = styled.div`
-//   /* background: #15171c; */
-//   height: 80px;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-// `;
-
-// const NavIcon = styled(Link)`
-//   margin-left: 2rem;
-//   font-size: 2rem;
-//   height: 80px;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-// `;
-
-// const SidebarNav = styled.nav<{ sidebar: boolean }>`
-//   background: #15171c;
-//   width: 250px;
-//   height: 100vh;
-//   display: flex;
-//   justify-content: center;
-//   position: fixed;
-//   top: 0;
-//   right: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
-//   transition: 350ms;
-//   z-index: 10;
-// `;
-
-// const SidebarWrap = styled.div`
-//   width: 100%;
-// `;
-// let iconStyle = {sidebar? color: white : color: black};
-// let iconStyle = { color: `${({ sidebar }) => (sidebar ? "white" : "black")}` };
-// let iconStyle = { color: "black" };
-
-// return (
-//   <>
-//     <Nav>
-//       <NavIcon to="#">
-//         <FaIcons.FaBars style={{ color: "black" }} onClick={showSidebar} />
-//       </NavIcon>
-//     </Nav>
-//     <SidebarNav sidebar={sidebar}>
-//       <SidebarWrap>
-//         <NavIcon to="#">
-//           <AiIcons.AiOutlineClose
-//             style={{ color: "white" }}
-//             onClick={showSidebar}
-//           />
-//         </NavIcon>
-//         {SidebarData.map((item, index) => {
-//           return <SubMenu item={item} key={index} />;
-//         })}
-//       </SidebarWrap>
-//     </SidebarNav>
-//   </>
-// );
+/* 
+ex.2 - style components condition:
+{color: ${({ sidebar }) => (sidebar ? "white" : "black")};} */
