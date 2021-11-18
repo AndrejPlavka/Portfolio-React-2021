@@ -65,12 +65,12 @@ const H1 = styled.h1`
   text-align: center;
   color: ${counter.black};
   @media (${theme.sm_min_768}) {
-    font-size: 3.5em;
+    font-size: 3.2em;
   }
 `;
 const DivNumber = styled.div`
   background: ${counter.white};
-  font-size: 3.5em;
+  font-size: 3.25em;
   padding: 0.25em;
   text-align: center;
   font-weight: ${counter.boldFont};
@@ -102,11 +102,10 @@ const Error = styled.div`
 const Button = styled.button`
   width: 45%;
   height: 3.5em;
-  margin-bottom: 1em;
+  margin-bottom: 0.75em;
   padding: 1em 2em;
   font-weight: ${counter.boldFont};
   border: none;
-  /* border: 1px solid ${counter.black}; */
   border-radius: 2em;
   background: ${counter.white};
   box-shadow: ${counter.shadow_l};

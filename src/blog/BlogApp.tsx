@@ -48,6 +48,7 @@ const NavLinks = styled.nav`
   margin: 0 0 2em;
   border-bottom: ${blog.borderBasic};
   text-transform: uppercase;
+  color: ${blog.textPrimary};
   a:visited {
     color: ${blog.visitedPrimary};
   }
