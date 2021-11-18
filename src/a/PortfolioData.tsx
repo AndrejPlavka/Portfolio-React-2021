@@ -139,7 +139,8 @@ const projects = [
       "Bacome a hacker yourself! By pressing any key on keyboard you'll add a line of real code to fool your friends.",
     stack: [HTML, CSS, TS, React, SC],
     sourceIcon: GitHub,
-    sourceCode: "https://github.com",
+    sourceCode:
+      "https://github.com/AndrejPlavka/Portfolio-React-2021/tree/master/src/hackertyper",
     livePreview: "/hackertyper",
     bgImg: HT_Md,
   },
@@ -149,7 +150,8 @@ const projects = [
       "Create your first simple React application and learn the basics of React. Built up on it and add Redux to manage actiones.",
     stack: [HTML, CSS, TS, React, SC, Redux],
     sourceIcon: GitHub,
-    sourceCode: "https://github.com",
+    sourceCode:
+      "https://github.com/AndrejPlavka/Portfolio-React-2021/tree/master/src/counter",
     livePreview: "/counter",
     bgImg: Counter_Lg,
   },
@@ -159,7 +161,8 @@ const projects = [
       "Test your memory by playing! Memory games provide space for critical thinking, which helps to develop attention to detail.",
     stack: [HTML, CSS, TS, React, SC],
     sourceIcon: GitHub,
-    sourceCode: "https://github.com",
+    sourceCode:
+      "https://github.com/AndrejPlavka/Portfolio-React-2021/tree/master/src/pexeso",
     livePreview: "/pexeso",
     bgImg: Mg_Md,
   },
@@ -169,7 +172,8 @@ const projects = [
       "Create a blog to learn how to use local storage and react router. Learn how to add, edit or delete posts. You can also use MD to style text.",
     stack: [HTML, CSS, TS, React, SC, Router, Markdown],
     sourceIcon: GitHub,
-    sourceCode: "https://github.com",
+    sourceCode:
+      "https://github.com/AndrejPlavka/Portfolio-React-2021/tree/master/src/blog",
     livePreview: "/blog",
     bgImg: Blog_Md,
   },
@@ -179,7 +183,8 @@ const projects = [
       "Find your favorite music! Learn how to create a search form and use the iTunes API to build on the JSON experience! ",
     stack: [HTML, CSS, TS, React, SASS, Router],
     sourceIcon: GitHub,
-    sourceCode: "https://github.com",
+    sourceCode:
+      "https://github.com/AndrejPlavka/Portfolio-React-2021/tree/master/src/tunesapp",
     livePreview: "/tunesapp",
     bgImg: Tunes_Md1,
   },
@@ -189,7 +194,8 @@ const projects = [
       "Get all those tasks out of your head and add them to the local storage list to get an overview. A simple task application in which you learn how to add, edit, delete and filter tasks.",
     stack: [HTML, CSS, TS, React, SC, Router],
     sourceIcon: GitHub,
-    sourceCode: "https://github.com",
+    sourceCode:
+      "https://github.com/AndrejPlavka/Portfolio-React-2021/tree/master/src/todoapp",
     livePreview: "/todoapp",
     bgImg: Todo_Md2,
   },
