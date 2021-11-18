@@ -166,7 +166,7 @@ const projects = [
   {
     name: "Blog",
     description:
-      "Create a blog to learn how to use local storage and a react router. Learn how to add, edit, or delete posts. You can also use MD.",
+      "Create a blog to learn how to use local storage and react router. Learn how to add, edit or delete posts. You can also use MD to style text.",
     stack: [HTML, CSS, TS, React, SC, Router, Markdown],
     sourceIcon: GitHub,
     sourceCode: "https://github.com",
@@ -177,7 +177,7 @@ const projects = [
     name: "Tunes App",
     description:
       "Find your favorite music! Learn how to create a search form and use the iTunes API to build on the JSON experience! ",
-    stack: [HTML, CSS, TS, React, SC, Router],
+    stack: [HTML, CSS, TS, React, SASS, Router],
     sourceIcon: GitHub,
     sourceCode: "https://github.com",
     livePreview: "/tunesapp",

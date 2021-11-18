@@ -1,6 +1,7 @@
 import { BlogContext, PostType } from "./BlogContext";
 import { useContext } from "react";
 import { useHistory } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 // Styles:
 import { IconEdit, IconTrash } from "../a/assets/icons";
 import { theme as blog } from "./theme";
@@ -94,7 +95,9 @@ export const Post = (props: { post: PostType }) => {
       <p>{date.toLocaleString()}</p>
       {props.post.content !== "" ? (
         <DivContent>
-          <p>{props.post.content}</p>
+          <p>
+            <ReactMarkdown>{props.post.content}</ReactMarkdown>
+          </p>
         </DivContent>
       ) : (
         <p>This post has no content</p>
