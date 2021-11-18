@@ -1,7 +1,7 @@
 # React project 
 
 This project was made as a single page app to get in touch mailny with React and Typescript and also serves as a startup portfolio.
-You can go through the code and give me feedback or learn thing or two if possible. 
+You can go through the code and give me feedback or maybe learn thing or two if possible. 
 
 ## Listed Apps 
 

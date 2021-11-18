@@ -1,6 +1,6 @@
 import { SidebarData } from "./components/navigation/SidebarData";
 //@ts-ignore
-import Pdf from "../a/documents/CV_Andrej Plavka.pdf";
+import Pdf from "../a/documents/CV_AndrejPlavka.pdf";
 // img imports
 import Blog_Md from "./components/portfolio/img/Blog_Md.png";
 import Counter_Lg from "./components/portfolio/img/Counter_Lg.png";
