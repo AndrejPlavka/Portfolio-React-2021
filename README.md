@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# React project 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made as a single page app to get in touch mailny with React and Typescript and also serves as a startup portfolio.
+You can go through the code and give me feedback or learn thing or two if possible. 
 
-## Available Scripts
+## Listed Apps 
 
-In the project directory, you can run:
+HackerTyper, Redux Counter, TodoMate, Blog, MemoryGame, Tunesapp, Portfolio
 
-### `yarn start`
+### Hackertyper :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Become a hacker too! Press any key on your keyboard to add a line of real code to trick your friends. Press backspace to clear the random amount of code.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Redux Counter :
 
-### `yarn test`
+Create your first simple React application and learn the basics of React. Built up on it and add Redux to manage actiones.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### TodoMate : 
 
-### `yarn build`
+Get all those tasks out of your head and add them to the local storage list to get an overview. A simple task application in which you learn how to add, edit, delete and filter tasks.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Blog : 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Create a blog to learn how to use local storage and react router. Learn how to add, edit or delete posts. You can also use MD to style text.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### MemoryGame : 
 
-### `yarn eject`
+Test your memory by playing! Memory game provide space for critical thinking, which helps to develop attention to detail.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Tunes :
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Find your favorite music! Learn how to create a search form and use the iTunes API to build on the JSON experience!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Portfolio :
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Portfolio page created to present myself. 
