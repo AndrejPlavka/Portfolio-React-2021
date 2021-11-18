@@ -127,7 +127,7 @@ const DivImg = styled.div`
   }
   @media screen and (${theme.sm_min_768}) {
     width: 340px;
-    height: 388px;
+    height: 420px;
   }
   @media screen and (${theme.md_min_1024}) {
     width: 416px;

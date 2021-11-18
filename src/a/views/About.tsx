@@ -83,7 +83,7 @@ const DivMain = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   .div {
     display: flex;
     flex-direction: column;
