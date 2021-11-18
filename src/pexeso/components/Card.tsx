@@ -16,6 +16,7 @@ export const DivWrapper = styled.div`
 export const FrontImg = styled.img<cardState>`
   width: 100%;
   height: 100%;
+  position: absolute;
   transition: all 0.5s ease;
   backface-visibility: hidden;
   cursor: pointer;
@@ -37,7 +38,7 @@ export const BackImg = styled.img<cardState>`
   z-index: ${(p) => (p.flipped ? 1 : 2)};
   transform: ${(p) => (p.flipped ? "rotateY(180deg)" : "rotate(360deg)")};
   border-radius: 2px;
-  box-shadow: ${mg.shadow_btn1};
+  box-shadow: ${mg.shadow_btn};
   &:hover {
     box-shadow: ${mg.shadow_btn4};
   }
