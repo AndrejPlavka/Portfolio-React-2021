@@ -157,7 +157,7 @@ export const ContactForm = (props: Props) => {
       ) : (
         <>
           <ReCAPTCHA sitekey={recaptchaKey} onChange={sendEmail} />
-          <DivAlert>{"nothing"}</DivAlert>
+          {/* <DivAlert>{"nothing"}</DivAlert> */}
         </>
       )}
     </DivMain>
@@ -407,7 +407,7 @@ const DivSubmit = styled.div`
       font-size: 1.5em;
       height: 3em;
       padding: 1.3rem 30px 1rem 30px;
-      text-align: center;
+      text-align: center;git 
     }
     p {
       margin: 30px auto;
