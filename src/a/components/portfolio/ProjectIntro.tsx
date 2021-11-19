@@ -12,7 +12,7 @@ export const ProjectIntro = () => {
       <DivContent>
         <DivText>
           <h1>Portfolio.</h1>
-          <h2>Here you can chceck out some of my latest work.</h2>
+          <h2>Here you can check out some of my latest work.</h2>
           <p>
             You can find here some of the projects I’ve been working on while
             practicing my skills as part of completing various programming
