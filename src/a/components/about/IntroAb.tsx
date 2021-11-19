@@ -40,7 +40,7 @@ export const AboutIntro = () => {
             <span>{"running "}</span>
             {"around or "}
             <span>{"working out "}</span>
-            {"somwhere."}
+            {"somewhere."}
           </h4>
         </DivText>
         <DivImgMain>
