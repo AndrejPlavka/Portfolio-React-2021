@@ -44,7 +44,7 @@ export const ContactForm = (props: Props) => {
   });
   const [showCaptcha, setShowCaptcha] = useState(false);
   const { name, email, message } = formState;
-  const recaptchaKey = "";
+  const recaptchaKey = "6LfZkkQdAAAAALGlOh0CURkfvQ3zBh_7qAZoJgHT";
 
   const submitFormAndShowCaptcha = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -155,8 +155,10 @@ export const ContactForm = (props: Props) => {
           </DivSubmit>
         </Form>
       ) : (
-        // <ReCAPTCHA sitekey={recaptchaKey} onChange={sendEmail} />
-        <DivAlert>{"nothing"}</DivAlert>
+        <>
+          <ReCAPTCHA sitekey={recaptchaKey} onChange={sendEmail} />
+          <DivAlert>{"nothing"}</DivAlert>
+        </>
       )}
     </DivMain>
   ) : (
