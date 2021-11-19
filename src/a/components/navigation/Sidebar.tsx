@@ -112,7 +112,12 @@ const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
       line-height: 1;
       padding: 0.5em 0 0.5em 45%;
       float: none;
-
+      .div {
+        width: 0.7em;
+        height: 100%;
+        margin-left: 0.15em;
+        color: white;
+      }
       div {
         display: flex;
         align-items: center;
