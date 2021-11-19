@@ -78,6 +78,10 @@ export const SidebarData = [
     ],
   },
   {
+    title: "Contact",
+    path: "/contact",
+  },
+  {
     title: "CV",
     path: cv.resume,
     icon: <IconDownload />,
