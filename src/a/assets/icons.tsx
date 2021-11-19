@@ -351,19 +351,34 @@ export const IconMenu = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       data-icon="menu"
-      data-container-transform="translate(0 1)"
-      viewBox="0 0 16 20"
+      // data-container-transform="translate(0 1)"
+      viewBox="0 -3 16 20"
       x="0px"
       y="0px"
     >
       <path
         d="M0 0v2h16v-2h-16zm0 6v2h16v-2h-16zm0 6v2h16v-2h-16z"
-        transform="translate(0 3)"
+        // transform="translate(0 3)"
       />
     </svg>
   );
 };
-// header
+// header***************************************************************
+
+// Download icon
+export const IconDownload = (props) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="currentWidth"
+      height="currentHeight"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M7 2v-2h10v2h-10zm0 4h10v-2h-10v2zm10 7v-5h-10v5h-6l11 11 11-11h-6z" />
+    </svg>
+  );
+};
 export const IconDelete = (props) => {
   // return (
   //   <svg

@@ -2,7 +2,7 @@ import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
-import { IconArrowDown, IconArrowUp } from "../../assets/icons";
+import { IconArrowDown, IconArrowUp, IconDownload } from "../../assets/icons";
 import { cv } from "../../../a/PortfolioData";
 import React from "react";
 
@@ -78,12 +78,9 @@ export const SidebarData = [
     ],
   },
   {
-    title: "Contact",
-    path: "/contact",
-  },
-  {
     title: "CV",
     path: cv.resume,
+    icon: <IconDownload />,
   },
 ];
 
