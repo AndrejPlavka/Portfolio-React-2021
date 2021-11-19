@@ -73,6 +73,7 @@ const DivMain = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
+  padding: 6em 0;
   background: ${ht.backgroundPrimary};
   animation: 1s ${fadeIn} forwards;
   @media screen and (${theme.sx_min_425}) {
@@ -87,7 +88,8 @@ const DivContent = styled.div`
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  width: 94%;
+  border: 1px solid black;
   @media screen and (${theme.sx_min_425}) {
     width: 80%;
     border: 1px solid black;
@@ -99,7 +101,7 @@ const DivFrame = styled.div`
   align-items: center;
   height: 1.75em;
   width: 100%;
-  display: none;
+  display: flex;
   @media screen and (${theme.sx_min_425}) {
     display: flex;
   }
@@ -133,12 +135,12 @@ const DivRight = styled(DivLeft)`
 const DivHackerApp = styled.div`
   box-sizing: border-box;
   display: block;
-  width: 100vw;
-  height: calc(100vh - 9em);
-  padding: 3em;
+  width: 100%;
+  height: 26em;
+  padding: 3em 1em;
   overflow: hidden;
   font-family: monospace;
-  font-size: 1em;
+  font-size: 0.75em;
   line-height: 1.2em;
   background-color: ${ht.black};
   color: ${ht.textGreen};
