@@ -37,7 +37,7 @@ const DivMain = styled.div`
   align-items: center;
   height: 100%;
   width: 100%;
-  color: black;
+
   .div {
     display: flex;
     flex-direction: column;
@@ -45,6 +45,5 @@ const DivMain = styled.div`
     align-items: center;
     height: 100%;
     width: 100%;
-    color: black;
   }
 `;

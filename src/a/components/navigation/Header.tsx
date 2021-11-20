@@ -23,7 +23,7 @@ export const Navbar = () => {
           <button onClick={showSidebar}>
             {sidebar ? navbar.close : navbar.open}
           </button>
-          <Sidebar sidebar={sidebar} />
+          <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
         </DivNavbarSection>
       </DivContent>
     </DivHeader>

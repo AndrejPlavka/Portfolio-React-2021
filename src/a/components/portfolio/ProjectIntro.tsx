@@ -1,12 +1,12 @@
 import React from "react";
 // Styles:
-// import { PortfolioIntro } from "../../PortfolioData";
 import { IconReact } from "../../assets/icons";
 import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
-// import ReactSpin
 
+// Component:
 export const ProjectIntro = () => {
+  // Template:
   return (
     <DivMain>
       <DivContent>
@@ -60,20 +60,19 @@ const DivContent = styled.div`
 `;
 
 const DivText = styled.div`
-  width: 100%; // 100%
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
+  width: 100%;
   line-height: 1.5;
-  /* //padding: 0 0 0.6em; */
   h1 {
     margin: 0.5em 0 0;
-    font-size: 3.5em; //4em
+    font-size: 3.5em;
   }
   h2 {
     margin: 0.7em 0 0.5em;
-    font-size: 1.8em; //2em
+    font-size: 1.8em;
     font-family: Roboto;
     font-weight: 300;
   }
@@ -138,94 +137,3 @@ const DivImg = styled.div`
     width: 440px;
   }
 `;
-
-// Styled components:
-// const DivMain = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   width: 100%;
-//   height: 100%;
-//   box-shadow: ${theme.shadow_intro_l};
-// `;
-// const DivContent = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: flex-end;
-//   align-items: center;
-//   max-width: 1300px;
-//   width: 100%;
-//   padding: 5em 3em;
-//   @media screen and (max-width: 1128px) {
-//     padding: 5em 3em;
-//   }
-//   @media screen and (max-width: 450px) {
-//     padding: 4em 1.2em;
-//     flex-direction: column;
-//   }
-// `;
-
-// const DivText = styled.div`
-//   width: 50%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-start;
-//   flex-wrap: wrap;
-//   line-height: 1.5;
-//   h1 {
-//     margin: 0.5em 0 0;
-//     font-size: 4.5em;
-//   }
-//   h2 {
-//     margin-bottom: 0.5em;
-//     font-size: 2.25em;
-//     font-family: Roboto;
-//     font-weight: 300;
-//   }
-//   p {
-//     font-weight: 300;
-//     font-size: 1.25em;
-//     margin: 0.5em 0;
-//   }
-//   @media screen and (max-width: 900px) {
-//     width: 100%;
-//   }
-//   @media screen and (max-width: 450px) {
-//     padding: 0 0.6em;
-//     h1 {
-//       font-size: 4em;
-//     }
-//     h2 {
-//       font-size: 2em;
-//     }
-//     p {
-//       font-size: 1.25em;
-//     }
-//   }
-// `;
-
-// const DivImg = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: row;
-//   align-content: center;
-//   div {
-//     align-self: center;
-//     width: 400px;
-//     height: 300px;
-//   }
-
-//   /* @media (prefers-reduced-motion: no-preference) {
-//     animation: IconReact infinite 80s linear;
-//   }
-//   @keyframes IconReact {
-//     from {
-//       transform: rotate(0deg);
-//     }
-//     to {
-//       transform: rotate(360deg);
-//     }
-//   } */
-//   @media screen and (max-width: 900px) {
-//     display: none;
-//   }
-// `;

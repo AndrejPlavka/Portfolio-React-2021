@@ -1,13 +1,13 @@
 import PP from "../../../img/PP.jpg";
 import React from "react";
 
-// Syles
+// Syles:
 import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 
-// Component
+// Component:
 export const AboutIntro = () => {
-  // Template
+  // Template:
   return (
     <DivMain>
       <DivContent>
@@ -46,7 +46,6 @@ export const AboutIntro = () => {
         <DivImgMain>
           <DivImg>
             <img className="img" src={PP} alt="profile_picture" />
-            {/* <img className="img" src={PPC} alt="bratislava" /> */}
           </DivImg>
         </DivImgMain>
       </DivContent>
@@ -58,15 +57,8 @@ export const AboutIntro = () => {
 //ex-eg -> exempli gratia (example)
 // e.g.: background: url(&{img}), import img from "./...";
 // e.g.: backdrop-filter: blur(5px) makes backround blury
-// const DivMain = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   width: 100%;
-//   height: 100%;
-// `;
-// Info section ********************************************************************
-//DivIntroSection
 const DivMain = styled.div`
+  z-index: 2;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -76,11 +68,10 @@ const DivMain = styled.div`
 `;
 const DivContent = styled.div`
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  /* height: 100%; */
   padding: 5em 3em 0;
 
   @media screen and (${theme.sx_min_425}) {
@@ -90,7 +81,6 @@ const DivContent = styled.div`
     flex-flow: row nowrap;
     justify-content: center;
     max-width: 710px;
-    /* width: 90%; */
     text-align: left;
   }
   @media screen and (${theme.md_min_1024}) {
@@ -112,8 +102,8 @@ const DivImgMain = styled.div`
 
 const DivImg = styled.div`
   position: relative;
-  width: 200px; //auto
-  height: 220px; //100%
+  width: 200px;
+  height: 220px;
   margin: 0 auto;
   overflow: hidden;
   .img {
@@ -148,7 +138,7 @@ const DivText = styled.div`
   width: 100%;
   margin: 0 0 1em;
   span {
-    color: black;
+    color: ${theme.text_bl_s};
     font-weight: 400;
   }
 

@@ -25,7 +25,7 @@ export type SiderbarType = {
 };
 interface Props {
   sidebar: boolean;
-  // showSubnav: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  showSidebar: () => void;
 }
 
 export const Sidebar = (props: Props) => {
@@ -46,7 +46,9 @@ export const Sidebar = (props: Props) => {
       item?.subNav ? (
         <li key={index}>
           <div>
-            <Link to={item.path}>{item.title}</Link>
+            <Link to={item.path} onClick={props.showSidebar}>
+              {item.title}
+            </Link>
             <button onClick={showSubnav}>
               {subnav ? item.iconOpened : item.iconClosed}
             </button>
@@ -65,7 +67,9 @@ export const Sidebar = (props: Props) => {
       ) : (
         <li key={index}>
           <div>
-            <Link to={item.path}>{item.title}</Link>
+            <Link to={item.path} onClick={props.showSidebar}>
+              {item.title}
+            </Link>
           </div>
         </li>
       )
@@ -151,6 +155,7 @@ const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
       padding: 0;
       text-align: right;
       background: none;
+      transform: translate(100%);
       opacity: 1;
       li {
         font-size: 0.8em;
