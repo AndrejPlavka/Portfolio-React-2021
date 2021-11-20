@@ -122,6 +122,9 @@ const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
         display: flex;
         align-items: center;
         width: 100%;
+        &:hover {
+          color: #ffffff86;
+        }
 
         button {
           display: inline-block;

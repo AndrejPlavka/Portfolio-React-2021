@@ -1,5 +1,5 @@
 // Styles:
-import { light } from "../portfolio/PortfolioAppTheme";
+
 import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 
@@ -7,12 +7,9 @@ export const Footer = () => {
   return (
     <DivFooter>
       <DivContent>
-        <AFooterLink href="https://github.com">
+        <AFooterLink href="https://andrejplavka.com">
           © 2021 Andrej Plavka
         </AFooterLink>
-        {/* <DivNavbarSection>
-      <Sidebar />
-    </DivNavbarSection> */}
       </DivContent>
     </DivFooter>
   );
@@ -42,14 +39,6 @@ const DivContent = styled.div`
   flex-basis: 100%;
   max-width: 1200px;
   padding: 0 3em;
-  @media screen and (${theme.sx_min_425}) {
-  }
-  @media screen and (${theme.sm_min_768}) {
-  }
-  @media screen and (${theme.md_min_1024}) {
-  }
-  @media screen and (${theme.lg_min_1200}) {
-  }
 `;
 const AFooterLink = styled.a`
   text-decoration: none;
