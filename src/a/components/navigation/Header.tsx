@@ -77,7 +77,7 @@ const DivNavbarSection = styled.div`
   button {
     display: flex;
     width: 2.5em;
-    height: 100%;
+    height: 2.5em;
     background: none;
     outline: none;
     border: none;
@@ -87,7 +87,7 @@ const DivNavbarSection = styled.div`
   &:hover {
     opacity: 1;
   }
-  @media screen and (${theme.sm_min_768}) {
+  @media (${theme.sm_min_768}) {
     button {
       display: none;
     }
