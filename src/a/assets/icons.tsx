@@ -366,15 +366,12 @@ export const IconMenu = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       data-icon="menu"
-      // data-container-transform="translate(0 1)"
-      viewBox="0 -3 16 20"
+      fill="currentColor"
+      viewBox="0 -1 16 20"
       x="0px"
       y="0px"
     >
-      <path
-        d="M0 0v2h16v-2h-16zm0 6v2h16v-2h-16zm0 6v2h16v-2h-16z"
-        // transform="translate(0 3)"
-      />
+      <path d="M0 0v2h16v-2h-16zm0 6v2h16v-2h-16zm0 6v2h16v-2h-16z" />
     </svg>
   );
 };
@@ -418,8 +415,8 @@ export const IconDelete = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="-1 -7 53 65.25"
-      fill="none"
+      viewBox="-2 -2 53 65.25"
+      fill="currentColor"
     >
       <path
         d="M48.7488 4.50943L44.9781 0.73877L24.7488 20.9681L4.51944 0.73877L0.748779 4.50943L20.9781 24.7388L0.748779 44.9681L4.51944 48.7388L24.7488 28.5094L44.9781 48.7388L48.7488 44.9681L28.5194 24.7388L48.7488 4.50943Z"

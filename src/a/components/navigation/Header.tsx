@@ -21,7 +21,7 @@ export const Navbar = () => {
         </DivLogoSection>
         <DivNavbarSection>
           <button onClick={showSidebar}>
-            {sidebar ? navbar.close : navbar.open}
+            <div>{sidebar ? navbar.close : navbar.open}</div>
           </button>
           <Sidebar showSidebar={showSidebar} sidebar={sidebar} />
         </DivNavbarSection>
@@ -76,13 +76,14 @@ const LinkLogo = styled(Link)`
 const DivNavbarSection = styled.div`
   button {
     display: flex;
-    width: 2.5em;
-    height: 2.5em;
     background: none;
     outline: none;
     border: none;
     align-items: center;
-    /* opacity: 0.5; */
+    div {
+      width: 2.3em;
+      height: 2.3em;
+    }
   }
   &:hover {
     opacity: 1;
