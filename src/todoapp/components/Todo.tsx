@@ -67,16 +67,12 @@ export const Todo = (props: Props) => {
           autoComplete="off"
         />
       </DivContentInput>
-      <DivContentButton className="btn-group">
-        <Button
-          type="button"
-          className="btn todo-cancel"
-          onClick={() => setEditing("")}
-        >
-          {cancel}
+      <DivContentButton>
+        <Button type="button" onClick={() => setEditing("")}>
+          <div>{cancel}</div>
         </Button>
-        <Button type="submit" className="btn btn__primary todo-edit">
-          {save}
+        <Button type="submit">
+          <div>{save}</div>
         </Button>
       </DivContentButton>
     </FormContent>
@@ -108,10 +104,10 @@ export const Todo = (props: Props) => {
       </DivContentInput>
       <DivContentButton>
         <Button type="button" onClick={() => setEditing(task.id)}>
-          {edit}
+          <div>{edit}</div>
         </Button>
         <Button type="button" onClick={() => deleteTask(task.id)}>
-          {trash}
+          <div>{trash}</div>
         </Button>
       </DivContentButton>
     </DivContent>
@@ -167,7 +163,6 @@ const DivContentInput = styled.div`
   display: flex;
   width: 100%;
   flex-flow: row nowrap;
-  /* justify-content: center; */
   align-items: center;
   .inputW {
     display: flex;
@@ -211,7 +206,7 @@ const DivContentButton = styled.div`
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  button {
+  /* button {
     display: flex;
     align-self: center;
     width: 2.2em;
@@ -226,14 +221,12 @@ const DivContentButton = styled.div`
     :hover {
       box-shadow: ${todo.shadow_btn};
     }
-  }
+  } */
 `;
 
 const Button = styled.button`
   display: flex;
   justify-content: center;
-  width: 2.2em;
-  height: 2.2em;
   margin: 0.5em;
   padding: 0.3em;
   border: none;
@@ -241,11 +234,11 @@ const Button = styled.button`
   outline: none;
   background: none;
   transition: 100ms linear;
-
-  /* div {
+  color: ${todo.textPrimary};
+  div {
     width: 2.2em;
     height: 2.2em;
-  } */
+  }
   :hover {
     box-shadow: ${todo.shadow_btn};
   }
