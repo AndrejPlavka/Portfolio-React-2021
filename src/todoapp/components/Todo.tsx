@@ -206,28 +206,12 @@ const DivContentButton = styled.div`
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  /* button {
-    display: flex;
-    align-self: center;
-    width: 2.2em;
-    height: 2.2em;
-    margin: 0.5em;
-    padding: 0.3em;
-    border: none;
-    border-radius: 50%;
-    outline: none;
-    background: none;
-    transition: 100ms linear;
-    :hover {
-      box-shadow: ${todo.shadow_btn};
-    }
-  } */
 `;
 
 const Button = styled.button`
   display: flex;
   justify-content: center;
-  margin: 0.5em;
+  margin: 0.3em;
   padding: 0.3em;
   border: none;
   border-radius: 50%;
@@ -236,8 +220,8 @@ const Button = styled.button`
   transition: 100ms linear;
   color: ${todo.textPrimary};
   div {
-    width: 2.2em;
-    height: 2.2em;
+    width: 2em;
+    height: 2em;
   }
   :hover {
     box-shadow: ${todo.shadow_btn};
