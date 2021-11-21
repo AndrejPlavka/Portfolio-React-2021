@@ -43,13 +43,13 @@ export const ProjectContainer = (props: Props) => {
       </DivContent>
       <DivFooter>
         {project.stack && (
-          <div>
+          <DivIcon>
             {project.stack.map((item, index) => (
               <div className="svg" key={index}>
                 {item}
               </div>
             ))}
-          </div>
+          </DivIcon>
         )}
       </DivFooter>
     </DivProject>
@@ -171,7 +171,7 @@ const DivContent = styled.div`
 
 const DivFooter = styled.div`
   padding: 0.6em 0.5em;
-  div {
+  /* div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -188,6 +188,29 @@ const DivFooter = styled.div`
   }
   @media screen and (${theme.md_min_1024}) {
     .svg {
+      width: 1.55em;
+      height: 1.55em;
+    }
+  } */
+`;
+
+const DivIcon = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background: transparent;
+  div {
+    width: 1.9em;
+    height: 1.9em;
+    margin: 0 0.45em 0 0;
+    opacity: 0.5;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  @media screen and (${theme.md_min_1024}) {
+    div {
       width: 1.55em;
       height: 1.55em;
     }
