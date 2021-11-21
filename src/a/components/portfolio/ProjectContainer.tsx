@@ -45,7 +45,9 @@ export const ProjectContainer = (props: Props) => {
         {project.stack && (
           <div>
             {project.stack.map((item, index) => (
-              <div key={index}>{item}</div>
+              <div className="svg" key={index}>
+                {item}
+              </div>
             ))}
           </div>
         )}
@@ -175,8 +177,9 @@ const DivFooter = styled.div`
     flex-wrap: wrap;
     justify-content: flex-start;
   }
-  div > div {
+  .svg {
     width: 1.9em;
+    height: 1.9em;
     margin: 0 0.45em 0 0;
     opacity: 0.5;
     &:hover {
@@ -184,8 +187,9 @@ const DivFooter = styled.div`
     }
   }
   @media screen and (${theme.md_min_1024}) {
-    div > div {
+    .svg {
       width: 1.55em;
+      height: 1.55em;
     }
   }
 `;
