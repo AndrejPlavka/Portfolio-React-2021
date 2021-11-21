@@ -26,6 +26,7 @@ import {
   IconGerman,
   IconGit,
   IconGitHub,
+  IconHTML1,
   IconHTML2,
   IconHiking,
   IconIGC,
@@ -50,7 +51,7 @@ import {
 } from "./assets/icons";
 
 // Project icons:
-const HTML = <IconHTML2 />;
+const HTML = <IconHTML1 />;
 const CSS = <IconCSS2 />;
 const TS = <IconTS />;
 const JS = <IconJS />;
