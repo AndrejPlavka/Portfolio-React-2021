@@ -96,24 +96,6 @@ const DivContent = styled.div`
       color: ${todo.textFaded};
     }
   }
-  /* button {
-    display: flex;
-    align-self: center;
-    width: 3em;
-    height: auto;
-    margin: 0.5em 1em 0.5em 0.5em;
-    padding: 0.5em;
-    border: none;
-    border-radius: 50%;
-    outline: none;
-    background: none;
-    color: ${todo.textFaded};
-    transition: 100ms linear;
-    :hover {
-      box-shadow: ${todo.shadow_btn};
-      color: ${todo.textPrimary};
-    } 
-  }*/
 `;
 
 const Button = styled.button`
@@ -130,7 +112,6 @@ const Button = styled.button`
   div {
     width: 2em;
     height: 2em;
-    /* margin: 0 0.25em 0 0; */
   }
   :hover {
     box-shadow: ${todo.shadow_btn};

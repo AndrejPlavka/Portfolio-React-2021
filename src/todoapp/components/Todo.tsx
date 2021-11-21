@@ -68,20 +68,16 @@ export const Todo = (props: Props) => {
         />
       </DivContentInput>
       <DivContentButton className="btn-group">
-        <button
+        <Button
           type="button"
           className="btn todo-cancel"
           onClick={() => setEditing("")}
         >
           {cancel}
-          {/* <span className="visually-hidden">renaming {task.taskContent}</span> */}
-        </button>
-        <button type="submit" className="btn btn__primary todo-edit">
+        </Button>
+        <Button type="submit" className="btn btn__primary todo-edit">
           {save}
-          {/* <span className="visually-hidden">
-            new name for {task.taskContent}
-          </span> */}
-        </button>
+        </Button>
       </DivContentButton>
     </FormContent>
   );
@@ -111,14 +107,12 @@ export const Todo = (props: Props) => {
         </label>
       </DivContentInput>
       <DivContentButton>
-        <button type="button" onClick={() => setEditing(task.id)}>
+        <Button type="button" onClick={() => setEditing(task.id)}>
           {edit}
-          {/* <span className="visually-hidden">{task.taskContent}</span> */}
-        </button>
-        <button type="button" onClick={() => deleteTask(task.id)}>
+        </Button>
+        <Button type="button" onClick={() => deleteTask(task.id)}>
           {trash}
-          {/* <span className="visually-hidden">{task.taskContent}</span> */}
-        </button>
+        </Button>
       </DivContentButton>
     </DivContent>
   );
@@ -232,5 +226,27 @@ const DivContentButton = styled.div`
     :hover {
       box-shadow: ${todo.shadow_btn};
     }
+  }
+`;
+
+const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  width: 2.2em;
+  height: 2.2em;
+  margin: 0.5em;
+  padding: 0.3em;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background: none;
+  transition: 100ms linear;
+
+  /* div {
+    width: 2.2em;
+    height: 2.2em;
+  } */
+  :hover {
+    box-shadow: ${todo.shadow_btn};
   }
 `;
