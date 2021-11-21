@@ -54,7 +54,9 @@ export const InputForm = (props: Props) => {
           onChange={handleChangeIF}
           ref={contentInputFormRef}
         />
-        <button type="submit">{add}</button>
+        <Button type="submit">
+          <div>{add}</div>
+        </Button>
       </DivContent>
     </FormContent>
   );
@@ -69,12 +71,6 @@ const FormContent = styled.form`
   align-items: center;
   width: 100%;
   margin: 0 0 1.25em;
-  /* .h2 {
-    font-size: 2em;
-    font-weight: 400;
-    margin: 1em 0;
-    text-align: center;
-  } */
 `;
 
 const DivContent = styled.div`
@@ -100,7 +96,7 @@ const DivContent = styled.div`
       color: ${todo.textFaded};
     }
   }
-  button {
+  /* button {
     display: flex;
     align-self: center;
     width: 3em;
@@ -116,6 +112,28 @@ const DivContent = styled.div`
     :hover {
       box-shadow: ${todo.shadow_btn};
       color: ${todo.textPrimary};
-    }
+    } 
+  }*/
+`;
+
+const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  margin: 0.5em 1em 0.5em 0.5em;
+  padding: 0.5em;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background: transparent;
+  color: ${todo.textFaded};
+  transition: 100ms linear;
+  div {
+    width: 2em;
+    height: 2em;
+    /* margin: 0 0.25em 0 0; */
+  }
+  :hover {
+    box-shadow: ${todo.shadow_btn};
+    color: ${todo.textPrimary};
   }
 `;
