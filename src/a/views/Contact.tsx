@@ -203,9 +203,8 @@ const DivLink = styled.div`
 `;
 
 const DivA = styled.div`
-  display: flex;
   width: 3em;
-  height: 100%;
+  height: 3em;
   margin: 0 1em 0 0;
 `;
 const DivB = styled.div`
