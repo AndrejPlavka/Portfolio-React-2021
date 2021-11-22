@@ -60,7 +60,7 @@ export const Sidebar = (props: Props) => {
             <a href={item.path} target="_blank" rel="noreferrer">
               {item.title}
             </a>
-            <div>{item.icon}</div>
+            <div className="div">{item.icon}</div>
           </div>
         </li>
       ) : (
@@ -115,19 +115,13 @@ const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
       line-height: 1;
       padding: 0.5em 0 0.5em 45%;
       float: none;
-      div {
+      .div {
         width: 0.7em;
         height: 100%;
         margin-left: 0.15em;
         color: white;
       }
       div {
-        div {
-          width: 0.7em;
-          height: 100%;
-          margin-left: 0.15em;
-          color: white;
-        }
         display: flex;
         align-items: center;
         width: 100%;
@@ -164,14 +158,13 @@ const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
         padding: 0.5em 0 0.5em 2.5em;
         display: inline-block;
         position: relative;
-
+        .div {
+          width: 0.7em;
+          height: 100%;
+          margin-left: 0.15em;
+          color: black;
+        }
         div {
-          div {
-            width: 0.7em;
-            height: 0.7em;
-            margin-left: 0.15em;
-            color: black;
-          }
           button {
             width: 0.8em;
             color: black;
