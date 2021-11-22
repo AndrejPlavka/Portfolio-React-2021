@@ -4,8 +4,7 @@ import { SidebarData } from "./SidebarData";
 import React, { useEffect, useRef, useState } from "react";
 import useOnClickOutside from "../../hooks/OnClickOutside";
 
-//Styles
-
+//Styles:
 import { theme } from "../../../GlobalStyles";
 import styled, { keyframes } from "styled-components/macro";
 
@@ -27,7 +26,7 @@ interface Props {
   sidebar: boolean;
   showSidebar: () => void;
 }
-
+// Component:
 export const Sidebar = (props: Props) => {
   const data = SidebarData;
   const [subnav, setSubnav] = useState(false);
@@ -159,13 +158,14 @@ const DivMenu = styled.div<{ sidebar: boolean; subnav: boolean }>`
         padding: 0.5em 0 0.5em 2.5em;
         display: inline-block;
         position: relative;
-        .div {
-          width: 0.7em;
-          height: 100%;
-          margin-left: 0.15em;
-          color: black;
-        }
+
         div {
+          .div {
+            width: 0.7em;
+            height: 0.7em;
+            margin-left: 0.15em;
+            color: black;
+          }
           button {
             width: 0.8em;
             color: black;
