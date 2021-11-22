@@ -107,17 +107,16 @@ const DivImgMain = styled.div`
 `;
 
 const DivImg = styled.div`
-  /* height: 100%; */
   justify-content: flex-end;
   flex-direction: column;
   align-items: center;
   width: 280px;
   .img {
-    display: flex;
+    /* display: flex; */
     align-self: center;
     margin: 0 auto;
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
   }
   @media (prefers-reduced-motion: no-preference) {
     animation: IconReact infinite 60s linear;
