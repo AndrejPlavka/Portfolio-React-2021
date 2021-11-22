@@ -951,8 +951,8 @@ export const IconUdemy = (props) => {
     <svg
       viewBox="0 0 412.77 799.91"
       xmlns="http://www.w3.org/2000/svg"
-      width="currentWidth"
-      height="currentHeight"
+      width="2em"
+      height="2em"
     >
       <path
         d="M412.74 238.2l-206.4-119.1L0 238.2V119.1L206.37 0l206.4 119.1v119.1z"
