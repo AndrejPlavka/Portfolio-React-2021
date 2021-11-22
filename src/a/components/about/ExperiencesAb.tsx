@@ -29,8 +29,6 @@ const DivMain = styled.div`
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  width: auto;
-  height: 100%;
   padding: 0.6em;
   border-radius: 2px;
   background: ${theme.box_bg_w};
@@ -38,7 +36,6 @@ const DivMain = styled.div`
   filter: grayscale(100%);
   opacity: 0.65;
   div {
-    display: flex;
     width: 2.5em;
     height: 2.5em;
     margin: 0 5px 0 0;
@@ -56,10 +53,4 @@ const DivMain = styled.div`
     transition: transform 0.15s linear;
     transform: translateY(3px);
   }
-  /* @media screen and (${theme.sx_min_425}) {
-  }
-  @media screen and (${theme.sm_min_768}) {
-  }
-  @media screen and (${theme.md_min_1024}) {
-  } */
 `;
