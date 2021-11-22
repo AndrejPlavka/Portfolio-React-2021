@@ -91,6 +91,9 @@ const DivProject = styled.div`
     background: ${project.backgroundFaded};
     color: ${project.textSecondary};
     animation: 0.35s ${fadeIn} forwards;
+    span {
+      color: ${project.textHighlighted};
+    }
   }
   :hover {
     transform: translateY(-3px);

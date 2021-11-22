@@ -1,5 +1,6 @@
 export const theme = {
   errorColor: "red",
+  textHighlighted: "rgb(170, 94, 94)",
   textPrimary: "black",
   textFaded: "lightgray",
   textSecondary: "white",

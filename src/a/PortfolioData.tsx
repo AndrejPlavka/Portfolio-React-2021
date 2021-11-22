@@ -125,7 +125,7 @@ const about = {
 // Projects Section ***************************************************************************
 export type ProjectType = {
   name: string;
-  description: string;
+  description: string | JSX.Element;
   stack: JSX.Element[];
   sourceIcon: JSX.Element;
   sourceCode: string;
@@ -136,8 +136,13 @@ export type ProjectType = {
 const projects = [
   {
     name: "Blog",
-    description:
-      "Create a blog to learn how to use local storage and react router. Learn how to add, edit or delete posts. You can also use MD to style text.",
+    description: (
+      <>
+        Create a blog to learn how to use local storage and react router. Learn
+        how to add, edit or delete posts. You can also use MD to style text. To
+        see more click on <span>Demo.</span>
+      </>
+    ),
     stack: [HTML, CSS, TS, React, SC, Router, Markdown],
     sourceIcon: GitHub,
     sourceCode:
@@ -147,8 +152,14 @@ const projects = [
   },
   {
     name: "Tunes App",
-    description:
-      "Find your favorite music! Learn how to create a search form and use the iTunes API to build on the JSON experience! ",
+    description: (
+      <>
+        Find your favorite music! Learn how to create a search form and use the
+        iTunes API to build on the JSON experience! To see more click on
+        <span>Demo.</span>
+      </>
+    ),
+
     stack: [HTML, CSS, TS, React, SASS, Router],
     sourceIcon: GitHub,
     sourceCode:
@@ -158,8 +169,15 @@ const projects = [
   },
   {
     name: "To-Do List",
-    description:
-      "Get all those tasks out of your head and add them to the local storage list to get an overview. A simple task application in which you learn how to add, edit, delete and filter tasks.",
+    description: (
+      <>
+        Get all those tasks out of your head and add them to the local storage
+        list to get an overview. A simple task application in which you learn
+        how to add, edit, delete and filter tasks. To see more click on
+        <span>Demo.</span>
+      </>
+    ),
+
     stack: [HTML, CSS, TS, React, SC, Router],
     sourceIcon: GitHub,
     sourceCode:
@@ -169,8 +187,15 @@ const projects = [
   },
   {
     name: "Memory Game",
-    description:
-      "Test your memory by playing! Memory games provide space for critical thinking, which helps to develop attention to detail.",
+    description: (
+      <>
+        Test your memory by playing! Memory games provide space for critical
+        thinking, which helps to develop attention to detail. To see more click
+        on
+        <span>Demo.</span>
+      </>
+    ),
+
     stack: [HTML, CSS, TS, React, SC],
     sourceIcon: GitHub,
     sourceCode:
@@ -180,8 +205,14 @@ const projects = [
   },
   {
     name: "Counter",
-    description:
-      "Create your first simple React application and learn the basics of React. Built up on it and add Redux to manage actiones.",
+    description: (
+      <>
+        Create your first simple React application and learn the basics of
+        React. Built up on it and add Redux to manage actiones. To see more
+        click on
+        <span>Demo.</span>
+      </>
+    ),
     stack: [HTML, CSS, TS, React, SC, Redux],
     sourceIcon: GitHub,
     sourceCode:
@@ -191,8 +222,14 @@ const projects = [
   },
   {
     name: "Hackertyper",
-    description:
-      "Bacome a hacker yourself! By pressing any key on keyboard you'll add a line of real code to fool your friends.",
+    description: (
+      <>
+        Bacome a hacker yourself! By pressing any key on keyboard {"you'll"} add
+        a line of real code to fool your friends. To see more click on
+        <span>Demo.</span>
+      </>
+    ),
+
     stack: [HTML, CSS, TS, React, SC],
     sourceIcon: GitHub,
     sourceCode:
