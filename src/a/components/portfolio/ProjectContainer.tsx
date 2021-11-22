@@ -187,9 +187,9 @@ const DivIcon = styled.div`
     height: 1.9em;
     margin: 0 0.45em 0 0;
     opacity: 0.5;
-  }
-  &:hover {
-    opacity: 1;
+    &:hover {
+      opacity: 1;
+    }
   }
   @media screen and (${theme.md_min_1024}) {
     div {
