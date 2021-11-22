@@ -6,13 +6,13 @@ import emailjs from "emailjs-com";
 import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 // emailjs:
-// emailjs.init("user_9NtwDnwudSGy35LXjGYNh");
-// to leasrn useReducer
-// type TypeSubmit = {
-//   name: string;
-//   email: string;
-//   message: any;
-// };
+emailjs.init("user_9NtwDnwudSGy35LXjGYNh");
+
+type TypeSubmit = {
+  name: string;
+  email: string;
+  message: any;
+};
 const initialState = {
   name: "",
   email: "",
@@ -231,13 +231,6 @@ const DivContent = styled.div`
   }
   @media screen and (${theme.md_min_1024}) {
   }
-  /* @media screen and (max-width: 600px) {
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    column-gap: 0px;
-  } */
 `;
 
 const DivContentData = styled.form`
@@ -397,23 +390,4 @@ const DivSubmit = styled.div`
   }
   @media screen and (${theme.md_min_1024}) {
   }
-  /* @media screen and (max-width: 450px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    button {
-      border: 1px solid black;
-      outline: none;
-      font-size: 1.5em;
-      height: 3em;
-      padding: 1.3rem 30px 1rem 30px;
-      text-align: center;git 
-    }
-    p {
-      margin: 30px auto;
-    font-size: 1.5em;
-    font-weight: 300;
-    color: lightcoral;
-    }
-  } */
 `;
