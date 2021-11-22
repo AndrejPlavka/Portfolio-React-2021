@@ -112,7 +112,6 @@ const DivImg = styled.div`
   align-items: center;
   width: 280px;
   .img {
-    /* display: flex; */
     align-self: center;
     margin: 0 auto;
     /* width: 100%;

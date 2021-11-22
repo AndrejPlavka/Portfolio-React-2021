@@ -161,6 +161,6 @@ const DivContentList = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  gap: 1em;
+  gap: 1em 1em;
   width: 90%;
 `;
