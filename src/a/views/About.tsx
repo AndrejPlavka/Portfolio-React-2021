@@ -94,7 +94,6 @@ const DivMain = styled.div`
   padding: 0 0 5em;
 `;
 // Skills section ******************************************************************
-// useless delete later  skills &  Experiences both!!!!
 const AboutSkills = styled.div`
   display: flex;
   flex-direction: column;

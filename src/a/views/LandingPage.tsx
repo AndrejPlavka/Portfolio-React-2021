@@ -43,7 +43,6 @@ const DivMain = styled.div`
     height: 100%;
     width: 100%;
   }
-  //   margin-top: 3em;
 `;
 // from: { opacity: 0, transform: "translate(100%, 0)" },
 // enter: { opacity: 1, transform: "translate(0%, 0)" },

@@ -14,7 +14,7 @@ export const ProjectPreview = () => {
       <H2>Some of my latest work</H2>
 
       <DivProjectsList>
-        {projects.slice(-3).map((project, index) => (
+        {projects.slice(0, 3).map((project, index) => (
           <ProjectContainer key={index} project={project} />
         ))}
       </DivProjectsList>
