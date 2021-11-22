@@ -41,11 +41,6 @@ export const SidebarData = [
         cName: "sub-nav",
       },
       {
-        title: "Hackertyper",
-        path: "/hackertyper",
-        cName: "sub-nav",
-      },
-      {
         title: "Todo App",
         path: "/todoapp",
         cName: "sub-nav",
@@ -63,6 +58,11 @@ export const SidebarData = [
       {
         title: "Tunes App",
         path: "/tunesapp",
+        cName: "sub-nav",
+      },
+      {
+        title: "Hackertyper",
+        path: "/hackertyper",
         cName: "sub-nav",
       },
       // {
