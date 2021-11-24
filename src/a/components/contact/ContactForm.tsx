@@ -1,4 +1,4 @@
-import { init } from "emailjs-com";
+// import { init } from "emailjs-com";
 import { useReducer, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
@@ -6,13 +6,13 @@ import emailjs from "emailjs-com";
 import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 // emailjs:
-emailjs.init("user_9NtwDnwudSGy35LXjGYNh");
+// emailjs.init("user_9NtwDnwudSGy35LXjGYNh");
 
-type TypeSubmit = {
-  name: string;
-  email: string;
-  message: any;
-};
+// type TypeSubmit = {
+//   name: string;
+//   email: string;
+//   message: any;
+// };
 const initialState = {
   name: "",
   email: "",
@@ -31,6 +31,10 @@ function reducer(state, action) {
       throw new Error();
   }
 }
+const recaptchaKey = "6LfZkkQdAAAAALGlOh0CURkfvQ3zBh_7qAZoJgHT";
+const emailjsService = "service_4370h1f";
+const emailjsTemplate = "template_rl8gm1r";
+const emailjsUser = "user_9NtwDnwudSGy35LXjGYNh";
 interface Props {
   emailRef: React.MutableRefObject<null>;
 }
@@ -44,14 +48,13 @@ export const ContactForm = (props: Props) => {
   });
   const [showCaptcha, setShowCaptcha] = useState(false);
   const { name, email, message } = formState;
-  const recaptchaKey = "6LfZkkQdAAAAALGlOh0CURkfvQ3zBh_7qAZoJgHT";
 
   const submitFormAndShowCaptcha = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setShowCaptcha(true);
   };
   // recaptcha use example - teilored
-  const sendEmail = (captchaValue) => {
+  const sendEmail = (recaptchaKey) => {
     if (name === "" || email === "" || message === "") {
       setShowFormErr(true);
       return;
@@ -59,16 +62,20 @@ export const ContactForm = (props: Props) => {
 
     const params = {
       ...formState,
-      "g-recaptcha-response": captchaValue,
+      "g-recaptcha-response": recaptchaKey,
     };
 
     setFormSubmitted({ title: "Sending message...", paragraph: "" });
     emailjs
       .send(
-        "service_4370h1f",
-        "template_rl8gm1r",
+        emailjsService,
+        emailjsTemplate,
         params,
-        "user_9NtwDnwudSGy35LXjGYNh"
+        emailjsUser
+        // "service_4370h1f",
+        // "template_rl8gm1r",
+        // params,
+        // "user_9NtwDnwudSGy35LXjGYNh"
       )
       .then(
         ({ status }) => {
@@ -86,9 +93,9 @@ export const ContactForm = (props: Props) => {
             });
           }
         },
-        (err) => {
+        (error) => {
           // eslint-disable-next-line no-console
-          console.log(err);
+          console.log(error);
           setFormSubmitted({
             title: "Error sending message, try again later",
             paragraph:
@@ -148,17 +155,17 @@ export const ContactForm = (props: Props) => {
             </DivContentMessage>
           </DivContent>
           <DivSubmit>
-            <button type="submit">Go!</button>
             {showFormErr ? (
               <p>Please fill in all three input boxes to send a message</p>
-            ) : null}
+            ) : (
+              <p>blabla</p>
+            )}
+            <button type="submit">Go!</button>
           </DivSubmit>
         </Form>
       ) : (
-        <>
-          <ReCAPTCHA sitekey={recaptchaKey} onChange={sendEmail} />
-          {/* <DivAlert>{"nothing"}</DivAlert> */}
-        </>
+        <ReCAPTCHA sitekey={recaptchaKey} onChange={sendEmail} />
+        // <DivAlert>{"bacov"}</DivAlert>
       )}
     </DivMain>
   ) : (
