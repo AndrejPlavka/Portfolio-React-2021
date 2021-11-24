@@ -157,15 +157,12 @@ export const ContactForm = (props: Props) => {
           <DivSubmit>
             {showFormErr ? (
               <p>Please fill in all three input boxes to send a message</p>
-            ) : (
-              <p>blabla</p>
-            )}
+            ) : null}
             <button type="submit">Go!</button>
           </DivSubmit>
         </Form>
       ) : (
         <ReCAPTCHA sitekey={recaptchaKey} onChange={sendEmail} />
-        // <DivAlert>{"bacov"}</DivAlert>
       )}
     </DivMain>
   ) : (
