@@ -34,7 +34,7 @@ export const LandingPage = () => {
 const DivMain = styled.div`
   display: flex;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
   .div {
     display: flex;
