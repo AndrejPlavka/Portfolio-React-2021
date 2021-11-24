@@ -31,7 +31,9 @@ function reducer(state, action) {
       throw new Error();
   }
 }
+
 const recaptchaKey = "6LfZkkQdAAAAALGlOh0CURkfvQ3zBh_7qAZoJgHT";
+// const recaptchaKey = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
 const emailjsService = "service_4370h1f";
 const emailjsTemplate = "template_rl8gm1r";
 const emailjsUser = "user_9NtwDnwudSGy35LXjGYNh";
@@ -50,11 +52,11 @@ export const ContactForm = (props: Props) => {
   const { name, email, message } = formState;
 
   const submitFormAndShowCaptcha = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    // e.preventDefault();
     setShowCaptcha(true);
   };
   // recaptcha use example - teilored
-  const sendEmail = (recaptchaKey) => {
+  const sendEmail = (captchaValue) => {
     if (name === "" || email === "" || message === "") {
       setShowFormErr(true);
       return;
@@ -62,47 +64,36 @@ export const ContactForm = (props: Props) => {
 
     const params = {
       ...formState,
-      "g-recaptcha-response": recaptchaKey,
+      "g-recaptcha-response": captchaValue,
     };
 
     setFormSubmitted({ title: "Sending message...", paragraph: "" });
-    emailjs
-      .send(
-        emailjsService,
-        emailjsTemplate,
-        params,
-        emailjsUser
-        // "service_4370h1f",
-        // "template_rl8gm1r",
-        // params,
-        // "user_9NtwDnwudSGy35LXjGYNh"
-      )
-      .then(
-        ({ status }) => {
-          if (status === 200) {
-            setFormSubmitted({
-              title: "Message has been sent",
-              paragraph: "I will be in contact with you soon.",
-            });
-          } else {
-            setFormSubmitted({
-              title:
-                "Unexpected status code returned from EmailJS, try again later",
-              paragraph:
-                "Please check your email adress xx@xx.xx or try other media.",
-            });
-          }
-        },
-        (error) => {
-          // eslint-disable-next-line no-console
-          console.log(error);
+    emailjs.send(emailjsService, emailjsTemplate, params, emailjsUser).then(
+      ({ status }) => {
+        if (status === 200) {
           setFormSubmitted({
-            title: "Error sending message, try again later",
+            title: "Message has been sent",
+            paragraph: "I will be in touch with you soon.",
+          });
+        } else {
+          setFormSubmitted({
+            title:
+              "An unexpected status code was returned from the e-mail provider, please try again later",
             paragraph:
-              "Please check your email adress xx@xx.xx or try other media.",
+              "Please check the correct form of your e-mail address ( xxx@xxx.xxx ).",
           });
         }
-      );
+      },
+      (error) => {
+        // eslint-disable-next-line no-console
+        console.log(error);
+        setFormSubmitted({
+          title: "Error sending message, please try again later",
+          paragraph:
+            "Please check the correct form of your e-mail address ( xxx@xxx.xxx ).",
+        });
+      }
+    );
   };
 
   return formSubmitted.title === "" ? (
@@ -156,7 +147,7 @@ export const ContactForm = (props: Props) => {
           </DivContent>
           <DivSubmit>
             {showFormErr ? (
-              <p>Please fill in all three input boxes to send a message</p>
+              <p>Fill in all three input fields to send a message</p>
             ) : null}
             <button type="submit">Go!</button>
           </DivSubmit>
@@ -203,11 +194,15 @@ const DivAlert = styled.div`
   max-width: 400px;
   height: auto;
   padding: 0;
+  text-align: center;
   h3 {
     font-size: 2em;
   }
   p {
     font-size: 1.5em;
+  }
+  @media screen and (${theme.sx_min_425}) {
+    max-width: 50%;
   }
 `;
 const Form = styled.form`
