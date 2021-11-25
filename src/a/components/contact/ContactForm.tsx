@@ -5,14 +5,12 @@ import emailjs from "emailjs-com";
 // styles:
 import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
-// emailjs:
-// emailjs.init("user_9NtwDnwudSGy35LXjGYNh");
 
-// type TypeSubmit = {
-//   name: string;
-//   email: string;
-//   message: any;
-// };
+type TypeSubmit = {
+  name: string;
+  email: string;
+  message: any;
+};
 const initialState = {
   name: "",
   email: "",
@@ -33,10 +31,8 @@ function reducer(state, action) {
 }
 
 const recaptchaKey = "6LfZkkQdAAAAALGlOh0CURkfvQ3zBh_7qAZoJgHT";
-// const recaptchaKey = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
-const emailjsService = "service_4370h1f";
-const emailjsTemplate = "template_rl8gm1r";
-const emailjsUser = "user_9NtwDnwudSGy35LXjGYNh";
+// const recaptchaSiteKey = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"; test one provided by google docs
+// const recaptchaSecretKey = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe"; test one
 interface Props {
   emailRef: React.MutableRefObject<null>;
 }
@@ -68,32 +64,39 @@ export const ContactForm = (props: Props) => {
     };
 
     setFormSubmitted({ title: "Sending message...", paragraph: "" });
-    emailjs.send(emailjsService, emailjsTemplate, params, emailjsUser).then(
-      ({ status }) => {
-        if (status === 200) {
+    emailjs
+      .send(
+        "service_4370h1f",
+        "template_rl8gm1r",
+        params,
+        "user_9NtwDnwudSGy35LXjGYNh"
+      )
+      .then(
+        ({ status }) => {
+          if (status === 200) {
+            setFormSubmitted({
+              title: "Message has been sent",
+              paragraph: "I will be in touch with you soon.",
+            });
+          } else {
+            setFormSubmitted({
+              title:
+                "An unexpected status code was returned from the e-mail provider, please try again later",
+              paragraph:
+                "Please check the correct form of your e-mail address ( xxx@xxx.xxx ).",
+            });
+          }
+        },
+        (error) => {
+          // eslint-disable-next-line no-console
+          console.log(error);
           setFormSubmitted({
-            title: "Message has been sent",
-            paragraph: "I will be in touch with you soon.",
-          });
-        } else {
-          setFormSubmitted({
-            title:
-              "An unexpected status code was returned from the e-mail provider, please try again later",
+            title: "Error sending message, please try again later",
             paragraph:
               "Please check the correct form of your e-mail address ( xxx@xxx.xxx ).",
           });
         }
-      },
-      (error) => {
-        // eslint-disable-next-line no-console
-        console.log(error);
-        setFormSubmitted({
-          title: "Error sending message, please try again later",
-          paragraph:
-            "Please check the correct form of your e-mail address ( xxx@xxx.xxx ).",
-        });
-      }
-    );
+      );
   };
 
   return formSubmitted.title === "" ? (
@@ -232,7 +235,7 @@ const DivContent = styled.div`
   }
 `;
 
-const DivContentData = styled.form`
+const DivContentData = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -287,7 +290,7 @@ const DivContentData = styled.form`
     height: 100%;
   }
 `;
-const DivContentMessage = styled.form`
+const DivContentMessage = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
