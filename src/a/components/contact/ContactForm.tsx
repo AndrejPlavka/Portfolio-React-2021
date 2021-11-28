@@ -88,8 +88,6 @@ export const ContactForm = (props: Props) => {
           }
         },
         (error) => {
-          // eslint-disable-next-line no-console
-          console.log(error);
           setFormSubmitted({
             title: "Error sending message, please try again later",
             paragraph:
@@ -249,8 +247,8 @@ const DivContentData = styled.div`
       font-size: 1.2em;
       font-weight: 300;
       padding: 1.25em 1em;
-      -webkit-transition: all 0.25s ease;
-      transition: all 0.25s ease;
+      -webkit-transition: all 0.225s ease;
+      transition: all 0.225s ease;
       pointer-events: none;
     }
 
@@ -302,8 +300,8 @@ const DivContentMessage = styled.div`
       font-size: 1.2em;
       font-weight: 300;
       padding: 1.25em 1em;
-      -webkit-transition: all 0.25s ease;
-      transition: all 0.25s ease;
+      -webkit-transition: all 0.225s ease;
+      transition: all 0.225s ease;
       pointer-events: none;
     }
     textarea {
@@ -389,7 +387,5 @@ const DivSubmit = styled.div`
   }
   @media screen and (${theme.sm_min_768}) {
     width: 85%;
-  }
-  @media screen and (${theme.md_min_1024}) {
   }
 `;
