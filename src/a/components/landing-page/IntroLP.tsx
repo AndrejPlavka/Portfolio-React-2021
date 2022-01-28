@@ -18,8 +18,8 @@ export const Intro = () => {
           </h3>
           <h4>
             {"Lets create some"} <span>{" practical "}</span>
-            {"&"} <span>{"uniqe"}</span>
-            {" projets "}
+            {"&"} <span>{"unique"}</span>
+            {" projects "}
             <span>{"together"}</span>
           </h4>
         </DivText>

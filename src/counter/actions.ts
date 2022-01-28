@@ -4,11 +4,12 @@ export const operationType = {
   DIV: "DIV",
   POW: "POW",
   SQRT: "SQRT",
+  RESET: "RESET",
 };
 
 export const mathOperation = {
   increment: (operationValue: number) => ({
-    type: operationType.INCREMENT,
+    type: "INCREMENT", // example of not using action constant operationType
     number: operationValue,
   }),
   decrement: (operationValue: number) => ({
@@ -26,5 +27,8 @@ export const mathOperation = {
   }),
   sqrt: () => ({
     type: operationType.SQRT,
+  }),
+  reset: () => ({
+    type: operationType.RESET,
   }),
 };

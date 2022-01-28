@@ -40,6 +40,7 @@ export const CounterTemplate = () => {
         </Button>
         <Button onClick={() => dispatch(mathOperation.div(2))}>x /2</Button>
         <Button onClick={() => dispatch(mathOperation.sqrt())}>√x</Button>
+        <Button onClick={() => dispatch(mathOperation.reset())}>reset</Button>
       </DivButtons>
     </DivCounter>
   );
