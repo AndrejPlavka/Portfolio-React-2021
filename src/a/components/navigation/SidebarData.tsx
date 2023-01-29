@@ -60,11 +60,12 @@ export const SidebarData = [
         path: "/tunesapp",
         cName: "sub-nav",
       },
-      {
-        title: "Hackertyper",
-        path: "/hackertyper",
-        cName: "sub-nav",
-      },
+      // under reconstruction
+      // {
+      //   title: "Hackertyper",
+      //   path: "/hackertyper",
+      //   cName: "sub-nav",
+      // },
       // {
       //   title: "Tic-tac-tou",
       //   path: "",

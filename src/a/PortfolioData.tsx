@@ -1,6 +1,6 @@
 import { SidebarData } from "./components/navigation/SidebarData";
 //@ts-ignore
-import Pdf from "../a/documents/CV_AndrejPlavka.pdf";
+import Pdf from "../a/documents/AndrejPlavka_CV.pdf";
 // img imports
 import Blog_Md from "./components/portfolio/img/Blog_Md.png";
 import Counter_Lg from "./components/portfolio/img/Counter_Lg.png";
@@ -140,7 +140,7 @@ const projects = [
       <>
         Create a blog to learn how to use local storage and react router. Learn
         how to add, edit or delete posts. You can also use MD to style text. To
-        see more click on <span>Demo.</span>
+        see more click on <span>Demo located in header.</span>
       </>
     ),
     stack: [HTML, CSS, TS, React, SC, Router, Markdown],
@@ -156,7 +156,7 @@ const projects = [
       <>
         Find your favorite music! Learn how to create a search form and use the
         iTunes API to build on the JSON experience! To see more click on
-        <span>Demo.</span>
+        <span>Demo located in header.</span>
       </>
     ),
 
@@ -174,7 +174,7 @@ const projects = [
         Get all those tasks out of your head and add them to the local storage
         list to get an overview. A simple task application in which you learn
         how to add, edit, delete and filter tasks. To see more click on
-        <span>Demo.</span>
+        <span>Demo located in header.</span>
       </>
     ),
 
@@ -192,7 +192,7 @@ const projects = [
         Test your memory by playing! Memory games provide space for critical
         thinking, which helps to develop attention to detail. To see more click
         on
-        <span>Demo.</span>
+        <span>Demo located in header.</span>
       </>
     ),
 
@@ -210,7 +210,7 @@ const projects = [
         Create your first simple React application and learn the basics of
         React. Built up on it and add Redux to manage actiones. To see more
         click on
-        <span>Demo.</span>
+        <span>Demo located in header.</span>
       </>
     ),
     stack: [HTML, CSS, TS, React, SC, Redux],
@@ -220,23 +220,24 @@ const projects = [
     livePreview: "/counter",
     bgImg: Counter_Lg,
   },
-  {
-    name: "Hackertyper",
-    description: (
-      <>
-        Bacome a hacker yourself! By pressing any key on keyboard {"you'll"} add
-        a line of real code to fool your friends. To see more click on
-        <span>Demo.</span>
-      </>
-    ),
+  // under reconstruction
+  // {
+  //   name: "Hackertyper",
+  //   description: (
+  //     <>
+  //       Bacome a hacker yourself! By pressing any key on keyboard {"you'll"} add
+  //       a line of real code to fool your friends. To see more click on
+  //       <span>Demo.</span>
+  //     </>
+  //   ),
 
-    stack: [HTML, CSS, TS, React, SC],
-    sourceIcon: GitHub,
-    sourceCode:
-      "https://github.com/AndrejPlavka/Portfolio-React-2021/tree/master/src/hackertyper",
-    livePreview: "/hackertyper",
-    bgImg: HT_Md,
-  },
+  //   stack: [HTML, CSS, TS, React, SC],
+  //   sourceIcon: GitHub,
+  //   sourceCode:
+  //     "https://github.com/AndrejPlavka/Portfolio-React-2021/tree/master/src/hackertyper",
+  //   livePreview: "/hackertyper",
+  //   bgImg: HT_Md,
+  // },
 ];
 // Skils section ***************************************************************
 export type SkillType = {

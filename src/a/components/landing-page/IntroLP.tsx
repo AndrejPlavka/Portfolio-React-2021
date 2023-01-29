@@ -17,7 +17,7 @@ export const Intro = () => {
             {" currently based in Bratislava, Slovakia."}
           </h3>
           <h4>
-            {"Lets create some"} <span>{" practical "}</span>
+            {"Lets work on some"} <span>{" practical "}</span>
             {"&"} <span>{"unique"}</span>
             {" projects "}
             <span>{"together"}</span>
