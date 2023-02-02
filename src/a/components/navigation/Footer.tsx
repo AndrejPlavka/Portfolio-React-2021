@@ -4,11 +4,13 @@ import { theme } from "../../../GlobalStyles";
 import styled from "styled-components/macro";
 
 export const Footer = () => {
+  const date = new Date().getFullYear();
+
   return (
     <DivFooter>
       <DivContent>
         <AFooterLink href="https://andrejplavka.com">
-          © 2021 Andrej Plavka
+          © {date} Andrej Plavka
         </AFooterLink>
       </DivContent>
     </DivFooter>
