@@ -1178,3 +1178,28 @@ export const IconTerminal = (props) => {
     </svg>
   );
 };
+
+export const IconExceedra = (props) => {
+  return (
+    <svg viewBox="36 36 120 120">
+      <path
+        d="M36.13,96.17a60.08,60.08,0,1,0,60.1-60.05,60.08,60.08,0,0,0-60.1,60.05"
+        fill="#b3b6b836"
+      />
+      <g>
+        <rect x="65.97" y="65.94" width="16.75" height="22.16" fill="#ef3340" />
+        <rect x="65.96" y="93.22" width="16.75" height="33.2" fill="#566771" />
+        <rect
+          x="109.71"
+          y="65.96"
+          width="16.75"
+          height="15.55"
+          fill="#ffa400"
+        />
+        <rect x="109.7" y="86.63" width="16.75" height="39.81" fill="#566771" />
+        <rect x="87.84" y="65.95" width="16.75" height="32.73" fill="#eb5727" />
+        <rect x="87.83" y="103.8" width="16.75" height="22.63" fill="#566771" />
+      </g>
+    </svg>
+  );
+};

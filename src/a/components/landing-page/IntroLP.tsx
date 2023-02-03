@@ -26,7 +26,6 @@ export const Intro = () => {
         <DivImgMain>
           <DivImg>
             <img className="img" src={PP} alt="profile_picture" />
-            {/* <img className="img" src={PPC} alt="bratislava" /> */}
           </DivImg>
         </DivImgMain>
       </DivContent>

@@ -8,6 +8,7 @@ import HT_Md from "./components/portfolio/img/HT_Md.png";
 import Mg_Md from "./components/portfolio/img/Mg_Md.png";
 import Todo_Md2 from "./components/portfolio/img/Todo_Md2.png";
 import Tunes_Md1 from "./components/portfolio/img/Tunes_Md1.png";
+import skillmeaFavicon from "./assets/skillmeaFavicon.png";
 // icon imports
 import {
   IconArrowDown,
@@ -22,6 +23,7 @@ import {
   IconDelete,
   IconEducation,
   IconEnglish,
+  IconExceedra,
   IconFBC,
   IconGerman,
   IconGit,
@@ -93,6 +95,8 @@ const MenuOpen = <IconMenu />;
 const MenuClose = <IconDelete />;
 const ArrowUp = <IconArrowUp />;
 const ArrowDown = <IconArrowDown />;
+// experiences icons:
+const Exceedra = <IconExceedra />;
 
 // Page Sections: *********************************************************
 const header = {
@@ -251,49 +255,55 @@ const skills = [
   {
     name: "HTML",
     img: HTML,
-    level: "basic",
+    level: "Intermediate",
     lvl: Star,
   },
   {
     name: "CSS",
     img: CSS,
-    level: "basic",
+    level: "Intermediate",
     lvl: Star,
   },
   {
     name: "SASS",
     img: SASS,
-    level: "basic",
+    level: "Intermediate",
     lvl: Star,
   },
   {
     name: "Bootstrap",
     img: Bootstrap,
-    level: "basic",
+    level: "Beginner",
     lvl: Star,
   },
   {
     name: "JavaScript",
     img: JS,
-    level: "basic",
+    level: "Intermediate",
     lvl: Star,
   },
   {
     name: "TypeScript",
     img: TS,
-    level: "basic",
+    level: "Intermediate",
     lvl: Star,
   },
   {
     name: "React",
     img: React,
-    level: "basic",
+    level: "Intermediate",
     lvl: Star,
   },
   {
     name: "Git",
     img: Git,
-    level: "basic",
+    level: "Intermediate",
+    lvl: Star,
+  },
+  {
+    name: "Redux",
+    img: Redux,
+    level: "Intermediate",
     lvl: Star,
   },
 ];
@@ -321,6 +331,22 @@ const L2C = (
   >
     LEARN 2CODE
   </div>
+);
+
+// new learn2code logo
+const skillmea = (
+  <img
+    style={{
+      display: "block",
+      margin: "auto",
+      backgroundColor: "none",
+      color: "blue",
+      transition: "backgroundColor 300ms",
+      height: "auto",
+      width: "100%",
+    }}
+    src={skillmeaFavicon}
+  />
 );
 
 const Cleverlance = (
@@ -354,6 +380,12 @@ export type ExpType = {
 };
 const experiences = [
   {
+    name: "Frontend Web Developer",
+    level: "Junior",
+    img: Exceedra,
+    text: "ddd",
+  },
+  {
     name: "Mechanical Engineering",
     level: "Master",
     img: University,
@@ -371,6 +403,13 @@ const experiences = [
     img: L2C,
     text: ",,Learn to Code,, course which covers the basics of work with React.",
   },
+  // new Learn2Code logo
+  // {
+  //   name: "React",
+  //   level: "",
+  //   img: skillmea,
+  //   text: ",,Learn to Code,, course which covers the basics of work with React.",
+  // },
   {
     name: "Basics of OOP",
     level: "",
