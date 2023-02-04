@@ -1,14 +1,5 @@
-import { SidebarData } from "./components/navigation/SidebarData";
 //@ts-ignore
 import Pdf from "../a/documents/AndrejPlavka_CV.pdf";
-// img imports
-import Blog_Md from "./components/portfolio/img/Blog_Md.png";
-import Counter_Lg from "./components/portfolio/img/Counter_Lg.png";
-import HT_Md from "./components/portfolio/img/HT_Md.png";
-import Mg_Md from "./components/portfolio/img/Mg_Md.png";
-import Todo_Md2 from "./components/portfolio/img/Todo_Md2.png";
-import Tunes_Md1 from "./components/portfolio/img/Tunes_Md1.png";
-import skillmeaFavicon from "./assets/skillmeaFavicon.png";
 // icon imports
 import {
   IconArrowDown,
@@ -28,7 +19,6 @@ import {
   IconGerman,
   IconGit,
   IconGitHub,
-  IconHTML1,
   IconHTML2,
   IconHiking,
   IconIGC,
@@ -51,6 +41,13 @@ import {
   IconUkulele,
   IconWorkout,
 } from "./assets/icons";
+import skillmeaFavicon from "./assets/skillmeaFavicon.png";
+// img imports
+import Blog_Md from "./components/portfolio/img/Blog_Md.png";
+import Counter_Lg from "./components/portfolio/img/Counter_Lg.png";
+import Mg_Md from "./components/portfolio/img/Mg_Md.png";
+import Todo_Md2 from "./components/portfolio/img/Todo_Md2.png";
+import Tunes_Md1 from "./components/portfolio/img/Tunes_Md1.png";
 
 // Project icons:
 const HTML = <IconHTML2 />;

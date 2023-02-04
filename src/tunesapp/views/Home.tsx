@@ -8,17 +8,13 @@ import "./Home.scss";
 
 //COMPONENT
 export const Home = () => {
-  //STATE - just for practise purpose
-  const [title] = useState("Homepage");
-
   //TEMPLATE
   return (
     <div className="home">
       <img className="logo" src={logo} alt="react logo" />
-      {/* <h1>{title}</h1> */}
-      {/* <p style={{ fontWeight: "lighter" }}>
+      <p style={{ fontWeight: "lighter", color: "white" }}>
         Search for your favrite music to your hart content by Tunes
-      </p> */}
+      </p>
     </div>
   );
 };
