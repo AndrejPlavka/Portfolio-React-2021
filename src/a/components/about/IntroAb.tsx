@@ -24,7 +24,7 @@ export const AboutIntro = () => {
             {"and "}
             <span>{"reliable "}</span>
             {"construct. "}
-            <span>{"The Same apply "}</span>
+            <span>{"The Same applies "}</span>
             {"for "}
             <span>{"web design "}</span>
             {"& "}
